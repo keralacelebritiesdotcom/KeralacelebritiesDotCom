@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "file": "movie-1.html",
+    "title": "Kerala's Movies.",
+    "status": "Now Running",
+    "image": "/movies/images/bethlehem-kudumba-unit.jpg"
+  }
+]
