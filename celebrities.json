@@ -47,7 +47,7 @@
   {
     "file": "mohanlal.html",
     "name": "Mohanlal",
-    "image": "/KeralaCelebrities.com-logo.jpeg",
+    "image": "/celebrities/images/mohanlal.jpg",
     "description": "Explore Mohanlal's complete profile: biography, early life, Malayalam cinema career, landmark movies, awards, National Film Awards, Padma honours, Dadasaheb Phalke Award, production, direction and legacy.",
     "categories": [
       "actors"
@@ -56,7 +56,7 @@
   {
     "file": "nivin-pauly.html",
     "name": "Nivin Pauly",
-    "image": "/celebrities/images/mohanlal.jpg",
+    "image": "/celebrities/images/nivin-pauly.jpg",
     "description": "Explore Nivin Pauly's complete profile: biography, early life, Malayalam cinema career, landmark movies, awards, career milestones, production and latest work.",
     "categories": [
       "actors"
@@ -74,7 +74,7 @@
   {
     "file": "prithviraj-sukumaran.html",
     "name": "Prithviraj Sukumaran",
-    "image": "/celebrities/images/mammootty.jpg",
+    "image": "/celebrities/images/prithviraj-sukumaran.jpg",
     "description": "Explore Prithviraj Sukumaran's detailed profile: biography, early life, Malayalam cinema career, landmark films, Kerala State Film Awards, acting, directing and production work.",
     "categories": [
       "actors"
@@ -83,7 +83,7 @@
   {
     "file": "tovino-thomas.html",
     "name": "Tovino Thomas",
-    "image": "/celebrities/images/mohanlal.jpg",
+    "image": "/celebrities/images/tovino-thomas.jpg",
     "description": "Tovino Thomas biography, career, movies, awards, Minnal Murali, 2018, A.R.M, production journey and latest profile from KeralaCelebrities.com.",
     "categories": [
       "actors"
