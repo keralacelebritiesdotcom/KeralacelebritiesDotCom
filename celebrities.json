@@ -1,12 +1,92 @@
 [
-  {"file":"dulquer-salmaan.html","name":"Dulquer Salmaan","image":"/celebrities/images/dulquer-salmaan.jpg","description":"Actor, Singer & Producer","categories":["actors"]},
-  {"file":"fahadh-faasil.html","name":"Fahadh Faasil","image":"/celebrities/images/fahadh-faasil.jpg","description":"Actor & Producer","categories":["actors"]},
-  {"file":"kunchacko-boban.html","name":"Kunchacko Boban","image":"/celebrities/images/kunchacko-boban.jpg","description":"Actor & Producer","categories":["actors"]},
-  {"file":"mammootty.html","name":"Mammootty","image":"/celebrities/images/mammootty.jpg","description":"Actor & Producer","categories":["actors"]},
-  {"file":"manju-warrier.html","name":"Manju Warrier","image":"/celebrities/images/manju-warrier.jpg","description":"Actress & Performer","categories":["actors"]},
-  {"file":"mohanlal.html","name":"Mohanlal","image":"/celebrities/images/mohanlal.jpg","description":"Actor, Producer, Singer & Director","categories":["actors"]},
-  {"file":"nivin-pauly.html","name":"Nivin Pauly","image":"/celebrities/images/nivin-pauly.jpg","description":"Actor & Producer","categories":["actors"]},
-  {"file":"parvathy-thiruvothu.html","name":"Parvathy Thiruvothu","image":"/celebrities/images/parvathy-thiruvothu.jpg","description":"Actress & Performer","categories":["actors"]},
-  {"file":"prithviraj-sukumaran.html","name":"Prithviraj Sukumaran","image":"/celebrities/images/prithviraj-sukumaran.jpg","description":"Actor, Director & Producer","categories":["actors"]},
-  {"file":"tovino-thomas.html","name":"Tovino Thomas","image":"/celebrities/images/tovino-thomas.jpg","description":"Actor & Producer","categories":["actors"]}
+  {
+    "file": "dulquer-salmaan.html",
+    "name": "Dulquer Salmaan",
+    "image": "/celebrities/images/dulquer-salmaan.jpg",
+    "description": "Explore Dulquer Salmaan's biography, early life, career, landmark films, awards, multilingual cinema journey, singing and production work.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "fahadh-faasil.html",
+    "name": "Fahadh Faasil",
+    "image": "/celebrities/images/fahadh-faasil.jpg",
+    "description": "Explore Fahadh Faasil's complete profile: biography, early life, Malayalam cinema career, landmark movies, awards, National Film Award, Kerala State Film Awards, production and legacy.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "kunchacko-boban.html",
+    "name": "Kunchacko Boban",
+    "image": "/celebrities/images/kunchacko-boban.JPG",
+    "description": "Explore Kunchacko Boban's profile, biography, Malayalam film career, landmark movies, awards, career milestones and work as an actor and producer.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "mammootty.html",
+    "name": "Mammootty",
+    "image": "/celebrities/images/mammootty.jpg",
+    "description": "Explore Mammootty's detailed profile: biography, early life, five-decade Malayalam cinema career, landmark films, National Film Awards, Padma honours, Kerala Prabha and latest recognition for Bramayugam.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "manju-warrier.html",
+    "name": "Manju Warrier",
+    "image": "/celebrities/images/manju-warrier.jpg",
+    "description": "Explore Manju Warrier's biography, Malayalam cinema career, landmark films, awards, comeback, production work and latest projects. A detailed KeralaCelebrities.com profile.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "mohanlal.html",
+    "name": "Mohanlal",
+    "image": "/KeralaCelebrities.com-logo.jpeg",
+    "description": "Explore Mohanlal's complete profile: biography, early life, Malayalam cinema career, landmark movies, awards, National Film Awards, Padma honours, Dadasaheb Phalke Award, production, direction and legacy.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "nivin-pauly.html",
+    "name": "Nivin Pauly",
+    "image": "/celebrities/images/mohanlal.jpg",
+    "description": "Explore Nivin Pauly's complete profile: biography, early life, Malayalam cinema career, landmark movies, awards, career milestones, production and latest work.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "parvathy-thiruvothu.html",
+    "name": "Parvathy Thiruvothu",
+    "image": "/celebrities/images/parvathy-thiruvothu.jpg",
+    "description": "Explore Parvathy Thiruvothu's profile: early career, Malayalam and South Indian cinema, landmark performances, awards, career milestones and latest work.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "prithviraj-sukumaran.html",
+    "name": "Prithviraj Sukumaran",
+    "image": "/celebrities/images/mammootty.jpg",
+    "description": "Explore Prithviraj Sukumaran's detailed profile: biography, early life, Malayalam cinema career, landmark films, Kerala State Film Awards, acting, directing and production work.",
+    "categories": [
+      "actors"
+    ]
+  },
+  {
+    "file": "tovino-thomas.html",
+    "name": "Tovino Thomas",
+    "image": "/celebrities/images/mohanlal.jpg",
+    "description": "Tovino Thomas biography, career, movies, awards, Minnal Murali, 2018, A.R.M, production journey and latest profile from KeralaCelebrities.com.",
+    "categories": [
+      "actors"
+    ]
+  }
 ]
