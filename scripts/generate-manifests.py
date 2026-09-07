@@ -94,7 +94,15 @@ def clean_title(s):
 
 
 def extract_movie_year(s):
-    """Extract a four-digit movie year from a movie title string."""
+    """
+    Extract a four-digit movie year.
+
+    Supports:
+        Thudakkam (2026)
+        Thudakkam – 2026
+        Thudakkam - 2026
+        Thudakkam 2026
+    """
     s = clean_title(s)
 
     match = re.search(
@@ -111,7 +119,10 @@ def extract_movie_year(s):
 
 
 def remove_movie_year(s):
-    """Return the movie title without its trailing year."""
+    """
+    Remove a trailing movie year from the title.
+    The year is stored separately in movies.json.
+    """
     s = clean_title(s)
 
     s = re.sub(
@@ -237,10 +248,12 @@ def movie_number(path):
 def parse_movie(path):
     parser = parse_file(path)
 
-    # IMPORTANT:
-    # Check BOTH H1 and <title> for the year.
-    # This fixes pages where H1 is "Bethlehem Kudumba Unit"
-    # but <title> is "Bethlehem Kudumba Unit (2026) | KeralaCelebrities.com".
+    # Check BOTH H1 and <title>.
+    # Example:
+    #   <h1>Bethlehem Kudumba Unit</h1>
+    #   <title>Bethlehem Kudumba Unit (2026) | KeralaCelebrities.com</title>
+    #
+    # The year is therefore still found even when the H1 has no year.
     h1_title = clean_title(parser.h1)
     page_title = clean_title(parser.title)
 
@@ -249,7 +262,7 @@ def parse_movie(path):
         or extract_movie_year(page_title)
     )
 
-    # Prefer H1 as the clean movie name, but remove any year from it.
+    # Prefer the H1 for the clean movie name.
     raw_title = (
         h1_title
         or page_title
