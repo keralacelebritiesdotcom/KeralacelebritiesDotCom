@@ -52,12 +52,8 @@ footer{background:#0b0b0b;color:#fff;padding-top:46px}.foot-grid{display:grid;gr
 <div class="container">
 <div class="breadcrumb"><a href="/">Home</a> &nbsp;›&nbsp; <a href="/#celebrities">Celebrities</a> &nbsp;›&nbsp; Actors &amp; Artists</div>
 <div class="section-heading"><span>KERALA CELEBRITIES</span><h1>Actors &amp; Artists</h1><p>Explore the journeys, careers, landmark performances and achievements of Kerala's celebrated actors and artists.</p></div>
-<div class="celebrity-grid">
-<a class="celebrity-card" href="/celebrities/mohanlal.html"><img src="/celebrities/images/mohanlal.jpg" alt="Mohanlal" loading="lazy"><div><h3>Mohanlal</h3><p>Actor, producer, filmmaker &amp; playback singer</p></div></a>
-<a class="celebrity-card" href="/celebrities/mammootty.html"><img src="/celebrities/images/mammootty.jpg" alt="Mammootty" loading="lazy"><div><h3>Mammootty</h3><p>Actor &amp; film producer</p></div></a>
-<a class="celebrity-card" href="/celebrities/prithviraj-sukumaran.html"><img src="/celebrities/images/prithviraj-sukumaran.jpg" alt="Prithviraj Sukumaran" loading="lazy"><div><h3>Prithviraj Sukumaran</h3><p>Actor, director &amp; producer</p></div></a>
-<a class="celebrity-card" href="/celebrities/fahadh-faasil.html"><img src="/celebrities/images/fahadh-faasil.jpg" alt="Fahadh Faasil" loading="lazy"><div><h3>Fahadh Faasil</h3><p>Actor &amp; producer</p></div></a>
-<a class="celebrity-card" href="/celebrities/dulquer-salmaan.html"><img src="/celebrities/images/dulquer-salmaan.jpg" alt="Dulquer Salmaan" loading="lazy"><div><h3>Dulquer Salmaan</h3><p>Actor, singer &amp; producer</p></div></a>
+<div class="celebrity-grid" id="actorsGrid" aria-live="polite">
+<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">Loading actors &amp; artists…</div>
 </div>
 </div>
 </section>
@@ -75,5 +71,215 @@ function toggleNav(){const n=document.getElementById('mainNav'),b=document.getEl
 document.querySelectorAll('#mainNav .nav-dropdown > a').forEach(a=>a.addEventListener('click',function(e){if(window.innerWidth<=850){e.preventDefault();this.parentElement.classList.toggle('open')}}));
 document.querySelectorAll('#mainNav a:not(.nav-dropdown > a)').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('open');document.getElementById('menuButton').setAttribute('aria-expanded','false')}));
 </script>
+
+<script>
+const GITHUB_OWNER = "Keralacelebritiesdotcom";
+const GITHUB_REPO = "keralacelebrities.com";
+const GITHUB_BRANCH = "main";
+const CELEBRITY_API = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/celebrities/`;
+const CELEBRITY_RAW = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/celebrities/`;
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[ch]));
+}
+
+function cleanTitle(value){
+  return String(value || "")
+    .replace(/\s*[|–—-]\s*KeralaCelebrities\.com.*$/i,"")
+    .replace(/\s+/g," ")
+    .trim();
+}
+
+function firstText(doc, selectors){
+  for(const selector of selectors){
+    const el = doc.querySelector(selector);
+    if(el){
+      const value = el.getAttribute("content") || el.textContent || "";
+      if(value.trim()) return value.trim();
+    }
+  }
+  return "";
+}
+
+function getJsonLdPeople(doc){
+  const results = [];
+  doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+    try{
+      const data = JSON.parse(script.textContent);
+      const add = item => {
+        if(!item) return;
+        if(Array.isArray(item)) item.forEach(add);
+        else if(item["@graph"]) item["@graph"].forEach(add);
+        else if(item["@type"] === "Person") results.push(item);
+      };
+      add(data);
+    }catch(e){}
+  });
+  return results;
+}
+
+function profileLooksLikeActor(doc){
+  const people = getJsonLdPeople(doc);
+
+  for(const person of people){
+    const job = JSON.stringify([
+      person.jobTitle,
+      person.occupation,
+      person.description
+    ]).toLowerCase();
+
+    if(/\b(actor|actress|artist|performer|film star|cinema)\b/.test(job)){
+      return true;
+    }
+  }
+
+  const meta = [
+    firstText(doc,['meta[name="description"]']),
+    firstText(doc,['meta[name="keywords"]']),
+    firstText(doc,['.hero-intro']),
+    firstText(doc,['main'])
+  ].join(" ").toLowerCase();
+
+  return /\b(actor|actress|film actor|film actress|artist|cinema)\b/.test(meta);
+}
+
+async function loadActors(){
+  const grid = document.getElementById("actorsGrid");
+
+  try{
+    const response = await fetch(CELEBRITY_API + "?ref=" + GITHUB_BRANCH, {
+      headers: {"Accept":"application/vnd.github+json"},
+      cache:"no-store"
+    });
+
+    if(!response.ok){
+      throw new Error(`GitHub API error ${response.status}`);
+    }
+
+    const files = await response.json();
+
+    const profileFiles = files.filter(item =>
+      item.type === "file" &&
+      /\.html$/i.test(item.name) &&
+      !/^(actors|directors|singers|television|other-personalities|index)\.html$/i.test(item.name)
+    );
+
+    const actors = [];
+
+    for(const file of profileFiles){
+      try{
+        const response = await fetch(
+          CELEBRITY_RAW + encodeURIComponent(file.name) + "?v=" + Date.now(),
+          {cache:"no-store"}
+        );
+
+        if(!response.ok) continue;
+
+        const html = await response.text();
+        const doc = new DOMParser().parseFromString(html,"text/html");
+
+        if(!profileLooksLikeActor(doc)) continue;
+
+        const person = getJsonLdPeople(doc)[0] || {};
+        const name = cleanTitle(
+          person.name ||
+          firstText(doc,[
+            "h1",
+            'meta[property="og:title"]',
+            "title"
+          ]) ||
+          file.name.replace(/\.html$/i,"")
+        );
+
+        const imageEl =
+          doc.querySelector(".profile-photo img") ||
+          doc.querySelector('meta[property="og:image"]') ||
+          doc.querySelector('img[src*="/celebrities/images/"]');
+
+        let image = imageEl
+          ? (imageEl.getAttribute("content") || imageEl.getAttribute("src") || "")
+          : "";
+
+        if(image && !/^https?:\/\//i.test(image) && !image.startsWith("/")){
+          image = "/celebrities/" + image.replace(/^\.?\//,"");
+        }
+
+        if(!image){
+          image = `/celebrities/images/${file.name.replace(/\.html$/i,"")}.jpg`;
+        }
+
+        let description =
+          person.jobTitle ||
+          firstText(doc,[
+            ".hero-intro",
+            'meta[name="description"]'
+          ]) ||
+          "Actor & Artist";
+
+        description = description
+          .replace(/\s+/g," ")
+          .trim();
+
+        if(description.length > 90){
+          description = description.slice(0,87).replace(/\s+\S*$/,"") + "…";
+        }
+
+        actors.push({
+          name,
+          file:file.name,
+          image,
+          description
+        });
+
+      }catch(error){
+        console.error("Could not load",file.name,error);
+      }
+    }
+
+    actors.sort((a,b) => a.name.localeCompare(b.name));
+
+    if(!actors.length){
+      grid.innerHTML =
+        '<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">No actor or artist profiles were found.</div>';
+      return;
+    }
+
+    grid.innerHTML = "";
+
+    actors.forEach(person => {
+      const card = document.createElement("a");
+      card.className = "celebrity-card";
+      card.href = "/celebrities/" + encodeURIComponent(person.file);
+
+      card.innerHTML = `
+        <img src="${escapeHtml(person.image)}"
+             alt="${escapeHtml(person.name)}"
+             loading="lazy">
+        <div>
+          <h3>${escapeHtml(person.name)}</h3>
+          <p>${escapeHtml(person.description)}</p>
+        </div>
+      `;
+
+      const img = card.querySelector("img");
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+      }, {once:true});
+
+      grid.appendChild(card);
+    });
+
+  }catch(error){
+    console.error("Actor loading failed:",error);
+    grid.innerHTML =
+      '<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">Actors could not be loaded. Please check the browser console.</div>';
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadActors);
+</script>
+
 </body>
 </html>
