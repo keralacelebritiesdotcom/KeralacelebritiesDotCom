@@ -107,7 +107,7 @@ movieList.forEach(m=>{
       const a=document.createElement("a");
       a.className="movie-card";
       a.href="/movies/"+encodeURIComponent(m.file);
-      a.innerHTML=`<div class="movie-poster"><img src="${esc(m.image)}" alt="${esc(m.title)}" loading="lazy"><div class="poster-fallback" style="display:none">${esc(m.title)}</div></div><div class="movie-name">${esc(m.title)}<span class="movie-status">${esc(m.status||"Now Running")}</span></div>`;
+      a.innerHTML=`<div class="movie-poster"><img src="${esc(m.image)}" alt="${esc(m.title)}" loading="lazy"><div class="poster-fallback" style="display:none">${esc(m.title)}</div></div><div class="movie-name">${esc(m.title)}<span class="movie-status">${esc(m.status||"Now Showing")}</span></div>`;
       const im=a.querySelector("img"),fb=a.querySelector(".poster-fallback");
       im.addEventListener("error",()=>{im.style.display="none";fb.style.display="flex"},{once:true});
       box.appendChild(a);
