@@ -94,20 +94,9 @@ def clean_title(s):
 
 
 def extract_movie_year(s):
-    """
-    Extract a four-digit movie year from the movie title/H1.
-
-    Examples:
-        'Thudakkam (2026)' -> 2026
-        'Thudakkam – 2026' -> 2026
-        'Thudakkam - 2026' -> 2026
-
-    Returns an integer year, or None when no year is found.
-    """
+    """Extract a four-digit movie year from a movie title string."""
     s = clean_title(s)
 
-    # Prefer a year at the end of the title, including common
-    # parenthesised and dash-separated formats.
     match = re.search(
         r"(?:\(\s*(\d{4})\s*\)|[–—-]\s*(\d{4})\s*)$",
         s,
@@ -116,17 +105,13 @@ def extract_movie_year(s):
     if match:
         return int(next(group for group in match.groups() if group))
 
-    # Fallback: accept a standalone 4-digit year anywhere in the title.
     match = re.search(r"\b(19\d{2}|20\d{2}|21\d{2})\b", s)
 
     return int(match.group(1)) if match else None
 
 
 def remove_movie_year(s):
-    """
-    Remove the movie year from the display title so index.html can
-    append it separately as: Title (Year).
-    """
+    """Return the movie title without its trailing year."""
     s = clean_title(s)
 
     s = re.sub(
@@ -252,17 +237,25 @@ def movie_number(path):
 def parse_movie(path):
     parser = parse_file(path)
 
-    raw_title = clean_title(
-        parser.h1
-        or parser.title
+    # IMPORTANT:
+    # Check BOTH H1 and <title> for the year.
+    # This fixes pages where H1 is "Bethlehem Kudumba Unit"
+    # but <title> is "Bethlehem Kudumba Unit (2026) | KeralaCelebrities.com".
+    h1_title = clean_title(parser.h1)
+    page_title = clean_title(parser.title)
+
+    year = (
+        extract_movie_year(h1_title)
+        or extract_movie_year(page_title)
+    )
+
+    # Prefer H1 as the clean movie name, but remove any year from it.
+    raw_title = (
+        h1_title
+        or page_title
         or path.stem.replace("-", " ").title()
     )
 
-    # Extract the year from the movie HTML and store it separately.
-    year = extract_movie_year(raw_title)
-
-    # Keep the title itself free of the year because index.html will
-    # display it as: Title (Year).
     title = remove_movie_year(raw_title)
 
     image = normalise_image_url(parser.og_image)
