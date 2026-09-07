@@ -1,8 +1,14 @@
 [
   {
     "file": "movie-1.html",
-    "title": "Kerala's Movies.",
+    "title": "Bethlehem Kudumba Unit",
     "status": "Now Showing",
     "image": "/movies/images/bethlehem-kudumba-unit.jpg"
+  },
+  {
+    "file": "movie-2.html",
+    "title": "I'm Game",
+    "status": "Now Showing",
+    "image": "/movies/images/im-game.jpg"
   }
 ]
