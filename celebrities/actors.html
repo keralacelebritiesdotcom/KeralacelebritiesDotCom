@@ -121,28 +121,23 @@ function getJsonLdPeople(doc){
 }
 
 function profileLooksLikeActor(doc){
-  const people = getJsonLdPeople(doc);
+  // Do not rely on JSON-LD wording. A celebrity profile page is an actor
+  // candidate unless it is clearly one of the category/index pages.
+  // This prevents valid profiles such as Mohanlal, Mammootty, etc. from
+  // disappearing just because their metadata uses different wording.
+  const person = getJsonLdPeople(doc);
+  if(person.length) return true;
 
-  for(const person of people){
-    const job = JSON.stringify([
-      person.jobTitle,
-      person.occupation,
-      person.description
-    ]).toLowerCase();
-
-    if(/\b(actor|actress|artist|performer|film star|cinema)\b/.test(job)){
-      return true;
-    }
-  }
-
-  const meta = [
-    firstText(doc,['meta[name="description"]']),
-    firstText(doc,['meta[name="keywords"]']),
-    firstText(doc,['.hero-intro']),
-    firstText(doc,['main'])
+  const signals = [
+    firstText(doc,["meta[name=\"description\"]"]),
+    firstText(doc,["meta[name=\"keywords\"]"]),
+    firstText(doc,["h1"]),
+    firstText(doc,[".hero-intro"]),
+    firstText(doc,["main"]),
+    firstText(doc,["title"])
   ].join(" ").toLowerCase();
 
-  return /\b(actor|actress|film actor|film actress|artist|cinema)\b/.test(meta);
+  return /\b(actor|actress|artist|performer|film star|cinema|producer|filmmaker|singer|director)\b/.test(signals);
 }
 
 async function loadActors(){
@@ -168,18 +163,27 @@ async function loadActors(){
 
     const actors = [];
 
-    for(const file of profileFiles){
+    // Fetch profiles in parallel so one slow/broken profile cannot prevent
+    // the rest of the directory from appearing.
+    const loadedProfiles = await Promise.all(profileFiles.map(async file => {
       try{
         const response = await fetch(
           CELEBRITY_RAW + encodeURIComponent(file.name) + "?v=" + Date.now(),
           {cache:"no-store"}
         );
-
-        if(!response.ok) continue;
-
+        if(!response.ok) return null;
         const html = await response.text();
-        const doc = new DOMParser().parseFromString(html,"text/html");
+        return {file, doc:new DOMParser().parseFromString(html,"text/html")};
+      }catch(error){
+        console.error("Could not load",file.name,error);
+        return null;
+      }
+    }));
 
+    for(const loaded of loadedProfiles){
+      if(!loaded) continue;
+      const {file, doc} = loaded;
+      try{
         if(!profileLooksLikeActor(doc)) continue;
 
         const person = getJsonLdPeople(doc)[0] || {};
