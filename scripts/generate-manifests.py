@@ -93,6 +93,57 @@ def clean_title(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+def extract_movie_year(s):
+    """
+    Extract a four-digit movie year from the movie title/H1.
+
+    Examples:
+        'Thudakkam (2026)' -> 2026
+        'Thudakkam – 2026' -> 2026
+        'Thudakkam - 2026' -> 2026
+
+    Returns an integer year, or None when no year is found.
+    """
+    s = clean_title(s)
+
+    # Prefer a year at the end of the title, including common
+    # parenthesised and dash-separated formats.
+    match = re.search(
+        r"(?:\(\s*(\d{4})\s*\)|[–—-]\s*(\d{4})\s*)$",
+        s,
+    )
+
+    if match:
+        return int(next(group for group in match.groups() if group))
+
+    # Fallback: accept a standalone 4-digit year anywhere in the title.
+    match = re.search(r"\b(19\d{2}|20\d{2}|21\d{2})\b", s)
+
+    return int(match.group(1)) if match else None
+
+
+def remove_movie_year(s):
+    """
+    Remove the movie year from the display title so index.html can
+    append it separately as: Title (Year).
+    """
+    s = clean_title(s)
+
+    s = re.sub(
+        r"\s*\(\s*(?:19\d{2}|20\d{2}|21\d{2})\s*\)\s*$",
+        "",
+        s,
+    )
+
+    s = re.sub(
+        r"\s*[–—-]\s*(?:19\d{2}|20\d{2}|21\d{2})\s*$",
+        "",
+        s,
+    )
+
+    return re.sub(r"\s+", " ", s).strip()
+
+
 def normalise_image_url(image):
     image = (image or "").strip()
 
@@ -201,11 +252,18 @@ def movie_number(path):
 def parse_movie(path):
     parser = parse_file(path)
 
-    title = clean_title(
+    raw_title = clean_title(
         parser.h1
         or parser.title
         or path.stem.replace("-", " ").title()
     )
+
+    # Extract the year from the movie HTML and store it separately.
+    year = extract_movie_year(raw_title)
+
+    # Keep the title itself free of the year because index.html will
+    # display it as: Title (Year).
+    title = remove_movie_year(raw_title)
 
     image = normalise_image_url(parser.og_image)
 
@@ -227,6 +285,7 @@ def parse_movie(path):
     return {
         "file": path.name,
         "title": title,
+        "year": year,
         "status": status,
         "image": image,
     }
@@ -278,9 +337,11 @@ def main():
 
     # IMPORTANT: numeric order, not alphabetical order.
     # This gives movie-1, movie-2, ..., movie-10.
-    movies.sort(key=lambda x: movie_number(
-        MOVIE_DIR / x["file"]
-    ))
+    movies.sort(
+        key=lambda x: movie_number(
+            MOVIE_DIR / x["file"]
+        )
+    )
 
     write_json(
         ROOT / "celebrities.json",
