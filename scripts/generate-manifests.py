@@ -213,30 +213,38 @@ def parse_movie(path):
         )
     )
 
+    # For movies, use the HTML <title> first.
+    # The page header may contain the site's general tagline.
     title = clean_title(
-        parser.h1
-        or parser.title
+        parser.title
+        or parser.h1
         or path.stem.replace("-", " ").title()
     )
 
-    matching_image = find_matching_image(
-        MOVIE_IMAGE_DIR,
-        path.stem
-    )
+    # For movie posters, prefer the explicit og:image from the
+    # movie HTML. This allows filenames such as:
+    # bethlehem-kudumba-unit.jpg
+    image = parser.og_image.strip() if parser.og_image else ""
 
-    if matching_image:
-        image = image_url_for_file(matching_image)
-    else:
-        image = parser.og_image.strip() if parser.og_image else ""
+    if image.startswith("https://keralacelebrities.com/"):
+        image = image[len("https://keralacelebrities.com"):]
 
-        if image.startswith("https://keralacelebrities.com/"):
-            image = image[len("https://keralacelebrities.com"):]
+    elif image.startswith("https://www.keralacelebrities.com/"):
+        image = image[len("https://www.keralacelebrities.com"):]
 
-        elif image.startswith("https://www.keralacelebrities.com/"):
-            image = image[len("https://www.keralacelebrities.com"):]
+    elif image and not image.startswith(("/", "http://", "https://")):
+        image = "/movies/" + image.lstrip("./")
 
-        elif image and not image.startswith(("/", "http://", "https://")):
-            image = "/movies/" + image.lstrip("./")
+    # If no og:image exists, try to find an image matching
+    # the movie HTML filename, e.g. movie-1.jpg.
+    if not image:
+        matching_image = find_matching_image(
+            MOVIE_IMAGE_DIR,
+            path.stem
+        )
+
+        if matching_image:
+            image = image_url_for_file(matching_image)
 
     status = parser.movie_status or "Now Running"
 
@@ -246,9 +254,6 @@ def parse_movie(path):
         "status": status,
         "image": image,
     }
-
-
-def write_json(path, data):
     path.write_text(
         json.dumps(
             data,
