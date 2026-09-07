@@ -12,5 +12,12 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/im-game.jpg"
+  },
+  {
+    "file": "movie-3.html",
+    "title": "Movie 3",
+    "year": null,
+    "status": "Now Showing",
+    "image": ""
   }
 ]
