@@ -4,8 +4,10 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+
 CELEB_DIR = ROOT / "celebrities"
 CELEB_IMAGE_DIR = CELEB_DIR / "images"
+
 MOVIE_DIR = ROOT / "movies"
 MOVIE_IMAGE_DIR = MOVIE_DIR / "images"
 
@@ -18,7 +20,7 @@ CATEGORY_FILES = {
     "index.html",
 }
 
-IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".png", ".webp"]
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 
 
 class PageParser(HTMLParser):
@@ -34,16 +36,12 @@ class PageParser(HTMLParser):
 
         self._tag = None
         self._buf = []
-        self._in_jsonld = False
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         self._tag = tag
 
-        if tag == "title":
-            self._buf = []
-
-        elif tag == "h1":
+        if tag in ("title", "h1"):
             self._buf = []
 
         elif tag == "meta":
@@ -53,24 +51,15 @@ class PageParser(HTMLParser):
 
             if name == "description":
                 self.description = content
-
             elif prop == "og:image":
                 self.og_image = content
-
             elif name == "celebrity-category":
                 self.category = content
-
             elif name == "movie-status":
                 self.movie_status = content
 
         elif tag == "span" and "movie-status" in (a.get("class") or "").split():
             self._tag = "movie-status"
-            self._buf = []
-
-        elif tag == "script" and (
-            (a.get("type") or "").lower() == "application/ld+json"
-        ):
-            self._in_jsonld = True
             self._buf = []
 
     def handle_endtag(self, tag):
@@ -80,15 +69,9 @@ class PageParser(HTMLParser):
         elif tag == "h1" and self._buf:
             self.h1 = " ".join(self._buf).strip()
 
-        elif (
-            tag == "movie-status"
-            and self._buf
-            and not self.movie_status
-        ):
-            self.movie_status = " ".join(self._buf).strip()
-
-        elif tag == "script" and self._in_jsonld:
-            self._in_jsonld = False
+        elif tag == "span" and self._tag == "movie-status" and self._buf:
+            if not self.movie_status:
+                self.movie_status = " ".join(self._buf).strip()
 
         self._tag = None
 
@@ -102,7 +85,7 @@ class PageParser(HTMLParser):
 
 def clean_title(s):
     s = re.sub(
-        r"\s*[|–—-]\s*KeralaCelebrities\.com.*$",
+        r"\s*(?:\||–|—|-)\s*KeralaCelebrities\.com.*$",
         "",
         s or "",
         flags=re.I,
@@ -110,12 +93,21 @@ def clean_title(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def find_matching_image(directory, stem):
-    """
-    Find an image whose filename matches the HTML filename stem,
-    regardless of JPG/JPEG/PNG/WEBP extension or capitalization.
-    """
+def normalise_image_url(image):
+    image = (image or "").strip()
 
+    for domain in (
+        "https://keralacelebrities.com",
+        "https://www.keralacelebrities.com",
+    ):
+        if image.startswith(domain):
+            image = image[len(domain):]
+            break
+
+    return image
+
+
+def find_matching_image(directory, stem):
     if not directory.exists():
         return ""
 
@@ -124,10 +116,8 @@ def find_matching_image(directory, stem):
     for image in directory.iterdir():
         if not image.is_file():
             continue
-
         if image.suffix.casefold() not in IMAGE_EXTENSIONS:
             continue
-
         if image.stem.casefold() == target:
             return image
 
@@ -135,23 +125,24 @@ def find_matching_image(directory, stem):
 
 
 def image_url_for_file(image_path):
-    """
-    Convert a repository image path into a website URL.
-    """
-
-    relative = image_path.relative_to(ROOT).as_posix()
-    return "/" + relative
+    return "/" + image_path.relative_to(ROOT).as_posix()
 
 
-def parse(path):
+def parse_file(path):
     parser = PageParser()
 
     parser.feed(
         path.read_text(
             encoding="utf-8",
-            errors="ignore"
+            errors="ignore",
         )
     )
+
+    return parser
+
+
+def parse_celebrity(path):
+    parser = parse_file(path)
 
     name = clean_title(
         parser.h1
@@ -159,27 +150,19 @@ def parse(path):
         or path.stem.replace("-", " ").title()
     )
 
-    # IMPORTANT:
-    # Always prefer the actual image file matching the HTML filename.
-    # This prevents incorrect og:image metadata from causing wrong photos.
     matching_image = find_matching_image(
         CELEB_IMAGE_DIR,
-        path.stem
+        path.stem,
     )
 
     if matching_image:
         image = image_url_for_file(matching_image)
     else:
-        # Only use og:image if no matching local image exists.
-        image = parser.og_image.strip() if parser.og_image else ""
+        image = normalise_image_url(parser.og_image)
 
-        if image.startswith("https://keralacelebrities.com/"):
-            image = image[len("https://keralacelebrities.com"):]
-
-        elif image.startswith("https://www.keralacelebrities.com/"):
-            image = image[len("https://www.keralacelebrities.com"):]
-
-        elif image and not image.startswith(("/", "http://", "https://")):
+        if image and not image.startswith(
+            ("/", "http://", "https://")
+        ):
             image = "/celebrities/" + image.lstrip("./")
 
     categories = [
@@ -191,8 +174,11 @@ def parse(path):
     if not categories:
         categories = ["actors"]
 
-    description = parser.description or "Kerala Celebrity"
-    description = re.sub(r"\s+", " ", description).strip()
+    description = re.sub(
+        r"\s+",
+        " ",
+        parser.description or "Kerala Celebrity",
+    ).strip()
 
     return {
         "file": path.name,
@@ -203,50 +189,40 @@ def parse(path):
     }
 
 
-def parse_movie(path):
-    parser = PageParser()
-
-    parser.feed(
-        path.read_text(
-            encoding="utf-8",
-            errors="ignore"
-        )
+def movie_number(path):
+    match = re.fullmatch(
+        r"movie-(\d+)\.html",
+        path.name,
+        re.I,
     )
+    return int(match.group(1)) if match else 999999999
 
-    # For movies, use the HTML <title> first.
-    # The page header may contain the site's general tagline.
+
+def parse_movie(path):
+    parser = parse_file(path)
+
     title = clean_title(
-        parser.title
-        or parser.h1
+        parser.h1
+        or parser.title
         or path.stem.replace("-", " ").title()
     )
 
-    # For movie posters, prefer the explicit og:image from the
-    # movie HTML. This allows filenames such as:
-    # bethlehem-kudumba-unit.jpg
-    image = parser.og_image.strip() if parser.og_image else ""
+    image = normalise_image_url(parser.og_image)
 
-    if image.startswith("https://keralacelebrities.com/"):
-        image = image[len("https://keralacelebrities.com"):]
-
-    elif image.startswith("https://www.keralacelebrities.com/"):
-        image = image[len("https://www.keralacelebrities.com"):]
-
-    elif image and not image.startswith(("/", "http://", "https://")):
+    if image and not image.startswith(
+        ("/", "http://", "https://")
+    ):
         image = "/movies/" + image.lstrip("./")
 
-    # If no og:image exists, try to find an image matching
-    # the movie HTML filename, e.g. movie-1.jpg.
     if not image:
         matching_image = find_matching_image(
             MOVIE_IMAGE_DIR,
-            path.stem
+            path.stem,
         )
-
         if matching_image:
             image = image_url_for_file(matching_image)
 
-    status = parser.movie_status or "Now Running"
+    status = parser.movie_status or "Now Showing"
 
     return {
         "file": path.name,
@@ -254,11 +230,14 @@ def parse_movie(path):
         "status": status,
         "image": image,
     }
+
+
+def write_json(path, data):
     path.write_text(
         json.dumps(
             data,
             ensure_ascii=False,
-            indent=2
+            indent=2,
         ) + "\n",
         encoding="utf-8",
     )
@@ -268,15 +247,14 @@ def main():
     celebrities = []
 
     if CELEB_DIR.exists():
-        for path in sorted(CELEB_DIR.glob("*.html")):
-
+        for path in CELEB_DIR.glob("*.html"):
             if path.name.lower() in CATEGORY_FILES:
                 continue
 
             try:
-                celebrities.append(parse(path))
+                celebrities.append(parse_celebrity(path))
             except Exception as exc:
-                print(f"Skipping {path}: {exc}")
+                print(f"Skipping celebrity {path}: {exc}")
 
     celebrities.sort(
         key=lambda x: x["name"].casefold()
@@ -285,35 +263,38 @@ def main():
     movies = []
 
     if MOVIE_DIR.exists():
-        for path in sorted(
-            MOVIE_DIR.glob("movie-*.html")
-        ):
-
+        for path in MOVIE_DIR.glob("movie-*.html"):
             if not re.fullmatch(
                 r"movie-\d+\.html",
                 path.name,
-                re.I
+                re.I,
             ):
                 continue
 
             try:
                 movies.append(parse_movie(path))
             except Exception as exc:
-                print(f"Skipping {path}: {exc}")
+                print(f"Skipping movie {path}: {exc}")
+
+    # IMPORTANT: numeric order, not alphabetical order.
+    # This gives movie-1, movie-2, ..., movie-10.
+    movies.sort(key=lambda x: movie_number(
+        MOVIE_DIR / x["file"]
+    ))
 
     write_json(
         ROOT / "celebrities.json",
-        celebrities
+        celebrities,
     )
 
     write_json(
         ROOT / "movies.json",
-        movies
+        movies,
     )
 
     print(
         f"Generated {len(celebrities)} celebrities "
-        f"and {len(movies)} movies"
+        f"and {len(movies)} movies."
     )
 
 
