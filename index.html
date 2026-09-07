@@ -53,12 +53,12 @@ footer{background:#0b0b0b;color:#fff;padding-top:46px}.foot-grid{display:grid;gr
 <main>
 
 <section id="now-running"><div class="wrap"><div class="running-head"><div><h2>Now Running Movies</h2><p>Move across the latest movie posters • Hover to pause • Click a poster for movie details</p></div><a class="link" href="/movies/">View all movies →</a></div><div class="running-window"><div class="movie-track" id="movieTrack">
-<!-- Automatically populated from /movies/movie-N.html -->
+<!-- Automatically populated from /movies/movie-*.html via /movies/movies-list.php -->
 <noscript>Please enable JavaScript to view currently running movies.</noscript>
 </div></div></div></section>
 
 <section id="celebrities"><div class="wrap"><div class="title"><h2>Featured Celebrities</h2><div class="title-mark"></div><p>Explore profiles of some of Kerala's most celebrated names.</p></div><div class="celeb-grid" id="featuredCelebrities">
-<!-- Automatically populated from /celebrities/*.html -->
+<!-- Automatically populated from /celebrities/*.html via /celebrities/celebrities-list.php -->
 <noscript>Please enable JavaScript to view featured celebrities.</noscript>
 </div></div></section>
 
@@ -87,181 +87,108 @@ footer{background:#0b0b0b;color:#fff;padding-top:46px}.foot-grid{display:grid;gr
 </div><div class="bottom"><div>© 2008–2026 KeralaCelebrities.com. All Rights Reserved.</div><div class="legal"><a href="/privacy.html">Privacy Policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms &amp; Conditions</a></div></div></div></footer>
 
 <script>
-/* =========================================================
-   KeralaCelebrities.com - automatic homepage content
-   =========================================================
-
-   Movies:
-     /movies/movies-list.php scans /movies/movie-N.html
-
-   Celebrities:
-     /celebrities/celebrities-list.php scans /celebrities/*.html
-
-   Therefore you do NOT edit index.html when adding a movie or celebrity.
-*/
-
 async function loadNowRunningMovies(){
   const track=document.getElementById('movieTrack');
   if(!track)return;
-
   try{
     const response=await fetch('/movies/movies-list.php',{cache:'no-store'});
-    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    if(!response.ok)throw new Error('Movie list request failed: '+response.status);
     const movies=await response.json();
-
     if(!Array.isArray(movies)||!movies.length){
-      track.innerHTML='<div style="padding:10px;color:#aaa">No movies found.</div>';
+      track.innerHTML='<div style="padding:20px;color:#aaa">No movies available right now.</div>';
+      track.style.animation='none';
       return;
     }
-
-    movies.sort((a,b)=>Number(a.number)-Number(b.number));
-
-    function makeCard(movie){
+    track.innerHTML='';
+    const addCards=list=>list.forEach(movie=>{
       const card=document.createElement('a');
       card.className='movie-card';
-      card.href=`/movies/movie-${movie.number}.html`;
-
+      card.href=movie.url||('/movies/movie-'+movie.number+'.html');
       const poster=document.createElement('div');
       poster.className='movie-poster';
-
       const img=document.createElement('img');
-      img.src=movie.image;
-      img.alt=`${movie.title} poster`;
+      img.src=movie.image||('/movies/images/movie-'+movie.number+'.jpg');
+      img.alt=(movie.title||'Malayalam movie')+' poster';
       img.loading='lazy';
-      img.decoding='async';
-
+      img.onerror=function(){this.style.display='none'};
       const fallback=document.createElement('div');
       fallback.className='poster-fallback';
-      fallback.textContent=movie.title;
-      fallback.style.display='none';
-
-      img.onerror=()=>{
-        img.style.display='none';
-        fallback.style.display='flex';
-      };
-
+      fallback.textContent=movie.title||'MOVIE POSTER';
       poster.append(img,fallback);
-
       const name=document.createElement('div');
       name.className='movie-name';
-      name.textContent=movie.title;
-
+      name.textContent=movie.title||('Movie '+movie.number);
       const status=document.createElement('span');
       status.className='movie-status';
       status.textContent=movie.status||'Now Running';
       name.appendChild(status);
-
       card.append(poster,name);
-      return card;
-    }
-
-    movies.forEach(movie=>track.appendChild(makeCard(movie)));
-
-    // Duplicate the sequence for the continuous ticker effect.
-    if(movies.length>1){
-      movies.forEach(movie=>track.appendChild(makeCard(movie)));
-    }else{
-      track.style.animation='none';
-    }
+      track.appendChild(card);
+    });
+    addCards(movies);
+    if(movies.length>1)addCards(movies);
+    else track.style.animation='none';
   }catch(error){
-    console.error('Could not load movies:',error);
-    track.innerHTML='<div style="padding:10px;color:#aaa">Unable to load movies.</div>';
+    console.error('Unable to load movies:',error);
+    track.innerHTML='<div style="padding:20px;color:#aaa">Unable to load movies right now.</div>';
+    track.style.animation='none';
   }
 }
 
 async function loadFeaturedCelebrities(){
   const grid=document.getElementById('featuredCelebrities');
   if(!grid)return;
-
   try{
     const response=await fetch('/celebrities/celebrities-list.php',{cache:'no-store'});
-    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    if(!response.ok)throw new Error('Celebrity list request failed: '+response.status);
     const celebrities=await response.json();
-
     if(!Array.isArray(celebrities)||!celebrities.length){
-      grid.innerHTML='<div style="padding:10px;color:#777">No celebrity profiles found.</div>';
+      grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:#777">No celebrity profiles available yet.</p>';
       return;
     }
-
+    grid.innerHTML='';
     celebrities.forEach(person=>{
       const article=document.createElement('article');
       article.className='card';
-
-      const imageLink=document.createElement('a');
-      imageLink.href=person.url;
-      imageLink.setAttribute('aria-label',`View ${person.name} profile`);
-
+      const topLink=document.createElement('a');
+      topLink.href=person.url||('/celebrities/'+person.file);
+      topLink.setAttribute('aria-label','View '+(person.name||'celebrity')+' profile');
       const photo=document.createElement('div');
       photo.className='photo';
-
       const img=document.createElement('img');
-      img.src=person.image;
-      img.alt=`${person.name} – Kerala celebrity`;
+      img.src=person.image||('/celebrities/images/'+person.file.replace(/\.html$/i,'')+'.jpg');
+      img.alt=(person.name||'Celebrity')+' profile photo';
       img.loading='lazy';
       img.decoding='async';
-
-      const fallback=document.createElement('div');
-      fallback.style.cssText='display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:54px;color:#fff;background:linear-gradient(135deg,#1d1d1d,#777)';
-      fallback.textContent=(person.name||'?').charAt(0).toUpperCase();
-
-      img.onerror=()=>{
-        img.style.display='none';
-        fallback.style.display='flex';
-      };
-
-      photo.append(img,fallback);
-      imageLink.appendChild(photo);
-
+      img.onerror=function(){this.style.display='none'};
+      photo.appendChild(img);
+      topLink.appendChild(photo);
       const info=document.createElement('div');
       info.className='info';
-
       const h3=document.createElement('h3');
-      h3.textContent=person.name;
-
+      h3.textContent=person.name||'Celebrity';
       const p=document.createElement('p');
-      p.textContent=person.description||'';
-
+      p.textContent=person.description||'Malayalam entertainment personality';
       const profile=document.createElement('a');
       profile.className='link';
-      profile.href=person.url;
+      profile.href=person.url||('/celebrities/'+person.file);
       profile.textContent='View Profile →';
-
       info.append(h3,p,profile);
-      article.append(imageLink,info);
+      article.append(topLink,info);
       grid.appendChild(article);
     });
   }catch(error){
-    console.error('Could not load celebrities:',error);
-    grid.innerHTML='<div style="padding:10px;color:#777">Unable to load celebrity profiles.</div>';
+    console.error('Unable to load celebrities:',error);
+    grid.innerHTML='<p style="grid-column:1/-1;text-align:center;color:#777">Unable to load celebrity profiles right now.</p>';
   }
 }
 
-/* Existing navigation/dropdown behavior - preserved. */
-function toggleNav(){
-  const n=document.getElementById('mainNav'),b=document.getElementById('menuButton'),o=n.classList.toggle('open');
-  b.setAttribute('aria-expanded',o?'true':'false');
-}
+function toggleNav(){const n=document.getElementById('mainNav'),b=document.getElementById('menuButton'),o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')}
+document.querySelectorAll('#mainNav .nav-dropdown > .nav-parent').forEach(a=>a.addEventListener('click',function(e){if(window.innerWidth<=850){e.preventDefault();this.parentElement.classList.toggle('open')}}));
+document.querySelectorAll('#mainNav a:not(.nav-parent)').forEach(a=>a.addEventListener('click',()=>{document.getElementById('mainNav').classList.remove('open');document.getElementById('menuButton').setAttribute('aria-expanded','false')}));
+window.addEventListener('resize',()=>{if(window.innerWidth>850){document.querySelectorAll('#mainNav .nav-dropdown').forEach(d=>d.classList.remove('open'))}});
 
-document.querySelectorAll('#mainNav .nav-dropdown > .nav-parent').forEach(a=>a.addEventListener('click',function(e){
-  if(window.innerWidth<=850){
-    e.preventDefault();
-    this.parentElement.classList.toggle('open');
-  }
-}));
-
-document.querySelectorAll('#mainNav a:not(.nav-parent)').forEach(a=>a.addEventListener('click',()=>{
-  document.getElementById('mainNav').classList.remove('open');
-  document.getElementById('menuButton').setAttribute('aria-expanded','false');
-}));
-
-window.addEventListener('resize',()=>{
-  if(window.innerWidth>850){
-    document.querySelectorAll('#mainNav .nav-dropdown').forEach(d=>d.classList.remove('open'));
-  }
-});
-
-loadNowRunningMovies();
-loadFeaturedCelebrities();
+document.addEventListener('DOMContentLoaded',()=>{loadNowRunningMovies();loadFeaturedCelebrities()});
 </script>
 </body>
 </html>
