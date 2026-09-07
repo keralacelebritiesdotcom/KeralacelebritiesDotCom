@@ -79,17 +79,30 @@ const GITHUB_BRANCH = "main";
 const CELEBRITY_API = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/celebrities/`;
 const CELEBRITY_RAW = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/celebrities/`;
 
+// Fallback list prevents the page from becoming blank if GitHub's public API
+// temporarily returns a rate-limit/403/5xx response. Add new profile filenames
+// here only if the API is unavailable.
+const FALLBACK_PROFILES = [
+  "dulquer-salmaan.html",
+  "fahadh-faasil.html",
+  "kunchacko-boban.html",
+  "mammootty.html",
+  "manju-warrier.html",
+  "mohanlal.html",
+  "nivin-pauly.html",
+  "parvathy-thiruvothu.html",
+  "prithviraj-sukumaran.html",
+  "tovino-thomas.html"
+];
+
+const CATEGORY_FILES = /^(actors|directors|singers|television|other-personalities|index)\.html$/i;
+
 function escapeHtml(value){
-  return String(value).replace(/[&<>"']/g, ch => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  }[ch]));
+  return String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
 
 function cleanTitle(value){
-  return String(value || "")
-    .replace(/\s*[|–—-]\s*KeralaCelebrities\.com.*$/i,"")
-    .replace(/\s+/g," ")
-    .trim();
+  return String(value || "").replace(/\s*[|–—-]\s*KeralaCelebrities\.com.*$/i,"").replace(/\s+/g," ").trim();
 }
 
 function firstText(doc, selectors){
@@ -104,15 +117,15 @@ function firstText(doc, selectors){
 }
 
 function getJsonLdPeople(doc){
-  const results = [];
-  doc.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+  const results=[];
+  doc.querySelectorAll('script[type="application/ld+json"]').forEach(script=>{
     try{
-      const data = JSON.parse(script.textContent);
-      const add = item => {
-        if(!item) return;
-        if(Array.isArray(item)) item.forEach(add);
-        else if(item["@graph"]) item["@graph"].forEach(add);
-        else if(item["@type"] === "Person") results.push(item);
+      const data=JSON.parse(script.textContent);
+      const add=item=>{
+        if(!item)return;
+        if(Array.isArray(item))item.forEach(add);
+        else if(item["@graph"])item["@graph"].forEach(add);
+        else if(item["@type"]==="Person")results.push(item);
       };
       add(data);
     }catch(e){}
@@ -120,169 +133,77 @@ function getJsonLdPeople(doc){
   return results;
 }
 
-function profileLooksLikeActor(doc){
-  // Do not rely on JSON-LD wording. A celebrity profile page is an actor
-  // candidate unless it is clearly one of the category/index pages.
-  // This prevents valid profiles such as Mohanlal, Mammootty, etc. from
-  // disappearing just because their metadata uses different wording.
-  const person = getJsonLdPeople(doc);
-  if(person.length) return true;
+function getName(doc,file){
+  const person=getJsonLdPeople(doc)[0]||{};
+  return cleanTitle(person.name || firstText(doc,["h1",'meta[property="og:title"]',"title"]) || file.replace(/\.html$/i,""));
+}
 
-  const signals = [
-    firstText(doc,["meta[name=\"description\"]"]),
-    firstText(doc,["meta[name=\"keywords\"]"]),
-    firstText(doc,["h1"]),
-    firstText(doc,[".hero-intro"]),
-    firstText(doc,["main"]),
-    firstText(doc,["title"])
-  ].join(" ").toLowerCase();
+function getImage(doc,file){
+  const imageEl=doc.querySelector(".profile-photo img") || doc.querySelector('meta[property="og:image"]') || doc.querySelector('img[src*="/celebrities/images/"]');
+  let image=imageEl ? (imageEl.getAttribute("content") || imageEl.getAttribute("src") || "") : "";
+  if(image && !/^https?:\/\//i.test(image) && !image.startsWith("/")) image="/celebrities/"+image.replace(/^\.?\//,"");
+  return image || `/celebrities/images/${file.replace(/\.html$/i,"")}.jpg`;
+}
 
-  return /\b(actor|actress|artist|performer|film star|cinema|producer|filmmaker|singer|director)\b/.test(signals);
+function getDescription(doc){
+  const person=getJsonLdPeople(doc)[0]||{};
+  let description=person.jobTitle || firstText(doc,[".hero-intro",'meta[name="description"]']) || "Actor & Artist";
+  return description.replace(/\s+/g," ").trim().slice(0,100).replace(/\s+\S*$/," ").trim();
+}
+
+async function fetchProfile(file){
+  const response=await fetch(CELEBRITY_RAW+encodeURIComponent(file)+"?v="+Date.now(),{cache:"no-store"});
+  if(!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+  const html=await response.text();
+  const doc=new DOMParser().parseFromString(html,"text/html");
+  return {name:getName(doc,file),file,image:getImage(doc,file),description:getDescription(doc)};
+}
+
+async function getProfileFiles(){
+  try{
+    const response=await fetch(CELEBRITY_API+"?ref="+GITHUB_BRANCH+"&_="+Date.now(),{
+      headers:{"Accept":"application/vnd.github+json"},cache:"no-store"
+    });
+    if(!response.ok) throw new Error(`GitHub API ${response.status}`);
+    const files=await response.json();
+    if(!Array.isArray(files)) throw new Error("GitHub API returned unexpected data");
+    const names=files.filter(item=>item.type==="file" && /\.html$/i.test(item.name) && !CATEGORY_FILES.test(item.name)).map(item=>item.name);
+    if(names.length) return names;
+  }catch(error){
+    console.warn("GitHub directory API unavailable; using fallback profile list.",error);
+  }
+  return FALLBACK_PROFILES;
 }
 
 async function loadActors(){
-  const grid = document.getElementById("actorsGrid");
-
+  const grid=document.getElementById("actorsGrid");
   try{
-    const response = await fetch(CELEBRITY_API + "?ref=" + GITHUB_BRANCH, {
-      headers: {"Accept":"application/vnd.github+json"},
-      cache:"no-store"
-    });
+    const profileFiles=await getProfileFiles();
+    const results=await Promise.allSettled(profileFiles.map(fetchProfile));
+    const actors=results.filter(r=>r.status==="fulfilled").map(r=>r.value);
 
-    if(!response.ok){
-      throw new Error(`GitHub API error ${response.status}`);
-    }
-
-    const files = await response.json();
-
-    const profileFiles = files.filter(item =>
-      item.type === "file" &&
-      /\.html$/i.test(item.name) &&
-      !/^(actors|directors|singers|television|other-personalities|index)\.html$/i.test(item.name)
-    );
-
-    const actors = [];
-
-    // Fetch profiles in parallel so one slow/broken profile cannot prevent
-    // the rest of the directory from appearing.
-    const loadedProfiles = await Promise.all(profileFiles.map(async file => {
-      try{
-        const response = await fetch(
-          CELEBRITY_RAW + encodeURIComponent(file.name) + "?v=" + Date.now(),
-          {cache:"no-store"}
-        );
-        if(!response.ok) return null;
-        const html = await response.text();
-        return {file, doc:new DOMParser().parseFromString(html,"text/html")};
-      }catch(error){
-        console.error("Could not load",file.name,error);
-        return null;
-      }
-    }));
-
-    for(const loaded of loadedProfiles){
-      if(!loaded) continue;
-      const {file, doc} = loaded;
-      try{
-        if(!profileLooksLikeActor(doc)) continue;
-
-        const person = getJsonLdPeople(doc)[0] || {};
-        const name = cleanTitle(
-          person.name ||
-          firstText(doc,[
-            "h1",
-            'meta[property="og:title"]',
-            "title"
-          ]) ||
-          file.name.replace(/\.html$/i,"")
-        );
-
-        const imageEl =
-          doc.querySelector(".profile-photo img") ||
-          doc.querySelector('meta[property="og:image"]') ||
-          doc.querySelector('img[src*="/celebrities/images/"]');
-
-        let image = imageEl
-          ? (imageEl.getAttribute("content") || imageEl.getAttribute("src") || "")
-          : "";
-
-        if(image && !/^https?:\/\//i.test(image) && !image.startsWith("/")){
-          image = "/celebrities/" + image.replace(/^\.?\//,"");
-        }
-
-        if(!image){
-          image = `/celebrities/images/${file.name.replace(/\.html$/i,"")}.jpg`;
-        }
-
-        let description =
-          person.jobTitle ||
-          firstText(doc,[
-            ".hero-intro",
-            'meta[name="description"]'
-          ]) ||
-          "Actor & Artist";
-
-        description = description
-          .replace(/\s+/g," ")
-          .trim();
-
-        if(description.length > 90){
-          description = description.slice(0,87).replace(/\s+\S*$/,"") + "…";
-        }
-
-        actors.push({
-          name,
-          file:file.name,
-          image,
-          description
-        });
-
-      }catch(error){
-        console.error("Could not load",file.name,error);
-      }
-    }
-
-    actors.sort((a,b) => a.name.localeCompare(b.name));
-
+    actors.sort((a,b)=>a.name.localeCompare(b.name));
     if(!actors.length){
-      grid.innerHTML =
-        '<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">No actor or artist profiles were found.</div>';
+      grid.innerHTML='<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">No celebrity profiles could be loaded.</div>';
       return;
     }
 
-    grid.innerHTML = "";
-
-    actors.forEach(person => {
-      const card = document.createElement("a");
-      card.className = "celebrity-card";
-      card.href = "/celebrities/" + encodeURIComponent(person.file);
-
-      card.innerHTML = `
-        <img src="${escapeHtml(person.image)}"
-             alt="${escapeHtml(person.name)}"
-             loading="lazy">
-        <div>
-          <h3>${escapeHtml(person.name)}</h3>
-          <p>${escapeHtml(person.description)}</p>
-        </div>
-      `;
-
-      const img = card.querySelector("img");
-      img.addEventListener("error", () => {
-        img.style.display = "none";
-      }, {once:true});
-
+    grid.innerHTML="";
+    actors.forEach(person=>{
+      const card=document.createElement("a");
+      card.className="celebrity-card";
+      card.href="/celebrities/"+encodeURIComponent(person.file);
+      card.innerHTML=`<img src="${escapeHtml(person.image)}" alt="${escapeHtml(person.name)}" loading="lazy"><div><h3>${escapeHtml(person.name)}</h3><p>${escapeHtml(person.description)}</p></div>`;
+      card.querySelector("img").addEventListener("error",()=>{ card.querySelector("img").style.display="none"; },{once:true});
       grid.appendChild(card);
     });
-
   }catch(error){
     console.error("Actor loading failed:",error);
-    grid.innerHTML =
-      '<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">Actors could not be loaded. Please check the browser console.</div>';
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">Actors could not be loaded.</div>';
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadActors);
+document.addEventListener("DOMContentLoaded",loadActors);
 </script>
 
 </body>
