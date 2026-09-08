@@ -1,0 +1,177 @@
+KERALA CELEBRITIES
+DIRECTOR IMAGE CREDITS
+======================
+
+Purpose
+-------
+This file records image attribution/licensing information for director
+portraits used on KeralaCelebrities.com.
+
+IMPORTANT
+---------
+Do not assume that an image is free to reuse merely because it appears on
+Wikipedia. Wikipedia may display images from Wikimedia Commons or images
+under other copyright/fair-use arrangements. Use the individual file page
+and its stated license as the authority.
+
+The entries below are the reusable sources I have verified so far. The
+remaining directors are intentionally marked "VERIFY" rather than having
+a license guessed.
+
+VERIFIED SOURCES
+----------------
+
+1. Adoor Gopalakrishnan
+Website filename: adoor-gopalakrishnan.jpg
+Source: Wikimedia Commons
+Original file:
+https://commons.wikimedia.org/wiki/File:Director_Adoor_Gopalakrishnan.jpg
+Author: Hareesh N. Nampoothiri (Haree Fotografie)
+License: CC BY-SA 4.0
+License:
+https://creativecommons.org/licenses/by-sa/4.0/
+Attribution: "Adoor Gopalakrishnan — photo by Hareesh N. Nampoothiri
+(Haree Fotografie), CC BY-SA 4.0, via Wikimedia Commons."
+Changes: If you crop/resize the image, state that changes were made.
+
+2. Fazil
+Website filename: fazil.jpg
+Source: Wikimedia Commons
+Original file:
+https://commons.wikimedia.org/wiki/File:Fazil.jpg
+License shown on Commons: CC BY-SA 3.0 Unported and GFDL 1.2 or later
+License:
+https://creativecommons.org/licenses/by-sa/3.0/
+Attribution: "Fazil — via Wikimedia Commons, CC BY-SA 3.0."
+NOTE: The Commons page does not clearly identify the original photographer
+in the information currently shown. Do not invent an author name.
+
+3. Anjali Menon
+Website filename: anjali-menon.jpg
+Source: Wikimedia Commons
+Original file:
+https://commons.wikimedia.org/wiki/File:Anjali_Menon_2.png
+Author/source: Film Companion (original YouTube source)
+License: CC BY 3.0
+License:
+https://creativecommons.org/licenses/by/3.0/
+Attribution: "Anjali Menon — Film Companion, CC BY 3.0, via Wikimedia Commons."
+Original YouTube source:
+https://www.youtube.com/watch?v=7TBNIhJSchk
+
+4. Anjali Menon — alternative Commons portrait
+Website filename: anjali-menon.jpg
+Source: Wikimedia Commons
+Original file:
+https://commons.wikimedia.org/wiki/File:%E0%B4%85%E0%B4%9C%E0%B5%8D%E0%B4%9E%E0%B4%B2%E0%B4%BF_%E0%B4%AE%E0%B5%87%E0%B4%A8%E0%B5%8B%E0%B5%BB_%28cropped%29.jpg
+Author: Najiya gafoor
+License: CC BY-SA 3.0
+License:
+https://creativecommons.org/licenses/by-sa/3.0/
+Attribution: "Anjali Menon — photo by Najiya gafoor, CC BY-SA 3.0, via Wikimedia Commons."
+
+IMPORTANT FOR YOUR FINAL PHOTO CHOICE
+-------------------------------------
+For each director, use ONE specific image and keep its corresponding source
+and license entry. If you download a different image from Wikipedia/Commons,
+tell me the exact file page or upload the source information so the credit
+can be changed to match.
+
+DIRECTOR FILES — VERIFY BEFORE PUBLISHING
+-----------------------------------------
+
+G. Aravindan
+Filename: g-aravindan.jpg
+Status: VERIFY exact image/license before publishing.
+
+Sathyan Anthikad
+Filename: sathyan-anthikad.jpg
+Status: VERIFY exact image/license before publishing.
+
+Priyadarshan
+Filename: priyadarshan.jpg
+Status: VERIFY exact image/license before publishing.
+
+Blessy
+Filename: blessy.jpg
+Status: VERIFY exact image/license before publishing.
+
+Lal Jose
+Filename: lal-jose.jpg
+Status: VERIFY exact image/license before publishing.
+
+Shaji Kailas
+Filename: shaji-kailas.jpg
+Status: VERIFY exact image/license before publishing.
+
+Ranjith
+Filename: ranjith.jpg
+Status: VERIFY exact image/license before publishing.
+
+Aashiq Abu
+Filename: aashiq-abu.jpg
+Status: VERIFY exact image/license before publishing.
+
+Amal Neerad
+Filename: amal-neerad.jpg
+Status: VERIFY exact image/license before publishing.
+
+Dileesh Pothan
+Filename: dileesh-pothan.jpg
+Status: VERIFY exact image/license before publishing.
+
+Lijo Jose Pellissery
+Filename: lijo-jose-pellissery.jpg
+Status: VERIFY exact image/license before publishing.
+
+Jeo Baby
+Filename: jeo-baby.jpg
+Status: VERIFY exact image/license before publishing.
+
+Basil Joseph
+Filename: basil-joseph.jpg
+Status: VERIFY exact image/license before publishing.
+
+Martin Prakkat
+Filename: martin-prakkat.jpg
+Status: VERIFY exact image/license before publishing.
+
+Mahesh Narayanan
+Filename: mahesh-narayanan.jpg
+Status: VERIFY exact image/license before publishing.
+
+Jude Anthany Joseph
+Filename: jude-anthany-joseph.jpg
+Status: VERIFY exact image/license before publishing.
+
+Chidambaram S. Poduval
+Filename: chidambaram-s-poduval.jpg
+Status: VERIFY exact image/license before publishing.
+
+Ratheesh Balakrishnan Poduval
+Filename: ratheesh-balakrishnan-poduval.jpg
+Status: VERIFY exact image/license before publishing.
+
+HOW TO USE THIS FILE
+--------------------
+1. Put this file in the root of the GitHub repository:
+   /DIRECTOR-IMAGE-CREDITS.txt
+
+2. Put portraits in:
+   /directors/images/
+
+3. Make the physical filename exactly match directors.json.
+
+4. Keep the original Wikimedia Commons file-page URL in this file.
+
+5. Do not publish an image marked VERIFY until its individual source page
+   and license have been checked.
+
+6. If an image is cropped/resized, record "Changes: cropped/resized" in
+   that image's entry.
+
+7. This credits file is documentation; it does not itself grant permission.
+   The permission comes from the license/authorization attached to the
+   individual source image.
+
+Last checked: 2026-09-08
