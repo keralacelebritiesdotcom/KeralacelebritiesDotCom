@@ -14,15 +14,16 @@ Wikipedia. Wikipedia may display images from Wikimedia Commons or images
 under other copyright/fair-use arrangements. Use the individual file page
 and its stated license as the authority.
 
-The entries below are the reusable sources I have verified so far. The
-remaining directors are intentionally marked "VERIFY" rather than having
-a license guessed.
+The entries below are the reusable sources verified so far. The remaining
+directors are intentionally marked "VERIFY" rather than having a license
+guessed.
 
 VERIFIED SOURCES
 ----------------
 
 1. Adoor Gopalakrishnan
 Website filename: adoor-gopalakrishnan.jpg
+Website location: /celebrities/images/
 Source: Wikimedia Commons
 Original file:
 https://commons.wikimedia.org/wiki/File:Director_Adoor_Gopalakrishnan.jpg
@@ -36,6 +37,7 @@ Changes: If you crop/resize the image, state that changes were made.
 
 2. Fazil
 Website filename: fazil.jpg
+Website location: /celebrities/images/
 Source: Wikimedia Commons
 Original file:
 https://commons.wikimedia.org/wiki/File:Fazil.jpg
@@ -48,6 +50,7 @@ in the information currently shown. Do not invent an author name.
 
 3. Anjali Menon
 Website filename: anjali-menon.jpg
+Website location: /celebrities/images/
 Source: Wikimedia Commons
 Original file:
 https://commons.wikimedia.org/wiki/File:Anjali_Menon_2.png
@@ -61,6 +64,7 @@ https://www.youtube.com/watch?v=7TBNIhJSchk
 
 4. Anjali Menon — alternative Commons portrait
 Website filename: anjali-menon.jpg
+Website location: /celebrities/images/
 Source: Wikimedia Commons
 Original file:
 https://commons.wikimedia.org/wiki/File:%E0%B4%85%E0%B4%9C%E0%B5%8D%E0%B4%9E%E0%B4%B2%E0%B4%BF_%E0%B4%AE%E0%B5%87%E0%B4%A8%E0%B5%8B%E0%B5%BB_%28cropped%29.jpg
@@ -74,8 +78,7 @@ IMPORTANT FOR YOUR FINAL PHOTO CHOICE
 -------------------------------------
 For each director, use ONE specific image and keep its corresponding source
 and license entry. If you download a different image from Wikipedia/Commons,
-tell me the exact file page or upload the source information so the credit
-can be changed to match.
+update the exact file page and license here.
 
 DIRECTOR FILES — VERIFY BEFORE PUBLISHING
 -----------------------------------------
@@ -157,10 +160,11 @@ HOW TO USE THIS FILE
 1. Put this file in the root of the GitHub repository:
    /DIRECTOR-IMAGE-CREDITS.txt
 
-2. Put portraits in:
-   /directors/images/
+2. Put all director portraits in:
+   /celebrities/images/
 
-3. Make the physical filename exactly match directors.json.
+3. Make the physical filename exactly match the slug used by
+   directors.json, followed by .jpg.
 
 4. Keep the original Wikimedia Commons file-page URL in this file.
 
