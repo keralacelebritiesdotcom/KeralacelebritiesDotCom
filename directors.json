@@ -1,23 +1,280 @@
 [
-{"name":"Adoor Gopalakrishnan","slug":"adoor-gopalakrishnan","profession":"Director, Screenwriter","image":"/directors/images/adoor-gopalakrishnan.jpg","description":"A landmark figure of Indian parallel cinema whose Malayalam films brought Kerala's social realities and human relationships to national and international audiences.","contribution":"Helped establish Malayalam cinema as a major force in art and parallel cinema through precise, socially observant and psychologically rich filmmaking.","knownFor":["Swayamvaram","Elippathayam","Mukhamukham","Mathilukal","Vidheyan"]},
-{"name":"G. Aravindan","slug":"g-aravindan","profession":"Director, Cartoonist, Musician","image":"/directors/images/g-aravindan.jpg","description":"One of Malayalam cinema's most distinctive auteurs, known for poetic, philosophical and visually inventive filmmaking.","contribution":"Expanded the expressive possibilities of Malayalam cinema by blending visual poetry, music, philosophy and unconventional storytelling.","knownFor":["Uttarayanam","Thampu","Kummatty","Esthappan","Chidambaram"]},
-{"name":"Sathyan Anthikad","slug":"sathyan-anthikad","profession":"Director, Screenwriter","image":"/directors/images/sathyan-anthikad.jpg","description":"A celebrated filmmaker known for warm family dramas, social observation, humour and stories rooted in everyday Kerala life.","contribution":"Made ordinary middle-class Kerala life a lasting subject of popular Malayalam cinema, balancing humour with social and emotional themes.","knownFor":["Nadodikkattu","Varavelpu","Sanmanassullavarkku Samadhanam","Manassinakkare","Njan Prakashan"]},
-{"name":"Priyadarshan","slug":"priyadarshan","profession":"Director, Screenwriter, Producer","image":"/directors/images/priyadarshan.jpg","description":"A prolific filmmaker who has worked across Malayalam, Hindi and Tamil cinema, particularly known for comedy and mainstream entertainment.","contribution":"Helped take Malayalam filmmaking talent and storytelling into other Indian-language industries while creating commercially successful cinema.","knownFor":["Chithram","Kilukkam","Vandanam","Thenmavin Kombathu","Kaalapani"]},
-{"name":"Fazil","slug":"fazil","profession":"Director, Screenwriter, Producer","image":"/directors/images/fazil.jpg","description":"A major Malayalam filmmaker associated with emotionally rich family dramas, romances and enduring commercial films.","contribution":"Shaped several generations of Malayalam popular cinema through character-driven storytelling and helped establish major acting careers.","knownFor":["Manjil Virinja Pookkal","Nokkethadhoorathu Kannum Nattu","Ente Mamattikkuttiyammakku","Aniyathipraavu","Harikrishnans"]},
-{"name":"Blessy","slug":"blessy","profession":"Director, Screenwriter","image":"/directors/images/blessy.jpg","description":"A filmmaker known for emotionally intense dramas exploring human resilience, relationships, morality and survival.","contribution":"Brought a deeply character-centred and emotionally immersive approach to Malayalam cinema through intimate human stories and strong performances.","knownFor":["Kaazhcha","Thanmatra","Palunku","Pranayam","Aadujeevitham"]},
-{"name":"Lal Jose","slug":"lal-jose","profession":"Director, Producer","image":"/directors/images/lal-jose.jpg","description":"A popular Malayalam director whose films combine accessible storytelling, social themes, humour and memorable characters.","contribution":"An important part of contemporary Malayalam mainstream cinema, introducing fresh performers and delivering films across romance, drama and social themes.","knownFor":["Meesha Madhavan","Classmates","Ayalum Njanum Thammil","Vikramadithyan","Diamond Necklace"]},
-{"name":"Shaji Kailas","slug":"shaji-kailas","profession":"Director, Screenwriter","image":"/directors/images/shaji-kailas.jpg","description":"A leading commercial filmmaker associated with high-energy action dramas and politically charged mainstream Malayalam cinema.","contribution":"Helped define the large-scale action and political thriller style of Malayalam cinema during the 1990s and 2000s.","knownFor":["The King","Aaram Thamburan","Narasimham","Commissioner"]},
-{"name":"Ranjith","slug":"ranjith","profession":"Director, Screenwriter, Producer","image":"/directors/images/ranjith.jpg","description":"A prominent filmmaker and screenwriter whose work spans literary dramas, political themes, satire and character-driven cinema.","contribution":"Made a substantial contribution as both writer and director, helping shape modern Malayalam screenwriting and character-led storytelling.","knownFor":["Nandanam","Kerala Cafe","Pranchiyettan & the Saint","Indian Rupee","Thirakkatha"]},
-{"name":"Aashiq Abu","slug":"aashiq-abu","profession":"Director, Producer, Actor","image":"/directors/images/aashiq-abu.jpg","description":"A key contemporary Malayalam filmmaker known for urban stories, strong visual design and socially engaged themes.","contribution":"Influential in contemporary Malayalam cinema through distinctive visual storytelling, collaborative filmmaking and socially relevant subjects.","knownFor":["Salt N' Pepper","22 Female Kottayam","Virus","Mayaanadhi","Neelavelicham"]},
-{"name":"Amal Neerad","slug":"amal-neerad","profession":"Director, Cinematographer, Producer","image":"/directors/images/amal-neerad.jpg","description":"A visually distinctive filmmaker associated with stylised cinematography, action, atmosphere and technically polished filmmaking.","contribution":"Brought a strongly visual, genre-oriented sensibility to Malayalam cinema and popularised a stylised approach to action and crime filmmaking.","knownFor":["Big B","Iyobinte Pusthakam","Varathan","Bheeshma Parvam","Bougainvillea"]},
-{"name":"Anjali Menon","slug":"anjali-menon","profession":"Director, Screenwriter","image":"/directors/images/anjali-menon.jpg","description":"A leading contemporary filmmaker known for relationship-driven stories, ensemble characters and emotionally nuanced writing.","contribution":"Brought a strong voice to contemporary Malayalam cinema through stories about friendship, family, identity and changing social relationships.","knownFor":["Manjadikuru","Bangalore Days","Koode","Wonder Women"]},
-{"name":"Dileesh Pothan","slug":"dileesh-pothan","profession":"Director, Actor, Producer","image":"/directors/images/dileesh-pothan.jpg","description":"A prominent new-generation filmmaker known for naturalistic performances, grounded characters and sharp observations of everyday life.","contribution":"Helped popularise grounded, realistic filmmaking in contemporary Malayalam cinema through character-driven storytelling.","knownFor":["Maheshinte Prathikaaram","Thondimuthalum Driksakshiyum","Joji"]},
-{"name":"Lijo Jose Pellissery","slug":"lijo-jose-pellissery","profession":"Director, Actor, Producer","image":"/directors/images/lijo-jose-pellissery.jpg","description":"An acclaimed filmmaker known for unconventional narratives, ensemble performances, kinetic staging and adventurous genre experimentation.","contribution":"Pushed Malayalam cinema toward bold visual language, experimental structures and internationally recognised auteur filmmaking.","knownFor":["Amen","Angamaly Diaries","Ee.Ma.Yau.","Jallikattu","Churuli","Nanpakal Nerathu Mayakkam"]},
-{"name":"Jeo Baby","slug":"jeo-baby","profession":"Director, Screenwriter, Actor","image":"/directors/images/jeo-baby.jpg","description":"A contemporary filmmaker known for socially observant stories and films that question family structures, gender roles and relationships.","contribution":"Contributed to socially conscious Malayalam cinema by turning everyday domestic and relationship issues into accessible, discussion-provoking stories.","knownFor":["The Great Indian Kitchen","Kaathal – The Core","Freedom Fight"]},
-{"name":"Basil Joseph","slug":"basil-joseph","profession":"Director, Actor","image":"/directors/images/basil-joseph.jpg","description":"A filmmaker who combines accessible humour and emotional storytelling with ambitious genre filmmaking.","contribution":"Demonstrated that Malayalam cinema could combine local humour and emotional warmth with large-scale genre entertainment, notably through Minnal Murali.","knownFor":["Kunjiramayanam","Godha","Minnal Murali"]},
-{"name":"Martin Prakkat","slug":"martin-prakkat","profession":"Director, Producer, Screenwriter","image":"/directors/images/martin-prakkat.jpg","description":"A filmmaker known for character-focused stories, travel, friendship and visually polished contemporary dramas.","contribution":"Contributed to modern Malayalam cinema through emotionally accessible stories with strong visual settings and memorable character journeys.","knownFor":["Best Actor","Charlie","Nayattu"]},
-{"name":"Mahesh Narayanan","slug":"mahesh-narayanan","profession":"Director, Screenwriter, Editor","image":"/directors/images/mahesh-narayanan.jpg","description":"A filmmaker and editor known for tightly constructed narratives, political themes and contemporary social dramas.","contribution":"Brought an editor's sense of structure and pace to Malayalam filmmaking while addressing displacement, politics, conflict and social realities.","knownFor":["Take Off","C U Soon","Malik","Ariyippu"]},
-{"name":"Jude Anthany Joseph","slug":"jude-anthany-joseph","profession":"Director, Screenwriter, Actor","image":"/directors/images/jude-anthany-joseph.jpg","description":"A contemporary Malayalam filmmaker known for emotionally accessible stories and large-scale human dramas.","contribution":"Combined mainstream accessibility with stories centred on human courage and collective resilience, notably in 2018 and his later work Thudakkam.","knownFor":["Ohm Shanthi Oshaana","Oru Muthassi Gadha","2018","Thudakkam"]},
-{"name":"Chidambaram S. Poduval","slug":"chidambaram-s-poduval","profession":"Director, Screenwriter","image":"/directors/images/chidambaram-s-poduval.jpg","description":"A contemporary filmmaker known for rooted characters, regional texture and stories inspired by real social environments.","contribution":"Brought strong regional authenticity and ensemble storytelling to contemporary Malayalam cinema, especially with Manjummel Boys.","knownFor":["Jan.E.Man","Manjummel Boys"]},
-{"name":"Ratheesh Balakrishnan Poduval","slug":"ratheesh-balakrishnan-poduval","profession":"Director, Screenwriter","image":"/directors/images/ratheesh-balakrishnan-poduval.jpg","description":"A distinctive contemporary filmmaker known for deadpan humour, unusual worlds and inventive visual storytelling.","contribution":"Expanded Malayalam comedy through eccentric characters, genre play and carefully designed fictional worlds.","knownFor":["Android Kunjappan Version 5.25","Nna Thaan Case Kodu","Sureshinteyum Sumalathayudeyum Hridayahariyaya Pranayakatha"]}
+  {
+    "name": "Adoor Gopalakrishnan",
+    "slug": "adoor-gopalakrishnan",
+    "profession": "Director, Screenwriter",
+    "description": "A landmark figure of Indian parallel cinema whose Malayalam films brought Kerala's social realities and human relationships to national and international audiences.",
+    "contribution": "Helped establish Malayalam cinema as a major force in art and parallel cinema through precise, socially observant and psychologically rich filmmaking.",
+    "knownFor": [
+      "Swayamvaram",
+      "Elippathayam",
+      "Mukhamukham",
+      "Mathilukal",
+      "Vidheyan"
+    ]
+  },
+  {
+    "name": "G. Aravindan",
+    "slug": "g-aravindan",
+    "profession": "Director, Cartoonist, Musician",
+    "description": "One of Malayalam cinema's most distinctive auteurs, known for poetic, philosophical and visually inventive filmmaking.",
+    "contribution": "Expanded the expressive possibilities of Malayalam cinema by blending visual poetry, music, philosophy and unconventional storytelling.",
+    "knownFor": [
+      "Uttarayanam",
+      "Thampu",
+      "Kummatty",
+      "Esthappan",
+      "Chidambaram"
+    ]
+  },
+  {
+    "name": "Sathyan Anthikad",
+    "slug": "sathyan-anthikad",
+    "profession": "Director, Screenwriter",
+    "description": "A celebrated filmmaker known for warm family dramas, social observation, humour and stories rooted in everyday Kerala life.",
+    "contribution": "Made ordinary middle-class Kerala life a lasting subject of popular Malayalam cinema, balancing humour with social and emotional themes.",
+    "knownFor": [
+      "Nadodikkattu",
+      "Varavelpu",
+      "Sanmanassullavarkku Samadhanam",
+      "Manassinakkare",
+      "Njan Prakashan"
+    ]
+  },
+  {
+    "name": "Priyadarshan",
+    "slug": "priyadarshan",
+    "profession": "Director, Screenwriter, Producer",
+    "description": "A prolific filmmaker who has worked across Malayalam, Hindi and Tamil cinema, particularly known for comedy and mainstream entertainment.",
+    "contribution": "Helped take Malayalam filmmaking talent and storytelling into other Indian-language industries while creating commercially successful cinema.",
+    "knownFor": [
+      "Chithram",
+      "Kilukkam",
+      "Vandanam",
+      "Thenmavin Kombathu",
+      "Kaalapani"
+    ]
+  },
+  {
+    "name": "Fazil",
+    "slug": "fazil",
+    "profession": "Director, Screenwriter, Producer",
+    "description": "A major Malayalam filmmaker associated with emotionally rich family dramas, romances and enduring commercial films.",
+    "contribution": "Shaped several generations of Malayalam popular cinema through character-driven storytelling and helped establish major acting careers.",
+    "knownFor": [
+      "Manjil Virinja Pookkal",
+      "Nokkethadhoorathu Kannum Nattu",
+      "Ente Mamattikkuttiyammakku",
+      "Aniyathipraavu",
+      "Harikrishnans"
+    ]
+  },
+  {
+    "name": "Blessy",
+    "slug": "blessy",
+    "profession": "Director, Screenwriter",
+    "description": "A filmmaker known for emotionally intense dramas exploring human resilience, relationships, morality and survival.",
+    "contribution": "Brought a deeply character-centred and emotionally immersive approach to Malayalam cinema through intimate human stories and strong performances.",
+    "knownFor": [
+      "Kaazhcha",
+      "Thanmatra",
+      "Palunku",
+      "Pranayam",
+      "Aadujeevitham"
+    ]
+  },
+  {
+    "name": "Lal Jose",
+    "slug": "lal-jose",
+    "profession": "Director, Producer",
+    "description": "A popular Malayalam director whose films combine accessible storytelling, social themes, humour and memorable characters.",
+    "contribution": "An important part of contemporary Malayalam mainstream cinema, introducing fresh performers and delivering films across romance, drama and social themes.",
+    "knownFor": [
+      "Meesha Madhavan",
+      "Classmates",
+      "Ayalum Njanum Thammil",
+      "Vikramadithyan",
+      "Diamond Necklace"
+    ]
+  },
+  {
+    "name": "Shaji Kailas",
+    "slug": "shaji-kailas",
+    "profession": "Director, Screenwriter",
+    "description": "A leading commercial filmmaker associated with high-energy action dramas and politically charged mainstream Malayalam cinema.",
+    "contribution": "Helped define the large-scale action and political thriller style of Malayalam cinema during the 1990s and 2000s.",
+    "knownFor": [
+      "The King",
+      "Aaram Thamburan",
+      "Narasimham",
+      "Commissioner"
+    ]
+  },
+  {
+    "name": "Ranjith",
+    "slug": "ranjith",
+    "profession": "Director, Screenwriter, Producer",
+    "description": "A prominent filmmaker and screenwriter whose work spans literary dramas, political themes, satire and character-driven cinema.",
+    "contribution": "Made a substantial contribution as both writer and director, helping shape modern Malayalam screenwriting and character-led storytelling.",
+    "knownFor": [
+      "Nandanam",
+      "Kerala Cafe",
+      "Pranchiyettan & the Saint",
+      "Indian Rupee",
+      "Thirakkatha"
+    ]
+  },
+  {
+    "name": "Aashiq Abu",
+    "slug": "aashiq-abu",
+    "profession": "Director, Producer, Actor",
+    "description": "A key contemporary Malayalam filmmaker known for urban stories, strong visual design and socially engaged themes.",
+    "contribution": "Influential in contemporary Malayalam cinema through distinctive visual storytelling, collaborative filmmaking and socially relevant subjects.",
+    "knownFor": [
+      "Salt N' Pepper",
+      "22 Female Kottayam",
+      "Virus",
+      "Mayaanadhi",
+      "Neelavelicham"
+    ]
+  },
+  {
+    "name": "Amal Neerad",
+    "slug": "amal-neerad",
+    "profession": "Director, Cinematographer, Producer",
+    "description": "A visually distinctive filmmaker associated with stylised cinematography, action, atmosphere and technically polished filmmaking.",
+    "contribution": "Brought a strongly visual, genre-oriented sensibility to Malayalam cinema and popularised a stylised approach to action and crime filmmaking.",
+    "knownFor": [
+      "Big B",
+      "Iyobinte Pusthakam",
+      "Varathan",
+      "Bheeshma Parvam",
+      "Bougainvillea"
+    ]
+  },
+  {
+    "name": "Anjali Menon",
+    "slug": "anjali-menon",
+    "profession": "Director, Screenwriter",
+    "description": "A leading contemporary filmmaker known for relationship-driven stories, ensemble characters and emotionally nuanced writing.",
+    "contribution": "Brought a strong voice to contemporary Malayalam cinema through stories about friendship, family, identity and changing social relationships.",
+    "knownFor": [
+      "Manjadikuru",
+      "Bangalore Days",
+      "Koode",
+      "Wonder Women"
+    ]
+  },
+  {
+    "name": "Dileesh Pothan",
+    "slug": "dileesh-pothan",
+    "profession": "Director, Actor, Producer",
+    "description": "A prominent new-generation filmmaker known for naturalistic performances, grounded characters and sharp observations of everyday life.",
+    "contribution": "Helped popularise grounded, realistic filmmaking in contemporary Malayalam cinema through character-driven storytelling.",
+    "knownFor": [
+      "Maheshinte Prathikaaram",
+      "Thondimuthalum Driksakshiyum",
+      "Joji"
+    ]
+  },
+  {
+    "name": "Lijo Jose Pellissery",
+    "slug": "lijo-jose-pellissery",
+    "profession": "Director, Actor, Producer",
+    "description": "An acclaimed filmmaker known for unconventional narratives, ensemble performances, kinetic staging and adventurous genre experimentation.",
+    "contribution": "Pushed Malayalam cinema toward bold visual language, experimental structures and internationally recognised auteur filmmaking.",
+    "knownFor": [
+      "Amen",
+      "Angamaly Diaries",
+      "Ee.Ma.Yau.",
+      "Jallikattu",
+      "Churuli",
+      "Nanpakal Nerathu Mayakkam"
+    ]
+  },
+  {
+    "name": "Jeo Baby",
+    "slug": "jeo-baby",
+    "profession": "Director, Screenwriter, Actor",
+    "description": "A contemporary filmmaker known for socially observant stories and films that question family structures, gender roles and relationships.",
+    "contribution": "Contributed to socially conscious Malayalam cinema by turning everyday domestic and relationship issues into accessible, discussion-provoking stories.",
+    "knownFor": [
+      "The Great Indian Kitchen",
+      "Kaathal – The Core",
+      "Freedom Fight"
+    ]
+  },
+  {
+    "name": "Basil Joseph",
+    "slug": "basil-joseph",
+    "profession": "Director, Actor",
+    "description": "A filmmaker who combines accessible humour and emotional storytelling with ambitious genre filmmaking.",
+    "contribution": "Demonstrated that Malayalam cinema could combine local humour and emotional warmth with large-scale genre entertainment, notably through Minnal Murali.",
+    "knownFor": [
+      "Kunjiramayanam",
+      "Godha",
+      "Minnal Murali"
+    ]
+  },
+  {
+    "name": "Martin Prakkat",
+    "slug": "martin-prakkat",
+    "profession": "Director, Producer, Screenwriter",
+    "description": "A filmmaker known for character-focused stories, travel, friendship and visually polished contemporary dramas.",
+    "contribution": "Contributed to modern Malayalam cinema through emotionally accessible stories with strong visual settings and memorable character journeys.",
+    "knownFor": [
+      "Best Actor",
+      "Charlie",
+      "Nayattu"
+    ]
+  },
+  {
+    "name": "Mahesh Narayanan",
+    "slug": "mahesh-narayanan",
+    "profession": "Director, Screenwriter, Editor",
+    "description": "A filmmaker and editor known for tightly constructed narratives, political themes and contemporary social dramas.",
+    "contribution": "Brought an editor's sense of structure and pace to Malayalam filmmaking while addressing displacement, politics, conflict and social realities.",
+    "knownFor": [
+      "Take Off",
+      "C U Soon",
+      "Malik",
+      "Ariyippu"
+    ]
+  },
+  {
+    "name": "Jude Anthany Joseph",
+    "slug": "jude-anthany-joseph",
+    "profession": "Director, Screenwriter, Actor",
+    "description": "A contemporary Malayalam filmmaker known for emotionally accessible stories and large-scale human dramas.",
+    "contribution": "Combined mainstream accessibility with stories centred on human courage and collective resilience, notably in 2018 and his later work Thudakkam.",
+    "knownFor": [
+      "Ohm Shanthi Oshaana",
+      "Oru Muthassi Gadha",
+      "2018",
+      "Thudakkam"
+    ]
+  },
+  {
+    "name": "Chidambaram S. Poduval",
+    "slug": "chidambaram-s-poduval",
+    "profession": "Director, Screenwriter",
+    "description": "A contemporary filmmaker known for rooted characters, regional texture and stories inspired by real social environments.",
+    "contribution": "Brought strong regional authenticity and ensemble storytelling to contemporary Malayalam cinema, especially with Manjummel Boys.",
+    "knownFor": [
+      "Jan.E.Man",
+      "Manjummel Boys"
+    ]
+  },
+  {
+    "name": "Ratheesh Balakrishnan Poduval",
+    "slug": "ratheesh-balakrishnan-poduval",
+    "profession": "Director, Screenwriter",
+    "description": "A distinctive contemporary filmmaker known for deadpan humour, unusual worlds and inventive visual storytelling.",
+    "contribution": "Expanded Malayalam comedy through eccentric characters, genre play and carefully designed fictional worlds.",
+    "knownFor": [
+      "Android Kunjappan Version 5.25",
+      "Nna Thaan Case Kodu",
+      "Sureshinteyum Sumalathayudeyum Hridayahariyaya Pranayakatha"
+    ]
+  }
 ]
