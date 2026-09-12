@@ -19,5 +19,12 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/thudakkam.jpg"
+  },
+  {
+    "file": "movie-4.html",
+    "title": "Pradhama Drishtiya Kuttakkar",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/pradhama-drishtiya-kuttakkar.jpg"
   }
 ]
