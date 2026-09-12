@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malayalam Movies | KeralaCelebrities.com</title>
+<meta name="description" content="Malayalam movies on KeralaCelebrities.com — current films, recent releases and movie pages from Kerala's Malayalam cinema.">
+<style>
+:root{--r:#d71920;--g:#f0bd4c;--k:#080808;--dark:#111;--mid:#777;--line:#ddd;--bg:#f7f7f7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{background:#080808;color:#fff;border-bottom:3px solid var(--r);position:relative;z-index:20}
+.head{min-height:108px;display:flex;align-items:center;gap:22px;position:relative}
+.logo img{width:190px;display:block}
+.header-brand{flex:1}
+.kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g);margin-bottom:7px}
+.header-sub{font-size:11px;color:#bbb;max-width:720px;line-height:1.5}
+.header-title{font-size:22px;font-weight:800;margin-top:7px;letter-spacing:-.4px}
+.header-title span{color:var(--g)}
+.header-actions{display:flex;gap:8px;margin-top:11px}
+.mini-btn{font-size:10px;font-weight:700;padding:8px 11px;border:1px solid #555}
+.mini-btn.red{background:var(--r);border-color:var(--r);color:#fff}
+.mini-btn.outline{color:#fff}
+.menu{display:none;background:none;border:0;color:#fff;font-size:27px;cursor:pointer;padding:5px}
+.nav{display:flex;align-items:center;gap:15px;margin-left:auto;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.35px}
+.nav>a,.nav-dropdown>a{color:#fff;padding:10px 0;white-space:nowrap}
+.nav>a.active,.nav-dropdown.active>a{color:var(--g)}
+.nav-dropdown{position:relative}
+.nav-parent:after{content:" ▾";font-size:9px;color:#aaa}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:190px;background:#171717;border:1px solid #333;box-shadow:0 15px 25px #0005;padding:7px 0}
+.nav-dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{display:block;color:#fff;padding:10px 13px;font-size:9.5px;text-transform:none;border-bottom:1px solid #292929}
+.dropdown-menu a:last-child{border-bottom:0}
+.dropdown-menu a:hover{background:#242424;color:var(--g)}
+
+main{background:#fff}
+.hero{background:#f1f1f1;border-bottom:1px solid #ddd}
+.hero-in{padding:58px 0 54px}
+.hero .kicker{color:#777;margin-bottom:9px}
+h1{font-size:46px;line-height:1.02;margin:0 0 13px;letter-spacing:-2px}
+.hero h1 span{color:var(--r)}
+.hero p{max-width:720px;color:#555;font-size:16px;line-height:1.65;margin:0}
+section{padding:46px 0}
+.title{margin-bottom:25px}
+.title h2{font-size:28px;margin:0 0 7px;letter-spacing:-.7px}
+.title-mark{width:48px;height:4px;background:var(--r);margin-bottom:11px}
+.title p{margin:0;color:#777;font-size:13px}
+.movie-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.movie-card{border:1px solid #ddd;background:#fff;transition:transform .18s,box-shadow .18s}
+.movie-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px #0001}
+.poster{aspect-ratio:2/3;background:#ededed;position:relative;overflow:hidden}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.poster-fallback{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;color:#888;font-size:11px;font-weight:700;letter-spacing:1px;padding:15px}
+.movie-info{padding:13px}
+.movie-title{font-size:15px;font-weight:800;line-height:1.25}
+.movie-meta{font-size:11px;color:#777;margin-top:7px;line-height:1.5}
+.status{display:inline-block;margin-top:9px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;padding:5px 7px;background:#eee;color:#555}
+.status.now{background:#e9f6eb;color:#24752d}
+.empty,.error{padding:30px;border:1px dashed #ccc;color:#777;text-align:center;background:#fafafa}
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hub-card{border:1px solid #ddd;padding:24px;background:#fafafa}
+.hub-card h3{margin:0 0 8px;font-size:18px}
+.hub-card p{margin:0 0 15px;color:#666;font-size:12px;line-height:1.55}
+.hub-card .go{font-size:10px;font-weight:800;color:var(--r);text-transform:uppercase}
+.note{background:#080808;color:#fff;padding:30px}
+.note h2{margin:0 0 9px;font-size:23px}
+.note p{margin:0;color:#ccc;font-size:13px;line-height:1.6}
+footer{background:#080808;color:#aaa;border-top:1px solid #222}
+.foot{padding:22px 0;font-size:10px}
+
+@media(max-width:1000px){
+.movie-grid{grid-template-columns:repeat(3,1fr)}
+.nav{gap:10px}
+}
+@media(max-width:850px){
+.head{min-height:56px}
+.logo img{width:140px}
+.header-brand{display:none}
+.menu{display:block;margin-left:auto}
+.nav{display:none;position:absolute;top:56px;left:0;right:0;margin:0;padding:10px 20px 18px;background:#111;border-top:1px solid #333;flex-direction:column;align-items:stretch;box-shadow:0 15px 25px #0005}
+.nav.open{display:flex}
+.nav a{min-height:0;width:100%;padding:12px 0;border-bottom:1px solid #292929;font-size:10px}
+.nav-dropdown{width:100%}
+.nav-dropdown>a{display:flex;align-items:center;justify-content:space-between}
+.dropdown-menu{position:static;min-width:0;margin:0;padding:0 0 4px;background:#171717;border:0;border-top:1px solid #292929;box-shadow:none}
+.dropdown-menu a{padding:10px 12px 10px 18px!important;border-bottom:1px solid #292929!important;font-size:9.5px}
+.nav-dropdown:hover .dropdown-menu{display:none}
+.nav-dropdown.open .dropdown-menu{display:block!important}
+.nav-dropdown>a{touch-action:manipulation}
+.hero-in{padding:48px 0}
+.movie-grid{grid-template-columns:repeat(2,1fr)}
+.hub-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.wrap{width:calc(100% - 26px)}
+section{padding:40px 0}
+.hero h1{font-size:36px}
+.movie-grid{grid-template-columns:repeat(2,1fr);gap:13px}
+.movie-info{padding:10px}
+.movie-title{font-size:13px}
+}
+@media(max-width:400px){
+.movie-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap head">
+<a class="logo" href="/" aria-label="KeralaCelebrities.com Home"><img src="/KeralaCelebrities.com-logo.jpeg" alt="KeralaCelebrities.com"></a>
+<div class="header-brand">
+<div class="kicker">Kerala • Cinema • Culture • Entertainment</div>
+<div class="header-sub">Discover the inspiring journeys of Kerala's most celebrated personalities from cinema, music, television and beyond.</div>
+<div class="header-title">Kerala's Celebrities. <span>Their Stories. Our Pride.</span></div>
+<div class="header-actions"><a class="mini-btn red" href="/#celebrities">Explore Celebrities</a><a class="mini-btn outline" href="https://www.youtube.com/@KeralaCelebritiesDotcom" target="_blank" rel="noopener">▶ Watch on YouTube</a></div>
+</div>
+<button class="menu" type="button" onclick="toggleNav()" aria-label="Open navigation" aria-expanded="false" id="menuButton">☰</button>
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+<a href="/">Home</a>
+<div class="nav-dropdown"><a href="#celebrities" class="nav-parent">Celebrities</a><div class="dropdown-menu">
+<a href="/celebrities/actors.html">Actors &amp; Artists</a><a href="/celebrities/directors.html">Directors</a><a href="/celebrities/singers.html">Singers</a><a href="/celebrities/television.html">Television</a><a href="/celebrities/other-personalities.html">Other Personalities</a>
+</div></div>
+<div class="nav-dropdown active"><a href="/movies/" class="nav-parent">Movies</a><div class="dropdown-menu">
+<a href="/movies/malayalam.html">Malayalam Movies</a><a href="/movies/upcoming.html">Upcoming Movies</a><a href="/movies/box-office.html">Box Office</a>
+</div></div>
+<div class="nav-dropdown"><a href="/news/" class="nav-parent">News</a><div class="dropdown-menu">
+<a href="/news/celebrity.html">Celebrity News</a><a href="/news/movies.html">Movie News</a>
+</div></div>
+<div class="nav-dropdown"><a href="#features" class="nav-parent">Features</a><div class="dropdown-menu">
+<a href="/features/celebrity-stories.html">Celebrity Stories</a><a href="/features/did-you-know.html">Did You Know?</a><a href="/features/career-timelines.html">Career Timelines</a>
+</div></div>
+<a href="#videos">Videos</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="https://www.youtube.com/@KeralaCelebritiesDotcom" target="_blank" rel="noopener">YouTube ↗</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="wrap hero-in">
+<div class="kicker">Kerala • Malayalam Cinema</div>
+<h1>Malayalam <span>Movies</span></h1>
+<p>A growing home for Malayalam films on KeralaCelebrities.com — releases, movie pages and the people behind Kerala's cinema.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="title">
+<h2>Malayalam Movies</h2>
+<div class="title-mark"></div>
+<p>Browse the Malayalam movie pages currently available on KeralaCelebrities.com.</p>
+</div>
+<div id="movieGrid" class="movie-grid">
+<div class="empty">Loading Malayalam movies…</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="title">
+<h2>Explore Movies</h2>
+<div class="title-mark"></div>
+<p>More sections will grow from the same movie data.</p>
+</div>
+<div class="hub-grid">
+<a class="hub-card" href="/movies/">
+<h3>Movies Hub</h3>
+<p>Return to the Malayalam cinema landing page and explore the main movie sections.</p>
+<span class="go">Open Movies Hub →</span>
+</a>
+<a class="hub-card" href="/movies/upcoming.html">
+<h3>Upcoming Movies</h3>
+<p>See the Malayalam films being prepared for future release.</p>
+<span class="go">View Upcoming →</span>
+</a>
+<a class="hub-card" href="/movies/box-office.html">
+<h3>Box Office</h3>
+<p>A dedicated place for Malayalam box-office information as the section develops.</p>
+<span class="go">View Box Office →</span>
+</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="note">
+<h2>Malayalam cinema, connected.</h2>
+<p>Each movie page can eventually connect its cast and director to their KeralaCelebrities.com profiles, creating a useful network between films and the people who make them.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap foot">© 2026 KeralaCelebrities.com — Kerala Cinema, Celebrities &amp; Entertainment</div></footer>
+
+<script>
+const mainNav=document.getElementById("mainNav");
+const menuButton=document.getElementById("menuButton");
+
+function toggleNav(){
+  const open=mainNav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",open?"true":"false");
+}
+
+document.querySelectorAll("#mainNav .nav-dropdown > .nav-parent").forEach(a=>{
+  a.addEventListener("click",function(e){
+    if(window.matchMedia("(max-width:850px)").matches){
+      e.preventDefault();
+      e.stopPropagation();
+      const parent=this.parentElement;
+      document.querySelectorAll("#mainNav .nav-dropdown.open").forEach(d=>{
+        if(d!==parent) d.classList.remove("open");
+      });
+      parent.classList.toggle("open");
+    }
+  });
+});
+
+document.querySelectorAll("#mainNav .dropdown-menu a").forEach(a=>{
+  a.addEventListener("click",()=>{
+    if(window.matchMedia("(max-width:850px)").matches){
+      mainNav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded","false");
+      a.closest(".nav-dropdown")?.classList.remove("open");
+    }
+  });
+});
+
+document.querySelectorAll("#mainNav > a:not(.nav-parent)").forEach(a=>{
+  a.addEventListener("click",()=>{
+    if(window.matchMedia("(max-width:850px)").matches){
+      mainNav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded","false");
+    }
+  });
+});
+
+window.addEventListener("resize",()=>{
+  if(window.innerWidth>850){
+    document.querySelectorAll("#mainNav .nav-dropdown").forEach(d=>d.classList.remove("open"));
+    mainNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded","false");
+  }
+});
+
+function esc(v){
+  return String(v ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+
+function movieTitle(m){
+  return m.title || m.name || m.h1 || "Untitled Movie";
+}
+function moviePage(m){
+  return m.file ? "/movies/"+m.file : (m.page || m.url || "#");
+}
+function movieImage(m){
+  if(m.image) return m.image;
+  if(m.og_image) return m.og_image;
+  const page=moviePage(m);
+  const match=page.match(/movie-\d+\.html$/i);
+  return match ? "/movies/images/"+page.split("/").pop().replace(/\.html$/i,"")+".jpg" : "";
+}
+function movieYear(m){
+  return m.year || m.release_year || "";
+}
+function movieStatus(m){
+  return m.status || m.movie_status || "";
+}
+
+fetch("/movies.json",{cache:"no-store"})
+.then(r=>{if(!r.ok) throw new Error("Could not load movies.json"); return r.json();})
+.then(data=>{
+  const movies=Array.isArray(data) ? data : (data.movies || data.items || []);
+  const grid=document.getElementById("movieGrid");
+  if(!movies.length){
+    grid.innerHTML='<div class="empty">No Malayalam movies are listed yet.</div>';
+    return;
+  }
+
+  grid.innerHTML=movies.map(m=>{
+    const title=movieTitle(m);
+    const page=moviePage(m);
+    const image=movieImage(m);
+    const year=movieYear(m);
+    const status=movieStatus(m);
+    const meta=[year,m.genre,m.language].filter(Boolean).join(" • ");
+    const statusClass=/now|running|showing/i.test(status) ? "status now" : "status";
+    return `<a class="movie-card" href="${esc(page)}" aria-label="View ${esc(title)}">
+      <div class="poster">${image ? `<img src="${esc(image)}" alt="${esc(title)} poster" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ""}
+      <div class="poster-fallback" ${image?'style="display:none"':''}>MOVIE<br>POSTER</div></div>
+      <div class="movie-info"><div class="movie-title">${esc(title)}</div>
+      ${meta?`<div class="movie-meta">${esc(meta)}</div>`:""}
+      ${status?`<span class="${statusClass}">${esc(status)}</span>`:""}
+      </div>
+    </a>`;
+  }).join("");
+})
+.catch(err=>{
+  document.getElementById("movieGrid").innerHTML='<div class="error">Movie data could not be loaded right now. Please try again after the site updates.</div>';
+  console.error(err);
+});
+</script>
+</body>
+</html>
