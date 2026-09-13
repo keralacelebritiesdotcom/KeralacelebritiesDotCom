@@ -37,6 +37,10 @@ footer{background:#0b0b0b;color:#fff;padding-top:46px}.foot-grid{display:grid;gr
 <div class="section-heading"><span>KERALA CELEBRITIES</span><h1>Malayalam Film Directors</h1><p>Explore the journeys, careers, contributions and notable films of Kerala's celebrated Malayalam film directors.</p></div>
 <div class="search-wrap"><input id="directorSearch" type="search" placeholder="Search directors, films or contributions..." aria-label="Search directors"></div>
 <div class="celebrity-grid" id="directorsGrid" aria-live="polite"><div style="grid-column:1/-1;text-align:center;color:#777;padding:20px">Loading directors…</div></div>
+<div id="rosshan-2007-note" style="margin:28px auto 0;max-width:760px;padding:16px 18px;border:1px solid #e5e5e5;border-radius:10px;background:#fafafa;color:#666;font-size:12px;line-height:1.6">
+<strong style="color:#333">Personal archive:</strong>
+The Rosshan Andrrews photograph used on this page was taken at Renaissance, Palarivattom, on 22 November 2007. Personal photograph supplied for KeralaCelebrities.com.
+</div>
 </div></section></main>
 
 <footer><div class="wrap"><div class="foot-grid">
@@ -59,7 +63,8 @@ let directors=[];
 const IMAGE_CREDITS={
  "adoor-gopalakrishnan": {text:"Photo by Hareesh N. Nampoothiri (Haree Fotografie), CC BY-SA 4.0, via Wikimedia Commons.",url:"https://commons.wikimedia.org/wiki/File:Director_Adoor_Gopalakrishnan.jpg",license:"https://creativecommons.org/licenses/by-sa/4.0/"},
  "fazil": {text:"Via Wikimedia Commons, CC BY-SA 3.0.",url:"https://commons.wikimedia.org/wiki/File:Fazil.jpg",license:"https://creativecommons.org/licenses/by-sa/3.0/"},
- "anjali-menon": {text:"Film Companion, CC BY 3.0, via Wikimedia Commons.",url:"https://commons.wikimedia.org/wiki/File:Anjali_Menon_2.png",license:"https://creativecommons.org/licenses/by/3.0/"}
+ "anjali-menon": {text:"Film Companion, CC BY 3.0, via Wikimedia Commons.",url:"https://commons.wikimedia.org/wiki/File:Anjali_Menon_2.png",license:"https://creativecommons.org/licenses/by/3.0/"},
+ "rosshan-andrrews": {text:"Personal photograph, Renaissance, Palarivattom, 22 November 2007.",url:"#rosshan-2007-note",license:""}
 };
 function renderDirectors(list){
  const grid=document.getElementById("directorsGrid");
@@ -68,7 +73,7 @@ function renderDirectors(list){
  list.forEach(person=>{
    const card=document.createElement("a");
    card.className="celebrity-card";
-   const image=IMAGE_BASE+String(person.slug||"").trim()+".jpg";
+   const image=person.image||IMAGE_BASE+String(person.slug||"").trim()+".jpg";
    const credit=IMAGE_CREDITS[String(person.slug||"").trim()];
 const creditHtml=credit
  ? `<p class="image-credit"><strong>Image credit:</strong> <a href="${esc(credit.url)}" target="_blank" rel="noopener">${esc(credit.text)}</a></p>`
