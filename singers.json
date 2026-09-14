@@ -250,47 +250,5 @@
       "Playback singing",
       "Composition"
     ]
-  },
-  {
-    "name": "Prithviraj Sukumaran",
-    "slug": "prithviraj-sukumaran",
-    "profession": "Actor, Playback Singer, Director, Producer",
-    "image": "/celebrities/images/prithviraj-sukumaran.jpg",
-    "description": "Malayalam actor, filmmaker and producer who has also contributed as a playback singer to selected films.",
-    "contribution": "Represents the multi-talented Malayalam film personality who has combined acting, filmmaking, production and singing.",
-    "knownFor": [
-      "Playback singing",
-      "Acting",
-      "Direction",
-      "Film production"
-    ]
-  },
-  {
-    "name": "Dulquer Salmaan",
-    "slug": "dulquer-salmaan",
-    "profession": "Actor, Playback Singer, Producer",
-    "image": "/celebrities/images/dulquer-salmaan.jpg",
-    "description": "Malayalam actor and producer who has also performed playback vocals in Malayalam and other Indian-language films.",
-    "contribution": "Added playback singing to a wider career spanning acting and film production across multiple Indian languages.",
-    "knownFor": [
-      "Playback singing",
-      "Acting",
-      "Film production",
-      "Malayalam cinema"
-    ]
-  },
-  {
-    "name": "Mohanlal",
-    "slug": "mohanlal",
-    "profession": "Actor, Playback Singer, Producer, Director",
-    "image": "/celebrities/images/mohanlal.jpg",
-    "description": "Legendary Malayalam actor and filmmaker who has also performed playback singing in several films.",
-    "contribution": "A multi-disciplinary Malayalam cinema figure whose contributions extend beyond acting into singing, production and direction.",
-    "knownFor": [
-      "Playback singing",
-      "Acting",
-      "Film production",
-      "Direction"
-    ]
   }
 ]
