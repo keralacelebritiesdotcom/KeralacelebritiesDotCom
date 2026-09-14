@@ -4,251 +4,541 @@
     "slug": "k-j-yesudas",
     "profession": "Playback Singer, Musician",
     "image": "/celebrities/images/k-j-yesudas.jpg",
-    "description": "One of India's most acclaimed playback singers, renowned for his extensive contribution to Malayalam cinema and music.",
-    "contribution": "A defining voice of Malayalam film music whose career spans several decades and multiple Indian languages.",
+    "description": "A defining voice of Malayalam cinema and Indian playback singing, K. J. Yesudas has worked across film, classical and devotional music for more than six decades. His voice became closely associated with Malayalam cinema's leading actors and composers, while his work also spans many Indian languages.",
+    "contribution": "Known for extraordinary control, diction and emotional range, Yesudas helped shape the sound of Malayalam film music from the 1960s onward. He has recorded an enormous body of work and remains one of Kerala's most influential musical figures.",
     "knownFor": [
       "Malayalam film songs",
       "Classical music",
       "Playback singing",
       "Devotional music"
-    ]
+    ],
+    "yearsActive": "1961–present",
+    "notableSongs": [
+      "Harivarasanam — Swami Ayyappan (1975)",
+      "Devanganangal Kayyozhinja — Njan Gandharvan (1991)",
+      "Pramadavanam Veendum — His Highness Abdullah (1990)",
+      "Thamasamenthe Varuvan — Bhargavi Nilayam (1964)",
+      "Manushyan Mathangale Srishtichu — Achanum Bappayum (1972)"
+    ],
+    "notableFilms": [
+      "Bhargavi Nilayam (1964)",
+      "Nadi (1969)",
+      "His Highness Abdullah (1990)",
+      "Njan Gandharvan (1991)",
+      "Pazhassi Raja (2009)",
+      "Pulimurugan (2016)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "K. S. Chithra",
     "slug": "k-s-chithra",
     "profession": "Playback Singer",
     "image": "/celebrities/images/k-s-chithra.jpg",
-    "description": "Celebrated playback singer known for her expressive voice and extensive body of work in Malayalam and other Indian languages.",
-    "contribution": "A major female voice in Indian playback singing, with a particularly significant contribution to Malayalam cinema.",
+    "description": "K. S. Chithra is one of the most celebrated female playback voices in Malayalam cinema. Introduced to Malayalam playback by M. G. Radhakrishnan, she became a major recording artist across South Indian and other Indian-language film industries.",
+    "contribution": "Her precise diction, expressive phrasing and versatility across melody, classical-inflected compositions and lighter film songs have made her a lasting presence in Malayalam music. She is widely known as the 'Nightingale of Kerala'.",
     "knownFor": [
       "Playback singing",
       "Malayalam film songs",
       "Indian classical music",
       "National Film Awards"
-    ]
+    ],
+    "yearsActive": "1979–present",
+    "notableSongs": [
+      "Manjal Prasadavum — Nakhakshathangal (1986)",
+      "Indupushpam Choodi Nilkum — Vaishali (1989)",
+      "Azhake Nin — Amaram (1991)",
+      "Aadhyamay Kanda Naal — Thooval Kottaram (1996)",
+      "Theerame — Malik (2021)"
+    ],
+    "notableFilms": [
+      "Nakhakshathangal (1986)",
+      "Vaishali (1989)",
+      "Amaram (1991)",
+      "Thooval Kottaram (1996)",
+      "Malik (2021)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "P. Jayachandran",
     "slug": "p-jayachandran",
     "profession": "Playback Singer",
     "image": "/celebrities/images/p-jayachandran.jpg",
-    "description": "Veteran Malayalam playback singer admired for his distinctive voice and emotional interpretation of film songs.",
-    "contribution": "Contributed generations of memorable songs to Malayalam cinema and became one of Kerala's most respected playback voices.",
+    "description": "P. Jayachandran was a major Malayalam playback singer whose warm, emotive voice became a hallmark of romantic, devotional and dramatic film songs.",
+    "contribution": "Across a career of roughly six decades, Jayachandran recorded in Malayalam and several other Indian languages. His understated emotional delivery and distinctive timbre earned him a special place among Kerala's most respected playback singers.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "Romantic songs",
       "Melody"
-    ]
+    ],
+    "yearsActive": "1965–2025",
+    "notableSongs": [
+      "Rajahamsame — Chamaram (1980)",
+      "Neelagiriyude — Chakkaramuthu (2006)",
+      "Prayam Nammil — Niram (1999)",
+      "Ponveene — Thalavattam (1986)",
+      "Anuraga Vilochananayi — Neelathamara (2009)"
+    ],
+    "notableFilms": [
+      "Chamaram (1980)",
+      "Thalavattam (1986)",
+      "Niram (1999)",
+      "Neelathamara (2009)",
+      "Ennu Ninte Moideen (2015)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "M. G. Sreekumar",
     "slug": "m-g-sreekumar",
     "profession": "Playback Singer, Music Director",
     "image": "/celebrities/images/m-g-sreekumar.jpg",
-    "description": "Popular Malayalam playback singer and music director known for energetic, melodic and devotional songs.",
-    "contribution": "A prominent voice in Malayalam film music with a long career as a singer and composer.",
+    "description": "M. G. Sreekumar is a singer and music director known for an energetic yet highly melodic style. He became one of the most recognizable male playback voices in Malayalam cinema from the late 1980s onward.",
+    "contribution": "His work ranges from classical-tinged melodies and romantic duets to lively numbers. He has also composed music and remains strongly associated with some of Malayalam cinema's most memorable songs.",
     "knownFor": [
       "Malayalam playback singing",
       "Film music",
       "Devotional songs",
       "Music direction"
-    ]
+    ],
+    "yearsActive": "1982–present",
+    "notableSongs": [
+      "Pramadavanam — His Highness Abdullah (1990)",
+      "Gopike — Vadakkumnadhan (2006)",
+      "Pavizhamalli Poothulanja — Thenmavin Kombathu (1994)",
+      "Kallipoonkuyile — Thenmavin Kombathu (1994)",
+      "Kando Kando — Dwaraka (2017)"
+    ],
+    "notableFilms": [
+      "Chithram (1988)",
+      "His Highness Abdullah (1990)",
+      "Thenmavin Kombathu (1994)",
+      "Vadakkumnadhan (2006)",
+      "Kilukkam (1991)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Sujatha Mohan",
     "slug": "sujatha-mohan",
     "profession": "Playback Singer",
     "image": "/celebrities/images/sujatha-mohan.jpg",
-    "description": "Acclaimed playback singer known for her melodious voice and extensive contribution to South Indian film music.",
-    "contribution": "Became one of the best-known female playback voices associated with Malayalam cinema from the late twentieth century onward.",
+    "description": "Sujatha Mohan is known for a clear, graceful voice and a long career in Malayalam playback singing, with especially strong associations with romantic melodies and duets.",
+    "contribution": "She has worked extensively with leading South Indian composers and singers, becoming one of the familiar female voices of Malayalam cinema from the 1990s into the modern era.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "Melody",
       "South Indian cinema"
-    ]
+    ],
+    "yearsActive": "1980s–present",
+    "notableSongs": [
+      "Poomaname — Nirakkoottu (1985)",
+      "Melle Melle — Kilukkam (1991)",
+      "Kaathoramam — Kizhakku Pukkum?",
+      "Chingamasam Vannu Chernnal — Meesa Madhavan (2002)",
+      "Vennilave — Kalyanaraman (2002)"
+    ],
+    "notableFilms": [
+      "Nirakkoottu (1985)",
+      "Kilukkam (1991)",
+      "Meesa Madhavan (2002)",
+      "Kalyanaraman (2002)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Vijay Yesudas",
     "slug": "vijay-yesudas",
     "profession": "Playback Singer, Actor",
     "image": "/celebrities/images/vijay-yesudas.jpg",
-    "description": "Malayalam playback singer and actor who has built a prominent career across South Indian film music.",
-    "contribution": "Established an identity of his own in playback singing while continuing the musical legacy associated with the Yesudas family.",
+    "description": "Vijay Yesudas developed a distinctive identity in Malayalam playback singing while carrying forward the musical legacy of his father, K. J. Yesudas. He has also recorded extensively in Tamil, Telugu and other languages.",
+    "contribution": "His voice has featured prominently in romantic, youthful and emotionally driven songs, with major popular tracks in films such as Nivedyam, Premam and Joseph.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "South Indian cinema",
       "Acting"
-    ]
+    ],
+    "yearsActive": "2000–present",
+    "notableSongs": [
+      "Kolakkuzhal Vili Ketto — Nivedyam (2007)",
+      "Aaro Nee Aaro — Urumi (2011)",
+      "Malare — Premam (2015)",
+      "Ee Mazha Than — Salt N' Pepper (2011)",
+      "Poomuthole — Joseph (2018)"
+    ],
+    "notableFilms": [
+      "Nivedyam (2007)",
+      "Urumi (2011)",
+      "Premam (2015)",
+      "Joseph (2018)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Shahabaz Aman",
     "slug": "shahabaz-aman",
     "profession": "Singer, Musician, Composer",
     "image": "/celebrities/images/shahabaz-aman.jpg",
-    "description": "Malayalam singer, composer and musician recognised for his distinctive approach to film and independent music.",
-    "contribution": "Brought a contemporary and soulful musical voice to Malayalam cinema and independent music.",
+    "description": "Shahabaz Aman is a singer, composer and musician associated with contemporary Malayalam cinema and independent music. His work often carries a strong acoustic, ghazal and alternative sensibility.",
+    "contribution": "He has contributed both as a vocalist and composer, bringing a distinctive intimate style to Malayalam film and non-film music.",
     "knownFor": [
       "Malayalam film music",
       "Independent music",
       "Composition",
       "Playback singing"
-    ]
+    ],
+    "yearsActive": "2005–present",
+    "notableSongs": [
+      "Kuyilukale Thuyilunaroo — Oruvan (2006)",
+      "Ishtamalle Ishtamalle — Chocolate (2007)",
+      "Anuraagamaay — Pakal Nakshathrangal (2008)",
+      "Mele Mohavaanam — Da Thadiya (2012)"
+    ],
+    "notableFilms": [
+      "Chaanthu Pottu (2005)",
+      "Oruvan (2006)",
+      "Chocolate (2007)",
+      "Pakal Nakshathrangal (2008)",
+      "Da Thadiya (2012)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Sithara Krishnakumar",
     "slug": "sithara-krishnakumar",
     "profession": "Playback Singer, Musician",
     "image": "/celebrities/images/sithara-krishnakumar.jpg",
-    "description": "Versatile Malayalam singer and musician known for film songs, independent music and live performances.",
-    "contribution": "Known for combining classical training with contemporary styles across Malayalam film and independent music.",
+    "description": "Sithara Krishnakumar is a versatile playback singer and independent musician trained in Carnatic and Hindustani traditions, with a strong presence in Malayalam music and ghazal performance.",
+    "contribution": "She has recorded hundreds of film songs and works across multiple Indian languages, while also building an independent musical identity through concerts, collaborations and non-film releases.",
     "knownFor": [
       "Malayalam playback singing",
       "Independent music",
       "Classical music",
       "Live performance"
-    ]
+    ],
+    "yearsActive": "2005–present",
+    "notableSongs": [
+      "Pammi Pammi — Athishayan (2007)",
+      "Chil Chilambumani — later repertoire",
+      "Kanna Nee — later repertoire",
+      "Theerame — Malik (2021)"
+    ],
+    "notableFilms": [
+      "Athishayan (2007)",
+      "Malik (2021)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Vineeth Sreenivasan",
     "slug": "vineeth-sreenivasan",
     "profession": "Singer, Filmmaker, Actor",
     "image": "/celebrities/images/vineeth-sreenivasan.jpg",
-    "description": "Malayalam singer, filmmaker and actor who became widely recognised through film music before expanding into filmmaking.",
-    "contribution": "A prominent modern Malayalam film personality whose work connects playback singing, acting, writing and direction.",
+    "description": "Vineeth Sreenivasan is a singer, songwriter, filmmaker and actor whose work has connected Malayalam film music with a younger, contemporary audience.",
+    "contribution": "Alongside playback singing and songwriting, he has directed successful Malayalam films and built a strong identity around melody-driven soundtracks and youthful storytelling.",
     "knownFor": [
       "Malayalam film songs",
       "Direction",
       "Acting",
       "Writing"
-    ]
+    ],
+    "yearsActive": "2003–present",
+    "notableSongs": [
+      "Kuchu Kuruvi — Deepasthambham Mahascharyam?",
+      "Karale Karalinte — Ustad Hotel (2012)",
+      "Aaradhike — Ambili (2019)",
+      "Anuragathin Velayil — Thattathin Marayathu (2012)"
+    ],
+    "notableFilms": [
+      "Thattathin Marayathu (2012)",
+      "Ustad Hotel (2012)",
+      "Jacobinte Swargarajyam (2016)",
+      "Hridayam (2022)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Shreya Ghoshal",
     "slug": "shreya-ghoshal",
     "profession": "Playback Singer",
     "image": "/celebrities/images/shreya-ghoshal.jpg",
-    "description": "One of India's leading playback singers, with an extensive repertoire of Malayalam film songs alongside work in several Indian languages.",
-    "contribution": "A major contemporary playback voice whose Malayalam songs have become popular across generations.",
+    "description": "Shreya Ghoshal is one of India's leading playback singers, with a major body of work in Hindi and extensive contributions to Malayalam and other Indian-language cinema.",
+    "contribution": "Her Malayalam recordings are noted for polished diction, expressive phrasing and strong melodic interpretation, and she has collaborated with many leading composers across South Indian cinema.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "Indian cinema",
       "National Film Awards"
-    ]
+    ],
+    "yearsActive": "2002–present",
+    "notableSongs": [
+      "Manju Mazha — Aayalum Njanum Thammil (2012)",
+      "Kaathirunnu Kaathirunnu — Ennu Ninte Moideen (2015)",
+      "Vathikkalu Vellaripravu — Sufiyum Sujatayum (2020)",
+      "Puthan Puthu Kaalai — various Tamil repertoire"
+    ],
+    "notableFilms": [
+      "Aayalum Njanum Thammil (2012)",
+      "Ennu Ninte Moideen (2015)",
+      "Sufiyum Sujatayum (2020)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Haricharan",
     "slug": "haricharan",
     "profession": "Playback Singer",
     "image": "/celebrities/images/haricharan.jpg",
-    "description": "South Indian playback singer known for his work in Malayalam, Tamil and other Indian-language film music.",
-    "contribution": "A widely featured contemporary voice in Malayalam film music and South Indian playback singing.",
+    "description": "Haricharan is a versatile playback singer known for recording extensively across South Indian film industries. His Malayalam work spans romantic, melodic and contemporary film songs.",
+    "contribution": "He has collaborated with a wide range of composers and has built a pan-South Indian career through songs in Malayalam, Tamil, Telugu and Kannada.",
     "knownFor": [
       "Malayalam film songs",
       "Tamil film songs",
       "Playback singing",
       "Melody"
-    ]
+    ],
+    "yearsActive": "2004–present",
+    "notableSongs": [
+      "Pacha Manja — Oru Kal Oru Kannadi?",
+      "Kadha Parayumbol — selected Malayalam repertoire",
+      "Nenjodu Cherthu — Yuvvh (2012)"
+    ],
+    "notableFilms": [
+      "Yuvvh (2012)",
+      "various Malayalam and South Indian films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Najim Arshad",
     "slug": "najim-arshad",
     "profession": "Playback Singer, Composer",
     "image": "/celebrities/images/najim-arshad.jpg",
-    "description": "Malayalam playback singer and composer known for his work in contemporary Malayalam cinema.",
-    "contribution": "Developed a recognised presence in Malayalam film music through playback singing and composition.",
+    "description": "Najim Arshad is a Malayalam playback singer and composer who emerged through the modern generation of South Indian film music.",
+    "contribution": "His smooth, youthful vocal style has featured in Malayalam film songs and contemporary independent music, with work extending into composition.",
     "knownFor": [
       "Malayalam playback singing",
       "Film music",
       "Composition",
       "Melody"
-    ]
+    ],
+    "yearsActive": "2011–present",
+    "notableSongs": [
+      "Melle Melle — 22 Female Kottayam (2012)",
+      "Mele Mohavaanam — Da Thadiya (2012, with Shahabaz Aman)",
+      "Aaranu Nee — selected Malayalam repertoire"
+    ],
+    "notableFilms": [
+      "Da Thadiya (2012)",
+      "22 Female Kottayam (2012)"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "G. Venugopal",
     "slug": "g-venugopal",
     "profession": "Playback Singer",
     "image": "/celebrities/images/g-venugopal.jpg",
-    "description": "Veteran Malayalam playback singer known for his expressive voice and enduring contribution to film music.",
-    "contribution": "One of the familiar voices of Malayalam cinema, with a long career spanning numerous film songs.",
+    "description": "G. Venugopal is a veteran Malayalam playback singer recognized for a warm, classical-leaning voice and a long association with melody-rich film music.",
+    "contribution": "He has recorded extensively for Malayalam cinema and is particularly appreciated for expressive romantic and semi-classical songs.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "Melody",
       "Film music"
-    ]
+    ],
+    "yearsActive": "1987–present",
+    "notableSongs": [
+      "Aaro Viral Meetti — Pranayavarnangal (1998)",
+      "Pulari Mazha — selected repertoire",
+      "Oru Murai Vantha — various"
+    ],
+    "notableFilms": [
+      "Pranayavarnangal (1998)",
+      "Niram (1999)",
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Madhu Balakrishnan",
     "slug": "madhu-balakrishnan",
     "profession": "Playback Singer",
     "image": "/celebrities/images/madhu-balakrishnan.jpg",
-    "description": "Malayalam playback singer known for film songs, devotional music and work across South Indian languages.",
-    "contribution": "Built a substantial career in playback and devotional singing, particularly in Malayalam music.",
+    "description": "Madhu Balakrishnan is a prolific playback singer whose work spans Malayalam cinema, devotional music and several other Indian languages.",
+    "contribution": "His strong, classically informed voice has made him a regular presence in film songs, devotional recordings and stage performances.",
     "knownFor": [
       "Malayalam film songs",
       "Devotional music",
       "Playback singing",
       "South Indian music"
-    ]
+    ],
+    "yearsActive": "1990s–present",
+    "notableSongs": [
+      "Manathe Vellitheru — selected repertoire",
+      "Kanne Kalaimane — Malayalam repertoire",
+      "various devotional and film songs"
+    ],
+    "notableFilms": [
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Rimi Tomy",
     "slug": "rimi-tomy",
     "profession": "Playback Singer, Television Personality",
     "image": "/celebrities/images/rimi-tomy.jpg",
-    "description": "Popular Malayalam singer and television personality known for energetic performances and film songs.",
-    "contribution": "Became a familiar contemporary voice in Malayalam entertainment through singing and television appearances.",
+    "description": "Rimi Tomy is a playback singer and television personality known for an energetic performance style and a strong presence in Malayalam popular culture.",
+    "contribution": "She became widely recognized through lively film songs and television appearances, later expanding into live performance and entertainment hosting.",
     "knownFor": [
       "Malayalam playback singing",
       "Television",
       "Live performance",
       "Film music"
-    ]
+    ],
+    "yearsActive": "2002–present",
+    "notableSongs": [
+      "Chingamasam Vannu Chernnal — Meesa Madhavan (2002)",
+      "Kannanthumbikkoru — selected repertoire",
+      "Azhakulla Manavatti — selected repertoire"
+    ],
+    "notableFilms": [
+      "Meesa Madhavan (2002)",
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Jyotsna Radhakrishnan",
     "slug": "jyotsna-radhakrishnan",
     "profession": "Playback Singer",
     "image": "/celebrities/images/jyotsna-radhakrishnan.jpg",
-    "description": "Malayalam playback singer known for her work in contemporary South Indian film music.",
-    "contribution": "A recognised female playback voice in Malayalam cinema, particularly across the 2000s and later.",
+    "description": "Jyotsna Radhakrishnan is a Malayalam playback singer known for her bright, youthful voice and popular film duets and melodies.",
+    "contribution": "She became a familiar voice in Malayalam cinema during the 2000s and has continued to perform in film, television and live music settings.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "South Indian cinema",
       "Melody"
-    ]
+    ],
+    "yearsActive": "2000–present",
+    "notableSongs": [
+      "Karuppinazhaku — Swapnakoodu (2003)",
+      "Muthumani Maala — selected repertoire",
+      "various Malayalam film duets"
+    ],
+    "notableFilms": [
+      "Swapnakoodu (2003)",
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Manjari",
     "slug": "manjari",
     "profession": "Playback Singer",
     "image": "/celebrities/images/manjari.jpg",
-    "description": "Malayalam playback singer known for her distinctive voice and work in film and independent music.",
-    "contribution": "Established a strong presence in Malayalam film music with melodic and expressive performances.",
+    "description": "Manjari is a Malayalam playback singer and performer known for expressive vocals across film, devotional and independent music.",
+    "contribution": "Her career includes film songs, albums and live performances, with a repertoire that moves between contemporary melody and devotional music.",
     "knownFor": [
       "Malayalam film songs",
       "Playback singing",
       "Live performance",
       "Melody"
-    ]
+    ],
+    "yearsActive": "2004–present",
+    "notableSongs": [
+      "Muthumani — selected repertoire",
+      "Aaro Nee Aaro — selected repertoire",
+      "various Malayalam film songs"
+    ],
+    "notableFilms": [
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   },
   {
     "name": "Karthik",
     "slug": "karthik",
     "profession": "Playback Singer, Composer",
     "image": "/celebrities/images/karthik.jpg",
-    "description": "Indian playback singer and composer with a significant body of work in Malayalam and other South Indian languages.",
-    "contribution": "A prolific contemporary playback voice heard across major South Indian film industries, including Malayalam cinema.",
+    "description": "Karthik is a major South Indian playback singer and composer whose Malayalam work forms part of a much wider career across Tamil, Telugu, Kannada and other languages.",
+    "contribution": "His flexible voice and ability to move between melody, contemporary pop and technically demanding compositions have made him a frequent choice for modern South Indian film music.",
     "knownFor": [
       "Malayalam film songs",
       "Tamil film songs",
       "Playback singing",
       "Composition"
-    ]
+    ],
+    "yearsActive": "1999–present",
+    "notableSongs": [
+      "Oru Chiri Kandal — Ponmudipuzhayorathu (2005)",
+      "Anuragam — selected Malayalam repertoire",
+      "various Malayalam film melodies"
+    ],
+    "notableFilms": [
+      "Ponmudipuzhayorathu (2005)",
+      "various Malayalam films"
+    ],
+    "imageCredit": {
+      "text": "Image courtesy: Source / photographer / license to be verified",
+      "url": ""
+    }
   }
 ]
