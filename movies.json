@@ -26,5 +26,12 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/pradhama-drishtiya-kuttakkar.jpg"
+  },
+  {
+    "file": "movie-5.html",
+    "title": "Aasha",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/aasha.jpg"
   }
 ]
