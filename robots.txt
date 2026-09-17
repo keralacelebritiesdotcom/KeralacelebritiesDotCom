@@ -1,0 +1,5 @@
+# KeralaCelebrities.com robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://keralacelebrities.com/sitemap.xml
