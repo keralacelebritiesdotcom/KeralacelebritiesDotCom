@@ -1,4 +1,5 @@
 from html.parser import HTMLParser
+from html import unescape
 from pathlib import Path
 from urllib.parse import quote
 from xml.sax.saxutils import escape
@@ -337,6 +338,143 @@ def url_path_for_file(path):
     return "/" + relative
 
 
+
+def public_url_for_file(path):
+    return SITE_URL + url_path_for_file(path)
+
+
+def has_jsonld_type(html, type_name):
+    pattern = r'"@type"\s*:\s*"' + re.escape(type_name) + r'"'
+    return re.search(pattern, html, flags=re.I) is not None
+
+
+def extract_detail_value(html, label):
+    pattern = (
+        r'<div\s+class=["\']detail["\']\s*>\s*'
+        r'<strong>\s*' + re.escape(label) + r'\s*</strong>\s*'
+        r'<span>(.*?)</span>'
+    )
+    match = re.search(pattern, html, flags=re.I | re.S)
+    if not match:
+        return ""
+    value = re.sub(r'<[^>]+>', ' ', match.group(1))
+    return re.sub(r'\s+', ' ', unescape(value)).strip()
+
+
+def build_celebrity_jsonld(path, parser):
+    name = clean_title(parser.h1 or parser.title or path.stem.replace("-", " ").title())
+    image = normalise_image_url(parser.og_image)
+    if image and not image.startswith(("/", "http://", "https://")):
+        image = "/celebrities/" + image.lstrip("./")
+    if not image:
+        matching_image = find_matching_image(CELEB_IMAGE_DIR, path.stem)
+        if matching_image:
+            image = image_url_for_file(matching_image)
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": public_url_for_file(path) + "#person",
+        "name": name,
+        "url": public_url_for_file(path),
+    }
+    if image:
+        data["image"] = SITE_URL + image if image.startswith("/") else image
+    if parser.description:
+        data["description"] = re.sub(r"\s+", " ", parser.description).strip()
+    if parser.category:
+        categories = [c.strip() for c in re.split(r"[,;]", parser.category) if c.strip()]
+        if categories:
+            data["jobTitle"] = categories
+    return data
+
+
+def build_movie_jsonld(path, parser):
+    h1_title = clean_title(parser.h1)
+    page_title = clean_title(parser.title)
+    year = extract_movie_year(h1_title) or extract_movie_year(page_title)
+    name = remove_movie_year(h1_title or page_title or path.stem.replace("-", " ").title())
+
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Movie",
+        "@id": public_url_for_file(path) + "#movie",
+        "name": name,
+        "url": public_url_for_file(path),
+    }
+
+    image = normalise_image_url(parser.og_image)
+    if image and not image.startswith(("/", "http://", "https://")):
+        image = "/movies/" + image.lstrip("./")
+    if image:
+        data["image"] = SITE_URL + image if image.startswith("/") else image
+
+    if year:
+        data["dateCreated"] = f"{year:04d}"
+
+    director = extract_detail_value(
+        path.read_text(encoding="utf-8", errors="ignore"),
+        "Director",
+    )
+    if director:
+        data["director"] = {"@type": "Person", "name": director}
+
+    if parser.description:
+        data["description"] = re.sub(r"\s+", " ", parser.description).strip()
+
+    return data
+
+
+def inject_structured_data(path, data, type_name):
+    html = path.read_text(encoding="utf-8", errors="ignore")
+
+    # Never create duplicate Person/Movie structured data on pages that already have it.
+    if has_jsonld_type(html, type_name):
+        return False
+
+    marker = f"KERALA CELEBRITIES AUTO STRUCTURED DATA: {type_name}"
+    block = (
+        f'\n<!-- {marker} -->\n'
+        '<script type="application/ld+json">\n'
+        + json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+        + '\n</script>\n'
+        f'<!-- END {marker} -->\n'
+    )
+
+    if re.search(r"</head>\s*", html, flags=re.I):
+        html = re.sub(r"</head>\s*", block + "</head>\n", html, count=1, flags=re.I)
+        path.write_text(html, encoding="utf-8")
+        return True
+
+    return False
+
+
+def generate_structured_data():
+    added = 0
+    skipped = 0
+
+    if CELEB_DIR.exists():
+        for path in CELEB_DIR.glob("*.html"):
+            if path.name.lower() in CATEGORY_FILES:
+                continue
+            parser = parse_file(path)
+            if inject_structured_data(path, build_celebrity_jsonld(path, parser), "Person"):
+                added += 1
+            else:
+                skipped += 1
+
+    if MOVIE_DIR.exists():
+        for path in MOVIE_DIR.glob("movie-*.html"):
+            if not re.fullmatch(r"movie-\d+\.html", path.name, re.I):
+                continue
+            parser = parse_file(path)
+            if inject_structured_data(path, build_movie_jsonld(path, parser), "Movie"):
+                added += 1
+            else:
+                skipped += 1
+
+    print(f"Structured data: added {added} page(s); skipped {skipped} page(s) already containing the same type or without a usable </head>.")
+
 def should_include_in_sitemap(path):
     """
     Include public HTML pages in sitemap.xml.
@@ -497,6 +635,7 @@ def main():
     )
 
     # SEO files are generated automatically.
+    generate_structured_data()
     generate_sitemap()
     generate_robots()
 
