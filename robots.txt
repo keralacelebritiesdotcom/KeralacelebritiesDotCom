@@ -1,4 +1,3 @@
-# KeralaCelebrities.com robots.txt
 User-agent: *
 Allow: /
 
