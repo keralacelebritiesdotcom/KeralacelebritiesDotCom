@@ -1,9 +1,13 @@
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
+from xml.sax.saxutils import escape
 import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+
+SITE_URL = "https://keralacelebrities.com"
 
 CELEB_DIR = ROOT / "celebrities"
 CELEB_IMAGE_DIR = CELEB_DIR / "images"
@@ -308,6 +312,134 @@ def write_json(path, data):
     )
 
 
+def url_path_for_file(path):
+    """
+    Convert a repository HTML file into its public website URL.
+
+    Examples:
+        index.html
+            -> /
+
+        about.html
+            -> /about.html
+
+        celebrities/actors.html
+            -> /celebrities/actors.html
+
+        movies/movie-1.html
+            -> /movies/movie-1.html
+    """
+    relative = path.relative_to(ROOT).as_posix()
+
+    if relative == "index.html":
+        return "/"
+
+    return "/" + relative
+
+
+def should_include_in_sitemap(path):
+    """
+    Include public HTML pages in sitemap.xml.
+
+    The custom 404 page is excluded because it is not a
+    content page users should find in search results.
+    """
+
+    if not path.is_file():
+        return False
+
+    if path.suffix.lower() != ".html":
+        return False
+
+    relative = path.relative_to(ROOT).as_posix()
+
+    if relative == "404.html":
+        return False
+
+    # Ignore hidden/system directories such as .git and .github.
+    parts = path.relative_to(ROOT).parts
+
+    if any(part.startswith(".") for part in parts):
+        return False
+
+    return True
+
+
+def generate_sitemap():
+    """
+    Automatically generate sitemap.xml from all public HTML
+    pages in the repository.
+
+    New HTML pages are picked up automatically on the next
+    GitHub Actions run.
+    """
+
+    pages = []
+
+    for path in ROOT.rglob("*.html"):
+        if should_include_in_sitemap(path):
+            pages.append(path)
+
+    pages.sort(
+        key=lambda path: url_path_for_file(path).casefold()
+    )
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+
+    for path in pages:
+        url_path = url_path_for_file(path)
+
+        encoded_path = quote(
+            url_path,
+            safe="/:@-._~!$&'()*+,;="
+        )
+
+        full_url = SITE_URL + encoded_path
+
+        lines.extend([
+            "  <url>",
+            f"    <loc>{escape(full_url)}</loc>",
+            "  </url>",
+        ])
+
+    lines.append("</urlset>")
+
+    sitemap_path = ROOT / "sitemap.xml"
+
+    sitemap_path.write_text(
+        "\n".join(lines) + "\n",
+        encoding="utf-8",
+    )
+
+    print(
+        f"Generated sitemap.xml with {len(pages)} URLs."
+    )
+
+
+def generate_robots():
+    """
+    Automatically generate the root robots.txt file.
+    """
+
+    robots = f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
+"""
+
+    robots_path = ROOT / "robots.txt"
+
+    robots_path.write_text(
+        robots,
+        encoding="utf-8",
+    )
+
+    print("Generated robots.txt.")
+
+
 def main():
     celebrities = []
 
@@ -363,6 +495,10 @@ def main():
         f"Generated {len(celebrities)} celebrities "
         f"and {len(movies)} movies."
     )
+
+    # SEO files are generated automatically.
+    generate_sitemap()
+    generate_robots()
 
 
 if __name__ == "__main__":
