@@ -4,8 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'celebrities/*.html'
-      - 'movies/movie-*.html'
+      - '**/*.html'
       - 'scripts/generate-manifests.py'
       - '.github/workflows/generate-manifests.yml'
   workflow_dispatch:
@@ -16,17 +15,21 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate JSON manifests
+      - name: Generate JSON manifests and SEO files
         run: python scripts/generate-manifests.py
 
-      - name: Commit updated manifests
+      - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add celebrities.json movies.json
-          git diff --cached --quiet || git commit -m "Auto-update site manifests"
+
+          git add celebrities.json movies.json sitemap.xml robots.txt
+
+          git diff --cached --quiet || git commit -m "Auto-update manifests and SEO files"
+
           git push
