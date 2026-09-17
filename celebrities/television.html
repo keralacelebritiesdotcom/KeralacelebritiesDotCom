@@ -23,6 +23,27 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
 @media(max-width:1100px){.actor-grid,.featured .actor-grid{grid-template-columns:repeat(3,1fr)}.header-brand{flex-basis:260px}.nav{font-size:9px}.nav>a,.nav-dropdown>a{padding:0 4px}}
 @media(max-width:850px){.head{min-height:56px}.logo img{width:140px}.header-brand{display:none}.menu{display:block}.nav{display:none;position:absolute;top:56px;left:0;right:0;margin:0;padding:10px 20px 18px;background:#111;border-top:1px solid #333;flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav>a,.nav-dropdown>a{min-height:0;width:100%;padding:12px 0;border-bottom:1px solid #292929;font-size:10px}.nav-dropdown{width:100%}.nav-dropdown>a{justify-content:space-between}.dropdown-menu{position:static;min-width:0;margin:0;padding:0 0 4px;background:#171717;border:0;border-top:1px solid #292929;box-shadow:none}.dropdown-menu a{padding:10px 12px 10px 18px!important;border-bottom:1px solid #292929!important;font-size:9.5px!important}.nav-dropdown:hover .dropdown-menu{display:none}.nav-dropdown.open .dropdown-menu{display:block}.actor-grid,.featured .actor-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.wrap{width:calc(100% - 26px)}.hero{padding-top:34px}.hero h1{font-size:28px}.section-head{display:block}.section-head p{margin-top:4px}.actor-grid,.featured .actor-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.bottom{padding:18px 0;flex-direction:column;align-items:flex-start}}
+
+/* Detailed television directory */
+.tv-card{background:#fff;border:1px solid #d9e8e6;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.05);transition:transform .18s ease,box-shadow .18s ease}
+.tv-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.tv-card-top{display:flex;gap:16px;align-items:center;padding:22px 22px 16px;background:linear-gradient(135deg,#eef9f7,#fff)}
+.tv-avatar{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;flex:0 0 76px;background:#16807a;color:#fff;font-size:23px;font-weight:800;letter-spacing:.5px;border:4px solid #e6b84f}
+.tv-card h2{margin:2px 0 5px;font-size:24px;line-height:1.15}
+.tv-card .role{margin:0;color:#16807a;font-weight:700;font-size:14px}
+.tv-body{padding:20px 22px 24px}
+.tv-body p{line-height:1.72;color:#42484a}
+.tv-body h3{font-size:14px;text-transform:uppercase;letter-spacing:.7px;color:#16807a;margin:20px 0 7px}
+.image-note{margin-top:20px;padding:12px 14px;border-left:4px solid #e6b84f;background:#fff9e9;color:#666;font-size:13px;line-height:1.55;border-radius:8px}
+.featured-inner{max-width:920px;margin:auto}
+.featured .small{font-size:13px;color:#666}
+@media(max-width:560px){
+ .tv-card-top{align-items:flex-start}
+ .tv-avatar{width:62px;height:62px;flex-basis:62px;font-size:19px}
+ .tv-card h2{font-size:20px}
+ .tv-body{padding:18px}
+}
+
 </style>
 </head>
 
@@ -53,7 +74,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
 <div class="crumb"><a href="/">Home</a> &nbsp;›&nbsp; <a href="/#celebrities">Celebrities</a> &nbsp;›&nbsp; Television</div>
 <div class="eyebrow">KERALA CELEBRITIES • MALAYALAM TELEVISION</div>
 <h1>Kerala Television <span>Personalities</span></h1>
-<p>Explore familiar faces from Malayalam television — anchors, presenters, television actors, reality-show personalities and other artists connected with Kerala's TV industry.</p>
+<p>Explore detailed profiles of familiar faces from Malayalam television — anchors, presenters, television actors, reality-show personalities and other artists connected with Kerala's TV industry.</p>
 <div class="hero-rule"></div>
 <div class="notice"><strong>Editorial note:</strong> This is a growing directory. Profiles will be added progressively as KeralaCelebrities.com expands its television section.</div>
 </div></section>
@@ -62,33 +83,183 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
 <div class="section-head"><h2>Television Personalities</h2><p>A growing directory of familiar faces from Malayalam television</p></div>
 <div class="actor-grid">
 
-<a class="actor-card" href="#ramesh-pisharody"><div class="actor-top"><div class="initial">RP</div><div><h3>Ramesh Pisharody</h3><span>Television • Actor • Comedian</span></div></div><div class="actor-body"><p>A popular Malayalam television personality, comedian, actor and presenter known for his energetic screen presence.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Ramesh Pisharody image placeholder">RP</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Ramesh Pisharody</h2>
+      <p class="role">Television Host • Comedian • Actor</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>One of Malayalam television’s familiar comedy hosts, Ramesh Pisharody built a strong television identity through comedy, mimicry and celebrity-oriented programmes.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>His television journey includes early hosting and comedy appearances, Cinemala and Bluff Masters, followed by Badai Bungalow, where his hosting and comic timing became especially recognisable to Malayalam TV audiences.</p>
+    <h3>Known For</h3>
+    <p>Cinemala • Bluff Masters • Badai Bungalow • Cinema Chirima • Home Minister</p>
+    <h3>Why They Matter</h3>
+    <p>Host of Badai Bungalow; known for combining live-style humour, celebrity interaction and character-based comedy.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#mukesh"><div class="actor-top"><div class="initial">MK</div><div><h3>Mukesh</h3><span>Television • Actor • Presenter</span></div></div><div class="actor-body"><p>A familiar Malayalam entertainment personality with a long association with television and stage programmes.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Mukesh image placeholder">M</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Mukesh</h2>
+      <p class="role">Actor • Television Personality • Host</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Mukesh is a major Malayalam screen personality who has also been an important presence in television entertainment, particularly comedy and celebrity programmes.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>His television work broadened his audience beyond cinema, with Badai Bungalow becoming a notable example of his role as a television personality and performer.</p>
+    <h3>Known For</h3>
+    <p>Badai Bungalow • Asianet Television appearances • Celebrity and comedy programmes</p>
+    <h3>Why They Matter</h3>
+    <p>A bridge between Malayalam cinema and television entertainment, bringing an established film presence into a recurring TV format.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#pearle-maaney"><div class="actor-top"><div class="initial">PM</div><div><h3>Pearle Maaney</h3><span>Television • Presenter • Actor</span></div></div><div class="actor-body"><p>A television presenter and entertainer who became widely known through Malayalam reality and entertainment programmes.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Pearle Maaney image placeholder">PM</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Pearle Maaney</h2>
+      <p class="role">Television Presenter • VJ • Actress</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Pearle Maaney became widely recognised as a television presenter and VJ before expanding into acting and digital entertainment.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>She anchored Yes Jukebox and hosted programmes including Taste of Kerala and D4 Dance. Her television career also included Cinema Company and her widely followed appearance in Bigg Boss Malayalam Season 1.</p>
+    <h3>Known For</h3>
+    <p>Yes Jukebox • Taste of Kerala • D4 Dance • Cinema Company • Bigg Boss Malayalam Season 1</p>
+    <h3>Why They Matter</h3>
+    <p>Known for a lively presenting style and for moving successfully between television, film and digital media.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#swasika-vijay"><div class="actor-top"><div class="initial">SV</div><div><h3>Swasika Vijay</h3><span>Television • Actor</span></div></div><div class="actor-body"><p>An actress associated with Malayalam television as well as film and other entertainment work.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Swasika Vijay image placeholder">SV</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Swasika Vijay</h2>
+      <p class="role">Television Actress • Host</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Swasika Vijay has built a substantial Malayalam television career through serials, reality programmes and hosting assignments.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>Her television breakthrough is strongly associated with the character Seetha, while later work included Manampole Mangalyam, Red Carpet and other entertainment programmes.</p>
+    <h3>Known For</h3>
+    <p>Chinthavishtayaya Seetha • Seetha • Manampole Mangalyam • Red Carpet • Mazhavil Music Awards</p>
+    <h3>Why They Matter</h3>
+    <p>A prominent television performer whose work spans fiction, hosting and entertainment programming.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#veena-nair"><div class="actor-top"><div class="initial">VN</div><div><h3>Veena Nair</h3><span>Television • Actor • Comedian</span></div></div><div class="actor-body"><p>A familiar Malayalam television performer known for comedy, serials and entertainment programmes.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Veena Nair image placeholder">VN</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Veena Nair</h2>
+      <p class="role">Television Actress • Performer</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Veena Nair is a familiar Malayalam television performer known for comic and character-driven roles.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>She became especially recognisable to television audiences through Thatteem Mutteem as Kokila and later appeared in Badai Bungalow, adding a strong comedy presence to both serial and non-fiction television.</p>
+    <h3>Known For</h3>
+    <p>Sthreethwam • Thatteem Mutteem • Badai Bungalow</p>
+    <h3>Why They Matter</h3>
+    <p>Her contribution to Malayalam television is closely linked with memorable character performances and comedy.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#nobi-marcose"><div class="actor-top"><div class="initial">NM</div><div><h3>Nobi Marcose</h3><span>Television • Comedian • Actor</span></div></div><div class="actor-body"><p>A Malayalam television and comedy personality associated with popular entertainment programmes.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Noby Marcose image placeholder">NM</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Noby Marcose</h2>
+      <p class="role">Comedian • Television Performer • Actor</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Noby Marcose rose to prominence through Malayalam television comedy and later carried that popularity into films and reality television.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>He became widely known through Comedy Stars and subsequently appeared in programmes including Comedy Utsavam, Tamar Padar, Comedy Stars Season 2 and Star Magic, alongside his film career.</p>
+    <h3>Known For</h3>
+    <p>Comedy Stars • Comedy Utsavam • Tamar Padar • Comedy Masala • Star Magic • Bigg Boss Malayalam 3</p>
+    <h3>Why They Matter</h3>
+    <p>Known for improvisational comedy, ensemble performances and a strong transition from television comedy to cinema.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#anu-joseph"><div class="actor-top"><div class="initial">AJ</div><div><h3>Anu Joseph</h3><span>Television • Actor</span></div></div><div class="actor-body"><p>A Malayalam television actress known for serial and entertainment-programme appearances.</p><span class="profile-link">Profile coming soon →</span></div></a>
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Anu Joseph image placeholder">AJ</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Anu Joseph</h2>
+      <p class="role">Television Actress • Performer</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Anu Joseph is a Malayalam television actress whose career has included long-running serial roles and popular character performances.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>She entered the serial world through Chithralekha and went on to appear in programmes including Makalude Amma, Minnukettu, Aalilathaali, Snehachandhrika and Oridathoridathu.</p>
+    <h3>Known For</h3>
+    <p>Chithralekha • Makalude Amma • Minnukettu • Aalilathaali • Snehachandhrika • Oridathoridathu</p>
+    <h3>Why They Matter</h3>
+    <p>A familiar face of Malayalam serial television, with a career built around varied character roles.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 
-<a class="actor-card" href="#sreekandan-nair"><div class="actor-top"><div class="initial">SN</div><div><h3>Sreekandan Nair</h3><span>Television • Anchor • Journalist</span></div></div><div class="actor-body"><p>A prominent Malayalam television presenter and interviewer associated with major entertainment and talk-show formats.</p><span class="profile-link">Profile coming soon →</span></div></a>
-
+<article class="tv-card">
+  <div class="tv-card-top">
+    <div class="tv-avatar" aria-label="Sreekandan Nair image placeholder">SN</div>
+    <div>
+      <div class="kicker">Television Personality</div>
+      <h2>Sreekandan Nair</h2>
+      <p class="role">Television Host • Journalist • Producer</p>
+    </div>
+  </div>
+  <div class="tv-body">
+    <p>Sreekandan Nair is a veteran Malayalam television host and media personality whose career has connected journalism, television production and long-form talk programming.</p>
+    <h3>Contribution to Kerala Television</h3>
+    <p>He became closely associated with programmes such as Oru Nimisham and Nammal Thammil, later establishing Flowers TV and hosting The Sreekandan Nair Show and Flowers Oru Kodi.</p>
+    <h3>Known For</h3>
+    <p>Oru Nimisham • Nammal Thammil • Samadooram • The Sreekandan Nair Show • Flowers Oru Kodi</p>
+    <h3>Why They Matter</h3>
+    <p>A major figure in Malayalam television talk programming, known for long-form interviews, audience interaction and television production.</p>
+    <div class="image-note"><strong>Image:</strong> Ready for a credited/licensed portrait later. We can add a Wikimedia Commons or other properly licensed image without changing this page structure.</div>
+  </div>
+</article>
 </div></div></section>
 
-<section class="featured"><div class="wrap">
-<div class="section-head"><h2>Television &amp; Entertainment</h2><p>The section will expand with more presenters, actors and TV personalities</p></div>
-<div class="actor-grid">
-<a class="actor-card" href="#pearle-maaney"><div class="actor-top"><div class="initial">PM</div><div><h3>Pearle Maaney</h3><span>Presenter • Actor</span></div></div><div class="actor-body"><p>Known for television presentation, entertainment and acting.</p><span class="profile-link">Profile coming soon →</span></div></a>
-<a class="actor-card" href="#ramesh-pisharody"><div class="actor-top"><div class="initial">RP</div><div><h3>Ramesh Pisharody</h3><span>Presenter • Comedian</span></div></div><div class="actor-body"><p>A recognizable face across Malayalam television and entertainment.</p><span class="profile-link">Profile coming soon →</span></div></a>
-<a class="actor-card" href="#veena-nair"><div class="actor-top"><div class="initial">VN</div><div><h3>Veena Nair</h3><span>Television • Actor</span></div></div><div class="actor-body"><p>A television performer with comedy and serial experience.</p><span class="profile-link">Profile coming soon →</span></div></a>
-<a class="actor-card" href="#nobi-marcose"><div class="actor-top"><div class="initial">NM</div><div><h3>Nobi Marcose</h3><span>Television • Comedy</span></div></div><div class="actor-body"><p>A familiar Malayalam television entertainment personality.</p><span class="profile-link">Profile coming soon →</span></div></a>
-<a class="actor-card" href="#sreekandan-nair"><div class="actor-top"><div class="initial">SN</div><div><h3>Sreekandan Nair</h3><span>Anchor • Journalist</span></div></div><div class="actor-body"><p>A long-standing Malayalam television presenter and interviewer.</p><span class="profile-link">Profile coming soon →</span></div></a>
-</div></div></section>
+<section class="featured">
+  <div class="featured-inner">
+    <div class="kicker">About this directory</div>
+    <h2>A single-page guide to Kerala television</h2>
+    <p>This page is intentionally kept as a single, detailed directory rather than splitting every television personality into a separate profile. As the site grows, we can add more personalities, programme highlights, career timelines and properly credited images here.</p>
+    <p class="small">Sources for factual details are being checked against established biographical and television references. Image credits will be displayed separately for every portrait used.</p>
+  </div>
+</section>
 </main>
 
 <footer><div class="wrap"><div class="foot-grid">
