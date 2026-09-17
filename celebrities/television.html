@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kerala Television Personalities | KeralaCelebrities.com</title>
+  <meta name="description" content="Explore Kerala's television personalities, anchors, presenters and popular TV artists on KeralaCelebrities.com.">
+  <link rel="canonical" href="https://keralacelebrities.com/celebrities/television.html">
+
+  <meta property="og:title" content="Kerala Television Personalities | KeralaCelebrities.com">
+  <meta property="og:description" content="Explore Kerala's television personalities, anchors, presenters and popular TV artists.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://keralacelebrities.com/celebrities/television.html">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .section-page {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .section-page h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .section-page p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      line-height: 1.7;
+    }
+
+    .section-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .section-links a {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      background: #d71920;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .section-links a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="../index.html" class="logo">KeralaCelebrities.com</a>
+
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="../index.html">Home</a>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Celebrities ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="actors.html">Actors &amp; Artists</a></li>
+          <li><a href="directors.html">Directors</a></li>
+          <li><a href="singers.html">Singers</a></li>
+          <li><a href="television.html">Television</a></li>
+          <li><a href="other-personalities.html">Other Personalities</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Movies ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="../movies/malayalam.html">Malayalam Movies</a></li>
+          <li><a href="../movies/upcoming.html">Upcoming Movies</a></li>
+          <li><a href="../movies/box-office.html">Box Office</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">News ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="../news/celebrity.html">Celebrity News</a></li>
+          <li><a href="../news/movies.html">Movie News</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Features ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="../features/celebrity-stories.html">Celebrity Stories</a></li>
+          <li><a href="../features/did-you-know.html">Did You Know?</a></li>
+          <li><a href="../features/career-timelines.html">Career Timelines</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../videos.html">Videos</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../youtube.html">YouTube</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<main class="section-page">
+
+  <h1>Kerala Television Personalities</h1>
+
+  <p>
+    Discover television personalities from Kerala, including popular anchors,
+    presenters, television artists and familiar faces from Malayalam television.
+  </p>
+
+  <p>
+    This section is currently being built as part of KeralaCelebrities.com's
+    growing collection of Kerala entertainment personalities.
+  </p>
+
+  <div class="section-links">
+    <a href="actors.html">Actors &amp; Artists</a>
+    <a href="directors.html">Directors</a>
+    <a href="singers.html">Singers</a>
+    <a href="other-personalities.html">Other Personalities</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 KeralaCelebrities.com. All rights reserved.</p>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
