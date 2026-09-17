@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title> Kerala Television Personalities | KeralaCelebrities.com</title>
+<title>Kerala Television Personalities | KeralaCelebrities.com</title>
 <meta name="description" content="Explore Kerala television personalities, anchors, presenters and artists featured on KeralaCelebrities.com.">
 <meta name="keywords" content="Kerala television personalities, Malayalam television actors, TV anchors Kerala, Malayalam TV artists">
 <link rel="canonical" href="https://keralacelebrities.com/celebrities/television.html">
@@ -24,294 +24,38 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
 @media(max-width:850px){.head{min-height:56px}.logo img{width:140px}.header-brand{display:none}.menu{display:block}.nav{display:none;position:absolute;top:56px;left:0;right:0;margin:0;padding:10px 20px 18px;background:#111;border-top:1px solid #333;flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav>a,.nav-dropdown>a{min-height:0;width:100%;padding:12px 0;border-bottom:1px solid #292929;font-size:10px}.nav-dropdown{width:100%}.nav-dropdown>a{justify-content:space-between}.dropdown-menu{position:static;min-width:0;margin:0;padding:0 0 4px;background:#171717;border:0;border-top:1px solid #292929;box-shadow:none}.dropdown-menu a{padding:10px 12px 10px 18px!important;border-bottom:1px solid #292929!important;font-size:9.5px!important}.nav-dropdown:hover .dropdown-menu{display:none}.nav-dropdown.open .dropdown-menu{display:block}.actor-grid,.featured .actor-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.wrap{width:calc(100% - 26px)}.hero{padding-top:34px}.hero h1{font-size:28px}.section-head{display:block}.section-head p{margin-top:4px}.actor-grid,.featured .actor-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.bottom{padding:18px 0;flex-direction:column;align-items:flex-start}}
 
-
-/* =========================================================
-   Television Directory — Elegant Responsive Cards
-   ========================================================= */
-
-:root{
-  --tv-teal:#147d76;
-  --tv-teal-dark:#0e625d;
-  --tv-teal-soft:#edf8f6;
-  --tv-gold:#d8aa42;
-  --tv-ink:#171a1a;
-  --tv-muted:#66706f;
-  --tv-line:#dfe9e7;
-  --tv-white:#ffffff;
-  --tv-shadow:0 14px 38px rgba(12,42,40,.09);
-}
-
-.tv-card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  min-width:0;
-  overflow:hidden;
-  background:var(--tv-white);
-  border:1px solid var(--tv-line);
-  border-radius:22px;
-  box-shadow:var(--tv-shadow);
-  text-align:center;
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.tv-card::before{
-  content:"";
-  display:block;
-  height:4px;
-  width:100%;
-  background:linear-gradient(90deg,var(--tv-teal),var(--tv-gold),var(--tv-teal));
-}
-
-.tv-card:hover{
-  transform:translateY(-4px);
-  border-color:#c8dfdc;
-  box-shadow:0 20px 46px rgba(12,42,40,.13);
-}
-
-.tv-card-top{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  min-height:220px;
-  padding:28px 22px 20px;
-  background:linear-gradient(180deg,#f3fbfa 0%,#ffffff 100%);
-  border-bottom:1px solid #edf1f0;
-}
-
-.tv-avatar{
-  width:104px;
-  height:104px;
-  flex:0 0 104px;
-  display:grid;
-  place-items:center;
-  border-radius:50%;
-  background:linear-gradient(145deg,var(--tv-teal),var(--tv-teal-dark));
-  color:#fff;
-  border:5px solid #fff;
-  outline:2px solid #d9b65a;
-  box-shadow:0 8px 22px rgba(20,125,118,.20);
-  font-size:28px;
-  font-weight:800;
-  letter-spacing:.5px;
-}
-
-.tv-card .kicker{
-  margin:0 0 5px;
-  color:var(--tv-teal);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.15px;
-  text-transform:uppercase;
-}
-
-.tv-card h2{
-  margin:0 auto 7px;
-  max-width:100%;
-  color:var(--tv-ink);
-  font-size:22px;
-  line-height:1.2;
-  font-weight:800;
-  overflow-wrap:anywhere;
-  word-break:normal;
-}
-
-.tv-card .role{
-  max-width:280px;
-  margin:0 auto;
-  color:var(--tv-teal-dark);
-  font-size:13px;
-  line-height:1.5;
-  font-weight:700;
-  overflow-wrap:anywhere;
-}
-
-.tv-body{
-  display:flex;
-  flex:1;
-  flex-direction:column;
-  align-items:center;
-  width:100%;
-  min-width:0;
-  box-sizing:border-box;
-  padding:24px 25px 26px;
-  background:#fff;
-}
-
-.tv-body > p{
-  width:100%;
-  max-width:390px;
-  margin:0 auto;
-  color:#485251;
-  font-size:14px;
-  line-height:1.72;
-  overflow-wrap:anywhere;
-}
-
-.tv-body h3{
-  width:100%;
-  max-width:390px;
-  margin:21px auto 7px;
-  padding-top:15px;
-  border-top:1px solid #edf1f0;
-  color:var(--tv-teal-dark);
-  font-size:11px;
-  line-height:1.35;
-  font-weight:800;
-  letter-spacing:.85px;
-  text-transform:uppercase;
-}
-
-.tv-body h3 + p{
-  margin-bottom:0;
-}
-
-.image-note{
-  width:100%;
-  max-width:390px;
-  box-sizing:border-box;
-  margin:20px auto 0;
-  padding:11px 13px;
-  border:1px solid #eadfbf;
-  border-radius:11px;
-  background:#fffaf0;
-  color:#6d6654;
-  font-size:12px;
-  line-height:1.55;
-  overflow-wrap:anywhere;
-}
-
-.actor-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
-  align-items:stretch;
-  width:100%;
-}
-
-.featured{
-  overflow:hidden;
-}
-
-.featured-inner{
-  max-width:920px;
-  margin:0 auto;
-  text-align:center;
-}
-
-.featured .small{
-  font-size:13px;
-  color:#68716f;
-}
-
-/* Prevent long names/content from ever escaping the card */
-.tv-card,
-.tv-card *,
-.tv-card-top,
-.tv-body{
-  max-width:100%;
-  box-sizing:border-box;
-}
-
-@media (max-width:1100px){
-  .actor-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:20px;
-  }
-}
-
-@media (max-width:700px){
-  .actor-grid{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-
-  .tv-card-top{
-    min-height:0;
-    padding:25px 20px 19px;
-  }
-
-  .tv-avatar{
-    width:88px;
-    height:88px;
-    flex-basis:88px;
-    font-size:24px;
-  }
-
-  .tv-card h2{
-    font-size:21px;
-  }
-
-  .tv-body{
-    padding:21px 20px 23px;
-  }
-
-  .tv-body > p,
-  .tv-body h3,
-  .image-note{
-    max-width:520px;
-  }
-}
-
-@media (max-width:420px){
-  .actor-grid{
-    gap:15px;
-  }
-
-  .tv-card{
-    border-radius:18px;
-  }
-
-  .tv-card-top{
-    padding:22px 16px 17px;
-  }
-
-  .tv-body{
-    padding:19px 16px 21px;
-  }
-
-  .tv-avatar{
-    width:78px;
-    height:78px;
-    flex-basis:78px;
-    font-size:21px;
-  }
-
-  .tv-card h2{
-    font-size:19px;
-  }
-
-  .tv-card .role{
-    font-size:12.5px;
-  }
-
-  .tv-body > p{
-    font-size:13.5px;
-    line-height:1.68;
-  }
+/* Detailed television directory */
+.tv-card{background:#fff;border:1px solid #d9e8e6;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.05);transition:transform .18s ease,box-shadow .18s ease}
+.tv-card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.tv-card-top{display:flex;gap:16px;align-items:center;padding:22px 22px 16px;background:linear-gradient(135deg,#eef9f7,#fff)}
+.tv-avatar{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;flex:0 0 76px;background:#16807a;color:#fff;font-size:23px;font-weight:800;letter-spacing:.5px;border:4px solid #e6b84f}
+.tv-card h2{margin:2px 0 5px;font-size:24px;line-height:1.15}
+.tv-card .role{margin:0;color:#16807a;font-weight:700;font-size:14px}
+.tv-body{padding:20px 22px 24px}
+.tv-body p{line-height:1.72;color:#42484a}
+.tv-body h3{font-size:14px;text-transform:uppercase;letter-spacing:.7px;color:#16807a;margin:20px 0 7px}
+.image-note{margin-top:20px;padding:12px 14px;border-left:4px solid #e6b84f;background:#fff9e9;color:#666;font-size:13px;line-height:1.55;border-radius:8px}
+.featured-inner{max-width:920px;margin:auto}
+.featured .small{font-size:13px;color:#666}
+@media(max-width:560px){
+ .tv-card-top{align-items:flex-start}
+ .tv-avatar{width:62px;height:62px;flex-basis:62px;font-size:19px}
+ .tv-card h2{font-size:20px}
+ .tv-body{padding:18px}
 }
 
 
-.directory-count{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  margin:13px auto 0;
-  padding:8px 15px;
-  border:1px solid #cfe5e2;
-  border-radius:999px;
-  background:#edf8f6;
-  color:#126c66;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.25px;
-}
+.tv-card{min-width:0}
+.tv-card-top{min-height:118px}
+.directory-count{display:inline-flex;align-items:center;gap:8px;margin:10px 0 0;padding:7px 12px;border-radius:999px;background:#e8f6f3;color:#116a64;font-weight:800;font-size:13px}
+.actor-grid{align-items:stretch}
 
 </style>
-</head>
+<style>
+.az-index{max-width:1120px;margin:20px auto 28px;padding:12px 14px;border:1px solid #dce9e7;border-radius:15px;background:#f5fbfa;text-align:center}.az-index>span{display:block;margin-bottom:8px;color:#0e625d;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.az-index>div{display:flex;flex-wrap:wrap;justify-content:center;gap:5px}.az-index a{width:28px;height:28px;display:grid;place-items:center;border:1px solid #cfe3e0;border-radius:50%;background:#fff;color:#147d76;font-size:11px;font-weight:800;text-decoration:none}.az-index a:hover{background:#147d76;color:#fff}.letter-anchor{height:0;scroll-margin-top:15px}
+.actor-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}.tv-card{display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden;background:#fff;border:1px solid #dfe9e7;border-radius:20px;box-shadow:0 12px 32px rgba(12,42,40,.08);text-align:center}.tv-card::before{content:"";height:4px;background:linear-gradient(90deg,#147d76,#d8aa42,#147d76)}.tv-card-top{display:flex;flex-direction:column;align-items:center;gap:9px;padding:21px 17px 16px;background:linear-gradient(180deg,#f3fbfa,#fff);border-bottom:1px solid #edf1f0}.tv-avatar{width:74px;height:74px;display:grid;place-items:center;border-radius:50%;background:#147d76;color:#fff;border:4px solid #fff;outline:2px solid #d8aa42;font-size:20px;font-weight:800}.tv-card-heading{width:100%;min-width:0}.tv-card h2{margin:0 auto 5px;font-size:20px;line-height:1.2;overflow-wrap:anywhere}.tv-card .kicker{margin-bottom:4px;color:#147d76;font-size:9.5px;font-weight:800;letter-spacing:.9px;text-transform:uppercase}.tv-card .role{max-width:300px;margin:auto;color:#0e625d;font-size:12px;line-height:1.45;font-weight:700;overflow-wrap:anywhere}.tv-body{display:flex;flex:1;flex-direction:column;align-items:center;width:100%;box-sizing:border-box;padding:18px}.tv-summary,.tv-known,.tv-details{width:100%;max-width:380px}.tv-label{display:block;margin-bottom:4px;color:#147d76;font-size:9.5px;font-weight:800;letter-spacing:.75px;text-transform:uppercase}.tv-body p{margin:0;color:#4d5856;font-size:13px;line-height:1.58;overflow-wrap:anywhere}.tv-known{margin-top:13px;padding-top:12px;border-top:1px solid #edf1f0}.tv-known h3,.tv-details h3{margin:0 0 5px;color:#147d76;font-size:10px;letter-spacing:.7px;text-transform:uppercase}.tv-details-toggle{width:100%;max-width:380px;margin-top:14px;padding:8px 11px;border:1px solid #cfe2df;border-radius:9px;background:#f7fbfa;color:#126c66;font:inherit;font-size:11.5px;font-weight:800;cursor:pointer}.tv-details{margin-top:10px;padding-top:11px;border-top:1px solid #edf1f0}.image-note{margin-top:11px;padding:9px 11px;border:1px solid #eadfbf;border-radius:9px;background:#fffaf0;color:#6d6654;font-size:11px;line-height:1.45;overflow-wrap:anywhere}
+@media(max-width:1100px){.actor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}}@media(max-width:700px){.actor-grid{grid-template-columns:1fr;gap:16px}.az-index a{width:27px;height:27px}}@media(max-width:420px){.az-index{padding:11px 8px}.az-index>div{gap:4px}.az-index a{width:25px;height:25px;font-size:10px}.tv-card{border-radius:17px}.tv-avatar{width:68px;height:68px;font-size:18px}.tv-card h2{font-size:18px}.tv-body{padding:17px 15px 19px}.tv-body p{font-size:12.7px}}
+</style></head>
 
 <body>
 <header><div class="wrap head">
@@ -349,7 +93,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
 <div class="section-head"><h2>Television Personalities</h2><p>A growing directory of familiar faces from Malayalam television</p></div>
 <div class="actor-grid">
 
-<article class="tv-card" id="tv-01">
+<div class="letter-anchor" id="letter-A"></div><article class="tv-card" id="tv-01">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Ramesh Pisharody image placeholder">RP</div>
     <div>
@@ -364,7 +108,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for comedy-led television, celebrity interaction and programmes such as Badai Bungalow.</p>
     <h3>Known For</h3>
     <p>Cinemala • Bluff Masters • Badai Bungalow</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -383,7 +127,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for comedy, celebrity interaction and Badai Bungalow.</p>
     <h3>Known For</h3>
     <p>Badai Bungalow • Comedy and entertainment programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -402,7 +146,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for an energetic presenting style and shows including D4 Dance and Yes Jukebox.</p>
     <h3>Known For</h3>
     <p>Yes Jukebox • Taste of Kerala • D4 Dance • Bigg Boss Malayalam</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -421,7 +165,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known especially for Seetha and later television entertainment programmes.</p>
     <h3>Known For</h3>
     <p>Seetha • Manampole Mangalyam • Red Carpet</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -440,7 +184,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her work combines Malayalam serial drama with comedy and entertainment formats.</p>
     <h3>Known For</h3>
     <p>Thatteem Mutteem • Badai Bungalow</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -459,7 +203,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for ensemble comedy, mimicry and reality-show appearances.</p>
     <h3>Known For</h3>
     <p>Comedy Stars • Comedy Utsavam • Star Magic • Bigg Boss Malayalam</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -478,7 +222,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her career includes several popular serials and continuing television appearances.</p>
     <h3>Known For</h3>
     <p>Chithralekha • Minnukettu • Aalilathaali • Snehachandrika</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -497,11 +241,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for long-form interviews, audience interaction and television production.</p>
     <h3>Known For</h3>
     <p>Nammal Thammil • The Sreekandan Nair Show • Flowers Oru Kodi</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-09">
+<div class="letter-anchor" id="letter-B"></div><article class="tv-card" id="tv-09">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Ranjini Haridas image placeholder">RH</div>
     <div>
@@ -516,11 +260,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her distinctive presentation style became strongly associated with Star Singer.</p>
     <h3>Known For</h3>
     <p>Star Singer • Bigg Boss Malayalam • Reality and award shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-10">
+<div class="letter-anchor" id="letter-C"></div><article class="tv-card" id="tv-10">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Aswathy Sreekanth image placeholder">AS</div>
     <div>
@@ -535,7 +279,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for her conversational style and work across entertainment and fiction television.</p>
     <h3>Known For</h3>
     <p>Comedy Super Nite • Chakkappazham</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -554,11 +298,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for lively celebrity interviews, audience interaction and reality/entertainment formats.</p>
     <h3>Known For</h3>
     <p>Star Magic • Tamizhum Malayalavum • Celebrity programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-12">
+<div class="letter-anchor" id="letter-D"></div><article class="tv-card" id="tv-12">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Arya Badai image placeholder">AB</div>
     <div>
@@ -573,7 +317,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for comedy-oriented television, hosting and reality-show appearances.</p>
     <h3>Known For</h3>
     <p>Badai Bungalow • Bigg Boss Malayalam • Entertainment shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -592,11 +336,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for presenting programmes with a warm, audience-friendly style.</p>
     <h3>Known For</h3>
     <p>Comedy Stars • Entertainment and award shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-14">
+<div class="letter-anchor" id="letter-G"></div><article class="tv-card" id="tv-14">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Jewel Mary image placeholder">JM</div>
     <div>
@@ -611,7 +355,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for reality-show and entertainment hosting.</p>
     <h3>Known For</h3>
     <p>Star Singer • Comedy Stars • Television entertainment</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -630,7 +374,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for presenting lifestyle and reality-oriented programmes.</p>
     <h3>Known For</h3>
     <p>Made for Each Other • Lifestyle and entertainment television</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -649,11 +393,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for presenting and later acting roles in Malayalam television.</p>
     <h3>Known For</h3>
     <p>Entertainment shows • Bigg Boss Malayalam • Television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-17">
+<div class="letter-anchor" id="letter-H"></div><article class="tv-card" id="tv-17">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Nyla Usha image placeholder">NU</div>
     <div>
@@ -668,11 +412,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for presenting major entertainment events and programmes.</p>
     <h3>Known For</h3>
     <p>Radio • Television hosting • Malayalam cinema</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-18">
+<div class="letter-anchor" id="letter-J"></div><article class="tv-card" id="tv-18">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Rimi Tomy image placeholder">RT</div>
     <div>
@@ -687,7 +431,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for music, comedy and celebrity-oriented programmes.</p>
     <h3>Known For</h3>
     <p>Onnum Onnum Moonu • Comedy and music programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -706,7 +450,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for conversational interviews and the Happiness Project.</p>
     <h3>Known For</h3>
     <p>Happiness Project • Celebrity interviews</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -725,7 +469,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for thoughtful questioning and entertainment interviews.</p>
     <h3>Known For</h3>
     <p>FTQ • Television interview programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -744,11 +488,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for an easygoing presentation style across different programme genres.</p>
     <h3>Known For</h3>
     <p>Cookery shows • Reality shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-22">
+<div class="letter-anchor" id="letter-K"></div><article class="tv-card" id="tv-22">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Mithun Ramesh image placeholder">MR</div>
     <div>
@@ -763,11 +507,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for entertainment hosting and large-format television programmes.</p>
     <h3>Known For</h3>
     <p>Dance Kerala Dance • Comedy and reality programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-23">
+<div class="letter-anchor" id="letter-L"></div><article class="tv-card" id="tv-23">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Jeeva Joseph image placeholder">JJ</div>
     <div>
@@ -782,7 +526,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known particularly for music-reality television presentation.</p>
     <h3>Known For</h3>
     <p>Sa Re Ga Ma Pa Keralam • Music programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -801,11 +545,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for energetic hosting and comedy-based television.</p>
     <h3>Known For</h3>
     <p>Udan Panam • Comedy and entertainment programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-25">
+<div class="letter-anchor" id="letter-M"></div><article class="tv-card" id="tv-25">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Govind Padmasoorya image placeholder">GP</div>
     <div>
@@ -820,7 +564,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for hosting reality and dance formats as well as acting.</p>
     <h3>Known For</h3>
     <p>D 4 Dance • Dance Kerala Dance • Reality television</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -839,7 +583,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for entertainment hosting and his pairing with Kallu in Malayalam media.</p>
     <h3>Known For</h3>
     <p>Radio • Comedy and entertainment shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -858,7 +602,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for reality, award and celebrity-oriented television.</p>
     <h3>Known For</h3>
     <p>Reality and award programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -877,7 +621,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known primarily for fiction television and recurring serial performances.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -896,11 +640,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>His work spans fiction television and broader entertainment programming.</p>
     <h3>Known For</h3>
     <p>Malayalam serials • Bigg Boss Malayalam</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-30">
+<div class="letter-anchor" id="letter-N"></div><article class="tv-card" id="tv-30">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Kishor Sathya image placeholder">KS</div>
     <div>
@@ -915,7 +659,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character roles across Malayalam fiction television.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -934,7 +678,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>His work has contributed to the continuing popularity of Malayalam fiction television.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -953,7 +697,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character roles and recurring appearances in Malayalam fiction television.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -972,11 +716,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for supporting and character roles in Malayalam television fiction.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-34">
+<div class="letter-anchor" id="letter-P"></div><article class="tv-card" id="tv-34">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Harish Pisharody image placeholder">HP</div>
     <div>
@@ -991,7 +735,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for comedy, character performance and television appearances.</p>
     <h3>Known For</h3>
     <p>Comedy and entertainment programmes</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1010,7 +754,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character-driven roles in Malayalam television.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1029,11 +773,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her work has made her a familiar face among Malayalam serial audiences.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-37">
+<div class="letter-anchor" id="letter-R"></div><article class="tv-card" id="tv-37">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Gayathri Arun image placeholder">GA</div>
     <div>
@@ -1048,7 +792,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for fiction television and later entertainment appearances.</p>
     <h3>Known For</h3>
     <p>Parasparam • Television entertainment</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1067,7 +811,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for memorable negative and supporting roles in serial fiction.</p>
     <h3>Known For</h3>
     <p>Ente Manasaputhri • Television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1086,7 +830,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for recurring work in Malayalam television drama.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1105,7 +849,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her work represents the newer generation of Malayalam small-screen performers.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1124,7 +868,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for popular serial work and a strong small-screen following.</p>
     <h3>Known For</h3>
     <p>Kaboolwala • Santhwanam</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1143,7 +887,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for long-running television work and producing serials.</p>
     <h3>Known For</h3>
     <p>Sthree • Santhwanam • Television production</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1162,11 +906,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Represents the younger generation of small-screen talent.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-44">
+<div class="letter-anchor" id="letter-S"></div><article class="tv-card" id="tv-44">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Jishnu Raghavan image placeholder">JR</div>
     <div>
@@ -1181,7 +925,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for work across fiction and Malayalam entertainment.</p>
     <h3>Known For</h3>
     <p>Malayalam television and film</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1200,7 +944,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for reality-show participation, judging and entertainment programmes.</p>
     <h3>Known For</h3>
     <p>Bigg Boss Malayalam • Reality and award shows</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1219,7 +963,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character-driven acting and television appearances.</p>
     <h3>Known For</h3>
     <p>Malayalam television • Film</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1238,7 +982,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Her work has contributed to the popularity of Malayalam fiction television.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1257,7 +1001,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for emotionally strong character roles and a long small-screen career.</p>
     <h3>Known For</h3>
     <p>Kasthooriman • Television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1276,7 +1020,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for memorable supporting and family-drama roles.</p>
     <h3>Known For</h3>
     <p>Sthree • Television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1295,7 +1039,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character-driven performances across stage, screen and television.</p>
     <h3>Known For</h3>
     <p>Malayalam television • Theatre • Film</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
@@ -1314,11 +1058,11 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for comedy, character roles and television entertainment.</p>
     <h3>Known For</h3>
     <p>Thatteem Mutteem • Television entertainment</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 
-<article class="tv-card" id="tv-52">
+<div class="letter-anchor" id="letter-V"></div><article class="tv-card" id="tv-52">
   <div class="tv-card-top">
     <div class="tv-avatar" aria-label="Nandini image placeholder">N</div>
     <div>
@@ -1333,7 +1077,7 @@ footer{background:#0b0b0b;color:#fff;padding-top:42px}.foot-grid{display:grid;gr
     <p>Known for character work and recurring small-screen appearances.</p>
     <h3>Known For</h3>
     <p>Malayalam television serials</p>
-    <div class="image-note"><strong>Image:</strong> Portrait coming soon — with verified licensing and credit.</div>
+    <div class="image-note"><strong>Image:</strong> Portrait can be added later with a verified source and image licence/credit.</div>
   </div>
 </article>
 </div></div></section>
@@ -1373,5 +1117,5 @@ document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()
  }
 }));
 </script>
-</body>
+<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".tv-details-toggle").forEach(function(b){b.addEventListener("click",function(){const p=document.getElementById(b.getAttribute("aria-controls")),o=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",String(!o));p.hidden=o;b.innerHTML=o?'View details <span>＋</span>':'Hide details <span>−</span>'})})});</script></body>
 </html>
