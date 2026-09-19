@@ -52,6 +52,73 @@ footer{background:#0b0b0b;color:#fff;padding:42px 0 0}.footer-grid{display:grid;
 .ad-option h4{margin:0 0 7px;font-size:18px}.ad-option p{margin:0;color:#666;font-size:12.5px}
 .ad-note{margin-top:20px;text-align:center;color:#765d1d;font-size:12px}
 @media(max-width:850px){.two-in-one{grid-template-columns:1fr}.ad-options{grid-template-columns:1fr}.ad-section{padding:25px 20px}}
+
+/* Royal presentation */
+.contact-hero{
+  background:
+    radial-gradient(circle at 82% 25%,rgba(240,189,76,.16),transparent 30%),
+    linear-gradient(125deg,#050505 0%,#120b14 52%,#080808 100%);
+  border-bottom:3px solid #b98b2f;
+}
+.contact-hero:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,#f0bd4c,transparent);opacity:.8;
+}
+.contact-badge{
+  border-color:rgba(240,189,76,.62);
+  box-shadow:0 0 45px rgba(240,189,76,.08),inset 0 0 35px rgba(240,189,76,.04);
+}
+.contact-section{background:linear-gradient(180deg,#fff 0%,#faf8f3 100%)}
+.two-in-one{gap:28px;max-width:1080px}
+.two-card{
+  border-radius:16px;
+  padding:38px;
+  min-height:390px;
+  box-shadow:0 16px 38px rgba(20,14,8,.08);
+}
+.two-card.contact-royal{
+  background:linear-gradient(145deg,#fff 0%,#fff9f8 100%);
+  border:1px solid #ead0d1;
+}
+.two-card.ad-card{
+  background:linear-gradient(145deg,#fffdf7 0%,#f8f0dc 100%);
+  border:1px solid #e5d3a2;
+}
+.two-card:before{height:5px}
+.two-card.contact-royal:after,
+.two-card.ad-card:after{
+  content:"";position:absolute;width:120px;height:120px;border-radius:50%;
+  right:-55px;bottom:-55px;border:1px solid rgba(185,139,47,.18);
+}
+.two-card.contact-royal:after{border-color:rgba(215,25,32,.12)}
+.card-label{font-size:10px}
+.two-card h3{font-size:30px}
+.email-box{
+  margin-top:24px;padding:16px 17px;border-radius:10px;
+  background:#fff;border:1px solid #eadfdb;
+}
+.ad-card .email-box{border-color:#e5d5ad;background:rgba(255,255,255,.62)}
+.email-box small{
+  display:block;font-size:9px;font-weight:800;letter-spacing:1.7px;
+  text-transform:uppercase;color:#777;margin-bottom:6px
+}
+.email-box a{
+  color:#9d151b;font-size:14px;font-weight:800;word-break:break-word
+}
+.ad-card .email-box a{color:#89630e}
+.card-foot{margin-top:18px}
+.ad-section{
+  background:linear-gradient(145deg,#fbf6e8,#f5ecd4);
+  border-color:#e5d2a2;
+  box-shadow:0 10px 28px rgba(40,25,5,.05)
+}
+.cta{
+  background:linear-gradient(115deg,#5b0c12 0%,#a80f15 48%,#6f0d13 100%);
+  border-top:1px solid #e0a928;
+}
+@media(max-width:850px){
+  .two-card{min-height:auto;padding:30px}
+}
 </style></head>
 <body>
 <header class="site-header"><div class="wrap header-inner"><a class="logo" href="/" aria-label="KeralaCelebrities.com Home"><img src="/KeralaCelebrities.com-logo.jpeg" alt="KeralaCelebrities.com"></a><button class="menu-button" onclick="toggleMenu()" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -84,13 +151,13 @@ footer{background:#0b0b0b;color:#fff;padding:42px 0 0}.footer-grid{display:grid;
   <div class="wrap">
     <div class="section-head">
       <div class="section-label">Connect With Us</div>
-      <h2>One page. Two ways to connect.</h2>
+      <h2>Two doors. One elegant connection.</h2>
       <div class="red-mark"></div>
       <p>Whether you're visiting with an idea or representing a brand, this is the place to start a conversation with KeralaCelebrities.com.</p>
     </div>
 
     <div class="two-in-one">
-      <article class="two-card" id="contact">
+      <article class="two-card contact-royal" id="contact">
         <div class="card-label">For visitors &amp; contributors</div>
         <h3>Contact Us</h3>
         <p>We welcome thoughtful messages that help us improve and grow the platform.</p>
@@ -101,9 +168,13 @@ footer{background:#0b0b0b;color:#fff;padding:42px 0 0}.footer-grid{display:grid;
           <li>Collaboration proposals</li>
           <li>Questions about the website</li>
         </ul>
+        <div class="email-box">
+          <small>Please reach us by email</small>
+          <a href="mailto:keralacelebritiesdotcom@gmail.com">keralacelebritiesdotcom@gmail.com</a>
+        </div>
         <div class="card-foot">
           <small>We read every genuine enquiry.</small>
-          <a class="card-link" href="mailto:keralacelebritiesdotcom@gmail.com">Email us →</a>
+          <a class="card-link" href="mailto:keralacelebritiesdotcom@gmail.com">Write to us →</a>
         </div>
       </article>
 
@@ -118,9 +189,13 @@ footer{background:#0b0b0b;color:#fff;padding:42px 0 0}.footer-grid{display:grid;
           <li>Brand partnerships</li>
           <li>Custom collaborations for suitable brands</li>
         </ul>
+        <div class="email-box">
+          <small>Please reach us by email</small>
+          <a href="mailto:keralacelebritiesdotcom@gmail.com?subject=Advertising%20Enquiry%20-%20KeralaCelebrities.com">keralacelebritiesdotcom@gmail.com</a>
+        </div>
         <div class="card-foot">
           <small>Founding-stage opportunities.</small>
-          <a class="card-link" href="mailto:keralacelebritiesdotcom@gmail.com?subject=Advertising%20Enquiry%20-%20KeralaCelebrities.com">Enquire →</a>
+          <a class="card-link" href="mailto:keralacelebritiesdotcom@gmail.com?subject=Advertising%20Enquiry%20-%20KeralaCelebrities.com">Advertising enquiry →</a>
         </div>
       </article>
     </div>
