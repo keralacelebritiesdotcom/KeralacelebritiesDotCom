@@ -33,5 +33,19 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/aasha.jpg"
+  },
+  {
+    "file": "movie-6.html",
+    "title": "It's a Medical Miracle",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/its-a-medical-miracle.jpg"
+  },
+  {
+    "file": "movie-7.html",
+    "title": "Daayra",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/daayra.jpg"
   }
 ]
