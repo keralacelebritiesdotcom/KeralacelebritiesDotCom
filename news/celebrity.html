@@ -34,26 +34,26 @@ a{color:inherit;text-decoration:none}
 .menu-button{display:none;color:#fff;background:transparent;border:1px solid #555;border-radius:5px;padding:7px 10px;cursor:pointer}
 .breadcrumb{font-size:12px;color:#777;padding:20px 0 8px}
 .breadcrumb a:hover{color:var(--red)}
-.hero{padding:34px 0 50px}
-.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+.hero{padding:18px 0 18px}
+.eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:5px}
 h1,h2{font-family:"Playfair Display",Georgia,serif;line-height:1.12}
-h1{font-size:clamp(42px,6vw,70px);margin:0 0 16px;max-width:950px}
-.lead{font-size:18px;color:#4b4b4b;max-width:820px;margin:0}
-.section{border-top:1px solid var(--line);padding:48px 0}
+h1{font-size:clamp(32px,4vw,48px);margin:0 0 8px;max-width:950px}
+.lead{font-size:14px;color:#555;max-width:820px;margin:0}
+.section{border-top:1px solid var(--line);padding:18px 0 28px}
 .section.alt{background:var(--soft)}
-.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-.card{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
-.card-top{height:100px;background:linear-gradient(135deg,#111,#3a3a3a);display:flex;align-items:flex-end;padding:15px;color:#fff}
-.card-category{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.number{font-family:"Playfair Display",Georgia,serif;font-size:30px;color:#fff;opacity:.25;line-height:1}
-.card-body{padding:20px;display:flex;flex-direction:column;flex:1}
-.card h2{font-size:24px;margin:0 0 10px}
-.card p{font-size:14px;color:#555;margin:0 0 14px;line-height:1.72}
-.date{font-size:11px;color:#888;margin-top:auto;padding-top:8px}
-.read-more{display:inline-block;margin-top:12px;color:var(--red);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
-.category-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
-.category-links a{padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700}
+.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card{border:1px solid var(--line);border-radius:5px;background:#fff;overflow:hidden;transition:.15s;display:flex;flex-direction:column;min-height:176px}
+.card:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(0,0,0,.08)}
+.card-top{height:42px;background:linear-gradient(135deg,#111,#343434);display:flex;align-items:center;justify-content:space-between;padding:8px 11px;color:#fff}
+.card-category{font-size:9px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold)}
+.number{font-family:"Playfair Display",Georgia,serif;font-size:22px;color:#fff;opacity:.28;line-height:1}
+.card-body{padding:10px 12px 11px;display:flex;flex-direction:column;flex:1}
+.card h2{font-size:18px;margin:0 0 7px;line-height:1.2}
+.card p{font-size:12px;color:#666;margin:0 0 6px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.date{font-size:9.5px;color:#888;margin-top:auto;padding-top:5px}
+.read-more{display:inline-block;margin-top:6px;color:var(--red);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.category-links{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.category-links a{padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:700}
 .category-links a.active{background:#111;color:#fff;border-color:#111}
 .site-footer{border-top:1px solid var(--line);padding:30px 0;color:#777;font-size:12px}
 .site-footer a{color:#555}
@@ -96,7 +96,7 @@ padding:11px 15px;
 border-bottom:1px solid #222
 }
 .menu-button{display:block}
-.news-grid{grid-template-columns:1fr 1fr}
+.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .container{width:min(100% - 28px,1180px)}
 }
 
@@ -180,10 +180,7 @@ border-bottom:1px solid #222
 <div class="eyebrow">KeralaCelebrities.com</div>
 
 <h1>Celebrity News</h1>
-
-<p class="lead">
-Malayalam celebrity updates, career developments, public appearances and entertainment stories from Kerala.
-</p>
+<p class="lead">Latest Malayalam celebrity updates, actor news, interviews, appearances and entertainment stories.</p>
 
 <div class="category-links">
 <a href="/news/">Latest</a>
@@ -195,622 +192,101 @@ Malayalam celebrity updates, career developments, public appearances and enterta
 </div>
 
 <section class="section alt">
-
 <div class="container">
-
+<div style="display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:12px">
+<div>
+<div class="eyebrow" style="margin-bottom:3px">Latest Updates</div>
+<h2 style="font-size:25px;margin:0">Celebrity News</h2>
+</div>
+<div style="font-size:10px;color:#888">Updated 28 Sep 2026</div>
+</div>
 <div class="news-grid">
 
-<!-- 01 - SURYA KRISHNAMURTHY -->
+<article class="card">
+<div class="card-top"><div class="card-category">Interview</div><div class="number">01</div></div>
+<div class="card-body"><h2>Sangeeth Prathap opens up on his growing Malayalam cinema journey</h2>
+<p>The actor speaks about moving beyond his comfort zone after the success of Bethlehem Kudumba Unit and his new film It’s A Medical Miracle.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://gulfnews.com/entertainment/from-bethlehem-kudumba-unit-phenomenon-to-its-a-medical-miracle-sangeeth-prathap-steps-into-the-spotlight-breaking-my-comfort-zone-1.500690671" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Tribute</div>
-<div class="number">01</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Surya Krishnamurthy, theatre and cultural icon, passes away at 78</h2>
-
-<p>
-Veteran theatre personality, cultural organiser and former Kerala Sangeetha Nataka Akademi chairman Surya Krishnamurthy has passed away at the age of 78. He died at a hospital in Thiruvananthapuram after a period of illness. Founder of the Surya Stage and Film Society and the well-known Surya Festival, he was a major presence in Kerala's theatre and cultural life. He was also a former senior scientist at ISRO and received the Kerala Prabha award in 2023.
-</p>
-
-<div class="date">23 Sep 2026</div>
-
-<a class="read-more"
-href="https://malayalam.samayam.com/latest-news/kerala-news/surya-krishnamurthy-passed-away/articleshow/134440490.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 02 - MAMMOOTTY 75TH BIRTHDAY -->
+<div class="card-top"><div class="card-category">OTT</div><div class="number">02</div></div>
+<div class="card-body"><h2>Bethlehem Kudumba Unit OTT release date confirmed</h2>
+<p>Nivin Pauly and Mamitha Baiju’s Malayalam hit gets its confirmed streaming update after a strong theatrical run.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/bethlehem-kudumba-unit-ott-release-date-confirmed-when-and-where-to-stream-nivin-pauly-and-mamitha-baijus-romantic-comedy-drama-directed-by-girish-a-d-/articleshow/134507263.cms" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Birthday Tribute</div>
-<div class="number">02</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Happy 75th Birthday, Mammootty!</h2>
-
-<p>
-KeralaCelebrities.com wishes Malayalam cinema legend Mammootty a very happy 75th birthday. Born on September 7, 1951, Mammootty has built a remarkable career spanning more than five decades. On his 75th birthday, fans and well-wishers across Kerala and beyond celebrated the actor, while his fans also marked the occasion through blood-donation drives and other charitable activities.
-</p>
-
-<div class="date">Birthday: 7 Sep 1951 · 75th Birthday: 7 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.onmanorama.com/entertainment/entertainment-news/2026/09/07/mammootty-75th-birthday-celebrations-blood-donation-drive.html"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 03 - MAMMOOTTY BIRTHDAY GREETINGS -->
+<div class="card-top"><div class="card-category">Legal Update</div><div class="number">03</div></div>
+<div class="card-body"><h2>Lakshmipriya approaches Kerala High Court in social-media case</h2>
+<p>Malayalam actor Lakshmipriya has moved the High Court seeking to quash proceedings in a case connected with social-media videos.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://timesofindia.indiatimes.com/city/kochi/defamatory-video-actor-lakshmipriya-moves-kerala-hc-to-quash-case-against-her/articleshow/134545810.cms" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Birthday Greetings</div>
-<div class="number">03</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Birthday greetings pour in for Mammootty</h2>
-
-<p>
-Mammootty received birthday greetings from colleagues, friends, family and fans as he turned 75 on September 7, 2026. His son Dulquer Salmaan shared a heartfelt birthday message, while several members of the Malayalam film industry joined fans in wishing the veteran actor on his special day.
-</p>
-
-<div class="date">7 Sep 2026</div>
-
-<a class="read-more"
-href="https://malayalam.indianexpress.com/entertainment/dulquer-salmaan-birthday-wishes-mammootty-emotional-instagram-post-12504261"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 04 - MAMMOOTTY NATIONAL AWARD -->
+<div class="card-top"><div class="card-category">Mammootty</div><div class="number">04</div></div>
+<div class="card-body"><h2>Mammootty’s Gujarat National Award appearance sparks online discussion</h2>
+<p>Recent coverage focuses on Mammootty’s traditional welcome in Gujarat after receiving his fourth National Film Award for Best Actor.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://gulfnews.com/amp/story/entertainment%2Fsouth-indian/mammoottys-gujarat-tilak-sparks-online-debate-harisree-yousuf-responds-1.500690186" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">04</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Mammootty reacts to his fourth National Film Award for Best Actor</h2>
-
-<p>
-Mammootty has received the Best Actor honour at the 72nd National Film Awards for his performance in Bramayugam. The recognition marks his fourth National Film Award in the acting category. In a public reaction shared through an NFDC video, Mammootty thanked the jury and people who supported his career.
-</p>
-
-<div class="date">17 Sep 2026</div>
-
-<a class="read-more"
-href="https://malayalam.indianexpress.com/entertainment/mammootty-fourth-national-film-award-reaction-12545161"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 05 - MAMMOOTTY / ADOOR -->
+<div class="card-top"><div class="card-category">Celebrity News</div><div class="number">05</div></div>
+<div class="card-body"><h2>Dulquer Salmaan warns fans about a fake X profile</h2>
+<p>Dulquer says the impersonating account caused confusion and negativity and that he has reported it to X.</p>
+<div class="date">27 Sep 2026</div>
+<a class="read-more" href="https://www.cinemaexpress.com/malayalam/news/2026/Sep/27/dulquer-salmaan-calls-out-fake-profile-causing-unnecessary-confusion-negativity-says-it-posted-fake-wishes-to-family" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">05</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Mammootty and Adoor Gopalakrishnan reunite for Padayatra</h2>
-
-<p>
-Mammootty and filmmaker Adoor Gopalakrishnan have reunited after three decades for Padayatra. The reunion was highlighted by the Association of Malayalam Movie Artists as a notable moment connecting two major figures from Malayalam cinema.
-</p>
-
-<div class="date">16 Sep 2026</div>
-
-<a class="read-more"
-href="https://ammakerala.com/news/"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 06 - AHAANA -->
+<div class="card-top"><div class="card-category">New Film</div><div class="number">06</div></div>
+<div class="card-body"><h2>Vismaya Mohanlal set to headline Arun Bose’s next Malayalam film</h2>
+<p>Following Thudakkam, Vismaya Mohanlal is set to take the lead in a new project directed by Luca filmmaker Arun Bose.</p>
+<div class="date">26 Sep 2026</div>
+<a class="read-more" href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/vismaya-mohanlals-next-film-update-thudakkam-actor-to-headline-luca-director-arun-boses-movie/articleshow/134496010.cms" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">06</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Ahaana Krishna marries cinematographer Nimish Ravi</h2>
-
-<p>
-Malayalam actor Ahaana Krishna has married cinematographer Nimish Ravi. Reports on the wedding described the couple as having known each other for years, with the ceremony taking place on September 13, 2026. Ahaana is known for films including Njan Steve Lopez, Njandukalude Naatil Oridavela, Pathinettam Padi, Adi and Pachuvum Athbutha Vilakkum.
-</p>
-
-<div class="date">16 Sep 2026</div>
-
-<a class="read-more"
-href="https://indianexpress.com/article/entertainment/malayalam/ahaana-krishna-ties-the-knot-with-nimish-ravi-see-photos-10879395/"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 07 - RISHAB SHETTY -->
+<div class="card-top"><div class="card-category">Actor News</div><div class="number">07</div></div>
+<div class="card-body"><h2>Joy Mathew responds to social-media reactions</h2>
+<p>Actor Joy Mathew has responded to social-media posts following Raveendran’s appointment as Kerala State Chalachitra Academy chairman.</p>
+<div class="date">26 Sep 2026</div>
+<a class="read-more" href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/i-have-no-reason-to-be-upset-joy-mathew-responds-to-social-media-jibes-after-raveendrans-chalachitra-academy-appointment-recalls-chirakodinja-kinavukal-role/articleshow/134498577.cms" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">07</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Rishab Shetty attends Ahaana Krishna and Nimish Ravi's wedding reception</h2>
-
-<p>
-Actor Rishab Shetty and his wife Pragathi Shetty arrived in Thiruvananthapuram to attend Ahaana Krishna and Nimish Ravi's wedding reception. Rishab also visited the Sree Padmanabhaswamy Temple during the visit. Nimish Ravi is a cinematographer whose credits include Luca and other recent projects.
-</p>
-
-<div class="date">15 Sep 2026</div>
-
-<a class="read-more"
-href="https://news.keralakaumudi.com/en/cinema/cine-news/rishab-shetty-wife-arrive-in-thiruvananthapuram-to-attend-ahaana%E2%80%99s-wedding-reception-actor-opens-up-1803587"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 08 - DULQUER -->
+<div class="card-top"><div class="card-category">Mohanlal</div><div class="number">08</div></div>
+<div class="card-body"><h2>Ram resumes shoot as Priyamani joins Mohanlal’s cast</h2>
+<p>Mohanlal and Jeethu Joseph’s long-delayed action thriller Ram has resumed filming, with Priyamani joining the cast.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://www.cinemaexpress.com/malayalam/news" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">08</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Dulquer Salmaan appears in wedding pictures from Ahaana and Nimish's celebrations</h2>
-
-<p>
-Pictures from Ahaana Krishna and Nimish Ravi's wedding celebrations drew attention after Dulquer Salmaan was seen among the guests. Kerala Kaumudi reported that Dulquer played a special role in the celebrations, adding another familiar name from Malayalam cinema to the wedding coverage.
-</p>
-
-<div class="date">16 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.keralakaumudi.com/en/news/timeline.php?cid=21"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 09 - GANESH KUMAR -->
+<div class="card-top"><div class="card-category">Tribute</div><div class="number">09</div></div>
+<div class="card-body"><h2>Navya Nair remembers theatre icon Soorya Krishnamoorthy</h2>
+<p>Navya Nair has spoken about Soorya Krishnamoorthy, who passed away recently, reflecting the impact of the veteran cultural figure.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://www.cinemaexpress.com/malayalam/news" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">09</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>KB Ganesh Kumar and Yamini Thankachi reunite for their son's wedding reception</h2>
-
-<p>
-Actor and former minister KB Ganesh Kumar and his former wife Dr Yamini Thankachi appeared together at the wedding reception of their eldest son, Aditya Krishnan Thampi, in Thiruvananthapuram. The reception brought together guests from Kerala's political, social and entertainment circles.
-</p>
-
-<div class="date">19 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.onmanorama.com/news/kerala/2026/09/19/ganesh-kumar-and-ex-wife-yamini-thankachi-reunite-for-sons-wedding.html"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 10 - MANJU WARRIER -->
+<div class="card-top"><div class="card-category">Fahadh Faasil</div><div class="number">10</div></div>
+<div class="card-body"><h2>Jr NTR to attend Fahadh Faasil’s Don’t Trouble the Trouble event</h2>
+<p>Jr NTR is set to attend the Hyderabad pre-release event for Fahadh Faasil’s upcoming Telugu fantasy entertainer.</p>
+<div class="date">28 Sep 2026</div>
+<a class="read-more" href="https://www.cinemaexpress.com/telugu/news/2026/Sep/28/jr-ntr-to-grace-fahadh-faasils-dont-trouble-the-trouble-event" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">10</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Manju Warrier takes legal action over alleged defamatory social-media content</h2>
-
-<p>
-Actor Manju Warrier has filed a civil suit in a Kerala court concerning social-media content that she alleges is defamatory. The case names filmmaker Sanal Kumar Sasidharan, journalist Shajan Skariah and Meta. The court has issued interim relief in connection with the matter, while the legal proceedings continue.
-</p>
-
-<div class="date">20 Sep 2026</div>
-
-<a class="read-more"
-href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/manju-warrier-moves-court-against-sanal-kumar-sasidharan-seeks-removal-of-allegedly-defamatory-posts/articleshow/134362515.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 11 - MALA PARVATHY -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">11</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Mala Parvathy speaks about the Manju Warrier legal dispute</h2>
-
-<p>
-Actor Mala Parvathy has spoken publicly about the dispute involving Manju Warrier and filmmaker Sanal Kumar Sasidharan. Her comments followed reports that material had been submitted in court. The underlying allegations remain matters for the legal process and should be distinguished from established findings.
-</p>
-
-<div class="date">20 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.manoramaonline.com/movies/movie-news/2026/09/20/manju-warrier-s-privacy-under-threat-maaala-parvathi-speaks-out.html"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 12 - MOHANLAL -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">12</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Mohanlal and Vishnu Mohan's film gets the title Operation Ganga</h2>
-
-<p>
-Mohanlal's collaboration with director Vishnu Mohan has been titled Operation Ganga. AMMA's news page also noted that Bollywood actor Arjun Rampal has joined the cast, adding a national name to the Malayalam production.
-</p>
-
-<div class="date">10 Sep 2026</div>
-
-<a class="read-more"
-href="https://ammakerala.com/news/"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 13 - SAMVRUTHA -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">13</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Samvrutha Sunil returns to the camera after seven years</h2>
-
-<p>
-Actor Samvrutha Sunil is returning to Malayalam cinema after a seven-year break. AMMA reported that her next film comes from the producers of Prakambanam, marking a new screen appearance for the actor after her extended hiatus.
-</p>
-
-<div class="date">10 Sep 2026</div>
-
-<a class="read-more"
-href="https://ammakerala.com/news/"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 14 - AMALA PAUL -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">14</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Amala Paul returns to Malayalam cinema in M Padmakumar's new film</h2>
-
-<p>
-Amala Paul has returned to Malayalam film production with a new project directed by M Padmakumar. The untitled film began production in September and features an ensemble cast including Vijay Babu, Irshad, Kottayam Nazeer, Binu Pappu and Indrans.
-</p>
-
-<div class="date">12 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.onmanorama.com/entertainment/entertainment-news/2026/09/12/amala-paul-padmakumar-malayalam-film.html"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 15 - AMALA PAUL ACP -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">15</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Amala Paul to play an ACP in Padmakumar's horror-investigation thriller</h2>
-
-<p>
-Further details about M Padmakumar's new Malayalam film reveal that Amala Paul will play an ACP in a horror-investigation thriller being filmed in Thalassery. The project is her return to Malayalam cinema after Level Cross and explores a female-centred investigative story.
-</p>
-
-<div class="date">14 Sep 2026</div>
-
-<a class="read-more"
-href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/amala-paul-plays-a-cop-in-padmakumars-horror-thriller/articleshow/134222446.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 16 - MENAKA -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">16</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Menaka Suresh makes a Malayalam cinema comeback</h2>
-
-<p>
-Veteran actor Menaka Suresh is returning to Malayalam cinema with Oru Korean Confusion, written and directed by Sanjeev Sivan. The film is being shot in Idukki and also features South Korean actor Ami Jung, who is making her Indian film debut.
-</p>
-
+<div class="card-top"><div class="card-category">Cinema</div><div class="number">11</div></div>
+<div class="card-body"><h2>Menaka Suresh returns to Malayalam cinema</h2>
+<p>Veteran actor Menaka Suresh is making a comeback with Sanjeev Sivan’s Oru Korean Confusion, currently being shot in Idukki.</p>
 <div class="date">Sep 2026</div>
-
-<a class="read-more"
-href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/menaka-suresh-returns-to-malayalam-cinema-with-sanjeev-sivans-oru-korean-confusion/articleshow/134116679.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 17 - PRITHVIRAJ / THILAKAN / JAGATHY -->
+<a class="read-more" href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/menaka-suresh-returns-to-malayalam-cinema-with-sanjeev-sivans-oru-korean-confusion/articleshow/134116679.cms" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 <article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">17</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Prithviraj Sukumaran highlights the legacy of Thilakan and Jagathy Sreekumar</h2>
-
-<p>
-During a national media appearance connected with Daayra, Prithviraj Sukumaran spoke about several celebrated names from Malayalam cinema, including Thilakan and Jagathy Sreekumar. His remarks drew attention to the influence of Malayalam performers and the industry's distinctive acting tradition.
-</p>
-
-<div class="date">2 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.onmanorama.com/entertainment/entertainment-news/2026/09/02/prithviraj-sukumaran-praises-thilakan-jagathy-malayalam-cinema-national-stage-wins-hearts-of-malayalis.html"
-target="_blank"
-rel="noopener">Source ↗</a>
+<div class="card-top"><div class="card-category">Cinema</div><div class="number">12</div></div>
+<div class="card-body"><h2>Half becomes first Malayalam film to screen in TIFF Midnight Madness</h2>
+<p>Samjad PS’s Half made history with its Toronto International Film Festival Midnight Madness selection.</p>
+<div class="date">22 Sep 2026</div>
+<a class="read-more" href="https://www.cinemaexpress.com/malayalam/news" target="_blank" rel="noopener">Source ↗</a></div></article>
 
 </div>
-</article>
-
-
-<!-- 18 - PRITHVIRAJ -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">18</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Prithviraj discusses the strengths of Malayalam filmmaking</h2>
-
-<p>
-At The Indian Express's Expresso event, Prithviraj Sukumaran discussed differences between Malayalam cinema and Bollywood, pointing to the direct and practical working culture he associates with Malayalam filmmaking. He also discussed the way writers and storytelling shape the industry's films.
-</p>
-
-<div class="date">15 Sep 2026</div>
-
-<a class="read-more"
-href="https://indianexpress.com/article/entertainment/malayalam/prithviraj-contrasts-malayalam-films-with-bollywood-budgets-casting-10878207/"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 19 - RUKMINI -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">19</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Rukmini Vasanth joins Nivin Pauly's upcoming Malayalam film</h2>
-
-<p>
-Rukmini Vasanth has joined Nivin Pauly's upcoming Malayalam film, marking her Malayalam debut. Onmanorama reported that the actor was photographed with Nivin on the sets of the project, identified as NP 51.
-</p>
-
-<div class="date">9 Sep 2026</div>
-
-<a class="read-more"
-href="https://www.onmanorama.com/entertainment/entertainment-news/2026/09/09/nivin-pauly-new-film-rukmini-vasanth-joins-np51.html"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 20 - HALF -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">20</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Half becomes the first Malayalam film to screen in TIFF's Midnight Madness</h2>
-
-<p>
-Samjad PS's Half has become the first Malayalam film to screen in the Midnight Madness section of the Toronto International Film Festival, according to a Times of India report. The film stars Ranjith Sajeev and Aiswarya Raj and received an enthusiastic response at the festival screening.
-</p>
-
-<div class="date">19 Sep 2026</div>
-
-<a class="read-more"
-href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/samjad-ps-half-creates-history-as-the-first-malayalam-film-to-be-screened-at-tiffs-prestigious-midnight-madness-section/articleshow/134352092.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-
-<!-- 21 - PICNIC -->
-
-<article class="card">
-<div class="card-top">
-<div>
-<div class="card-category">Celebrity News</div>
-<div class="number">21</div>
-</div>
-</div>
-
-<div class="card-body">
-
-<h2>Fahadh Faasil, Dileesh Pothan and Syam Pushkaran back Picnic</h2>
-
-<p>
-The makers of Bethlehem Kudumba Unit have announced Picnic, a new Malayalam project backed by Fahadh Faasil, Dileesh Pothan and Syam Pushkaran. Sandeep Pradeep will lead the film and Kiran Josey will make his directorial debut. The reported release date is January 14, 2027.
-</p>
-
-<div class="date">19 Sep 2026</div>
-
-<a class="read-more"
-href="https://timesofindia.indiatimes.com/entertainment/malayalam/movies/news/bethlehem-kudumba-unit-makers-announce-picnic-fahadh-faasil-dileesh-pothan-and-syam-pushkaran-back-new-film-with-sandeep-pradeep-slated-for-january-2027/articleshow/134349238.cms"
-target="_blank"
-rel="noopener">Source ↗</a>
-
-</div>
-</article>
-
-</div>
-</div>
-</section>
 
 </main>
 
