@@ -54,5 +54,12 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/dhoomakethu.jpg"
+  },
+  {
+    "file": "movie-9.html",
+    "title": "Don't Trouble The Trouble",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/dont-trouble-the-trouble.jpg"
   }
 ]
