@@ -61,5 +61,12 @@
     "year": 2026,
     "status": "Now Showing",
     "image": "/movies/images/dont-trouble-the-trouble.jpg"
+  },
+  {
+    "file": "movie-10.html",
+    "title": "Avaraachan & Sons",
+    "year": 2026,
+    "status": "Now Showing",
+    "image": "/movies/images/avaraachan-and-sons.jpg"
   }
 ]
